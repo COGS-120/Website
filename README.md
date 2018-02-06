@@ -1,4 +1,4 @@
-lab4
+<APP NAME>
 ====
 
-Lab 4: Programming with Javascript
+This web app teaches people how to cook.
