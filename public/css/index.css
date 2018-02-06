@@ -1,0 +1,49 @@
+#center-small-title {
+    text-align: center;
+}
+
+#center-title {
+    text-align: center;
+    font-size: 300%;
+}
+
+.food-list-container {
+    width: 700px;
+    margin: 0px auto;
+}
+
+.food-list-container p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: -10px;
+}
+
+.food-list-container .food-categories {
+    position: relative;
+  }
+
+.food-categories .thumbnail {
+    padding: 0%;
+    border: 0px;
+    margin-bottom: 0px;
+}
+
+/* Centered text */
+.food-categories p {
+    margin: 0;
+    position: absolute;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 300%;
+    color: white;
+}
+
+.food-categories p span {
+    background-color: rgba(34, 34, 34, 0.8);
+    padding: 1%;
+    border-radius: 10px;
+}

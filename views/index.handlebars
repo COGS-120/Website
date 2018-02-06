@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-  <link href="/css/introHCI.css" rel="stylesheet">
+  <link href="/css/index.css" rel="stylesheet">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,23 +19,30 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="jumbotron">
-      <h1>APP NAME</h1>
-      <p>Learn to cook!</p>
-    </div>
+  <h1 id="center-title"><strong>EZ Cooking</strong></h1>
+  <h2 id="center-small-title">Learn to cook!</h2>
 
-    <h4>Items to cook</h4>
+  <div class="food-list-container">
     {{#each projects}}
-    <div class="project" id="{{id}}">
+    <div class="food-categories" id="{{id}}">
       <a href="project/{{name}}" class="thumbnail">
         <img src="images/{{image}}" class="img">
-        <p>{{name}}</p>
+        <p class="centered-text">
+          <span>{{name}}</span>
+        </p>
       </a>
-    </div {{/each}} </div>
+    </div>
+    {{/each}}
+  </div>
 
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+  </div>
+
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
 </body>
+
+<footer>
+  <p>Copyright 2018 EZ Cooking</p>
+</footer>
 
 </html>

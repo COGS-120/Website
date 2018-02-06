@@ -7,44 +7,34 @@ exports.view = function (req, res) {
   res.render('index', {
     'projects': [
       {
-        'name': 'Waiting in Line',
+        'name': 'Breakfast',
         'image': 'breakfast.jpg',
-        'id': 'project1'
+        'id': 'Breakfast'
       },
       {
-        'name': 'Needfinding',
-        'image': 'lorempixel.city.1.jpeg',
-        'id': 'project2'
+        'name': 'Lunch',
+        'image': 'lunch.jpg',
+        'id': 'Lunch'
       },
       {
-        'name': 'Prototyping',
-        'image': 'lorempixel.technics.1.jpeg',
-        'id': 'project3'
+        'name': 'Dinner',
+        'image': 'dinner.jpg',
+        'id': 'Dinner'
       },
       {
-        'name': 'Heuristic Evaluation',
-        'image': 'lorempixel.abstract.1.jpeg',
-        'id': 'project4'
+        'name': 'Dessert',
+        'image': 'dessert.jpg',
+        'id': 'Desert'
       },
       {
-        'name': 'Visualization',
-        'image': 'lorempixel.abstract.8.jpeg',
-        'id': 'project5'
+        'name': 'Vegetarian',
+        'image': 'vegetarian.jpg',
+        'id': 'Vegetarian'
       },
       {
-        'name': 'Social design',
-        'image': 'lorempixel.people.2.jpeg',
-        'id': 'project6'
-      },
-      {
-        'name': 'Gestural interaction',
-        'image': 'lorempixel.technics.2.jpeg',
-        'id': 'project7'
-      },
-      {
-        'name': 'Design tools',
-        'image': 'lorempixel.city.2.jpeg',
-        'id': 'project8'
+        'name': 'Gluten Free',
+        'image': 'glutenfree.jpg',
+        'id': 'Gluten Free'
       }
     ]
   });
