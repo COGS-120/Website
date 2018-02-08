@@ -1,6 +1,6 @@
 exports.view = function(req, res) {
 	var name = req.params.name;
-		res.render("instructions", {
+		res.render("finish", {
 		"name" : name
 	});
 };
