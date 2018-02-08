@@ -1,10 +1,10 @@
 {
-  "name": "IntroHCI",
-  "version": "0.0.1",
-  "author": "Intro HCI Staff",
+  "name": "EZ-Cooking",
+  "version": "0.0.2",
+  "author": "Christopher Cabreros, Pardeep Singh, Kenneth Nguyen",
   "repository": {
     "type": "git",
-    "url": "https://github.com/IntroHCI/lab4"
+    "url": "https://github.com/COGS-120/Website"
   },
   "license": "MIT",
   "private": true,
