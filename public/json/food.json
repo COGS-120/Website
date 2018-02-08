@@ -37,15 +37,93 @@
         }
     ],
 
-    "lunch": [
-
+    "Lunch": [
+        {
+            "name": "Sandwich",
+            "image": "lunch/sandwich.jpg",
+            "id": "Sandwich"
+        },
+        {
+            "name": "Spaghetti",
+            "image": "lunch/spaghetti.jpg",
+            "id": "Spaghetti"
+        },
+        {
+            "name": "Tacos",
+            "image": "lunch/tacos.jpg",
+            "id": "Tacos"
+        }
     ],
 
-    "dinner": [
-        
+    "Dinner": [
+        {
+            "name": "Beef",
+            "image": "dinner/beefwellington.jpg",
+            "id": "Beef"
+        },
+        {
+            "name": "Risotto",
+            "image": "dinner/risotto.jpg",
+            "id": "Risotto"
+        },
+        {
+            "name": "Vegatable Stew",
+            "image": "dinner/vegetablestew.jpg",
+            "id": "Vegetable Stew"
+        }        
     ],
 
-    "dessert": [
-        
+    "Dessert": [
+        {
+            "name": "Cheesecake",
+            "image": "dessert/cheesecake.jpg",
+            "id": "Cheesecake"
+        },
+        {
+            "name": "Cherry Cream Cheese",
+            "image": "dessert/cherrycreamcheese.jpg",
+            "id": "Cherry"
+        },
+        {
+            "name": "Nutella Taco",
+            "image": "dessert/nutellataco.jpg",
+            "id": "Nutella Taco"
+        }
+    ],
+
+    "Vegetarian": [
+        {
+            "name": "Frittata",
+            "image": "vegetarian/frittata.jpg",
+            "id": "Frittata"
+        },
+        {
+            "name": "Green Falafel",
+            "image": "vegetarian/greenfalafel.jpg",
+            "id": "Green Falafel"
+        },
+        {
+            "name": "Lentil",
+            "image": "vegetarian/lentil.jpg",
+            "id": "Lentil"
+        }
+    ],
+
+    "Gluten Free": [
+        {
+            "name": "Pork Chops",
+            "image": "glutenfree/caramelappleporkchops.png",
+            "id": "Pork Chops"
+        },
+        {
+            "name": "Grilled Sea Bass",
+            "image": "glutenfree/grilledseabass.jpg",
+            "id": "Sea Bass"
+        },
+        {
+            "name": "Salmon Cakes",
+            "image": "glutenfree/salmoncakes.jpg",
+            "id": "Salmon Cakes"
+        }
     ]
 }
