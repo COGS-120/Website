@@ -1,0 +1,51 @@
+{
+    "Breakfast": [
+        {
+            "name": "Bacon",
+            "image": "breakfast/bacon.jpg",
+            "id": "Bacon"
+        },
+        {
+            "name": "Eggs",
+            "image": "breakfast/eggs.jpg",
+            "id": "Eggs"
+        },
+        {
+            "name": "French Toast",
+            "image": "breakfast/french toast.jpg",
+            "id": "French Toast"
+        },
+        {
+            "name": "Oatmeal",
+            "image": "breakfast/oatmeal.jpg",
+            "id": "Oatmeal"
+        },
+        {
+            "name": "Pancakes",
+            "image": "breakfast/pancakes.jpg",
+            "id": "Pancakes"
+        },
+        {
+            "name": "Poached Eggs",
+            "image": "breakfast/poached eggs.jpg",
+            "id": "Poached Eggs"
+        },
+        {
+            "name": "Waffles",
+            "image": "breakfast/waffles.jpg",
+            "id": "Waffles"
+        }
+    ],
+
+    "lunch": [
+
+    ],
+
+    "dinner": [
+        
+    ],
+
+    "dessert": [
+        
+    ]
+}

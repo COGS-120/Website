@@ -3,11 +3,11 @@
 <html>
 
 <head>
-  <title>APP NAME</title>
+  <title>EZ Cooking</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
   <link href="/css/index.css" rel="stylesheet">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -20,30 +20,40 @@
 
 <body>
 
-  <h1 id="center-title"><strong>EZ Cooking</strong></h1>
-  <h2 id="center-small-title">Learn to cook!</h2>
+  <div id="topNavBar"></div>
 
-  <div class="search-bar">
-    <!-- To be implemented -->
-  </div>
+  <div class="container">
 
-  <div class="food-list-container">
-    {{#each projects}}
-    <div class="food-categories" id="{{id}}">
-      <a href="project/{{name}}" class="thumbnail">
-        <img src="images/{{image}}" class="img">
-        <p class="centered-text">
-          <span>{{name}}</span>
-        </p>
-      </a>
+    <h2 id="center-small-title">Learn to cook!</h2>
+
+    <div class="search-bar">
+      <!-- To be implemented -->
+    </div>
+
+    {{#each categories}}
+    <div class="row justify-content-center">
+      <div class="col">
+
+        <a href="category/{{name}}" id="{{id}}">
+          <div class="card bg-dark text-white border-0">
+            <img class="card-img" src="images/{{image}}" alt="Card image">
+            <div class="card-img-overlay text-center align-middle outer-name">
+                <h3 class="inner-name">
+                  {{name}}
+                </h3>
+            </div>
+          </div>
+        </a>
+
+      </div>
     </div>
     {{/each}}
-  </div>
 
   </div>
 
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/navbar.js"></script>
 </body>
 
 <footer>
