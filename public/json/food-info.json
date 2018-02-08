@@ -23,7 +23,7 @@
         "id": "Oatmeal",
         "hashtag": "#oatmeal"
     },
-    "Panackes": {
+    "Pancakes": {
         "name": "Pancakes",
         "image": "breakfast/pancakes.jpg",
         "id": "Pancakes",
@@ -40,5 +40,100 @@
         "image": "breakfast/waffles.jpg",
         "id": "Waffles",
         "hashtag": "#waffles"
+    },
+
+    "Sandwich":{
+        "name": "Sandwich",
+        "image": "lunch/sandwich.jpg",
+        "id": "Sandwich",
+        "hashtag": "#Sandwich"
+    },
+    "Spaghetti":{
+        "name": "Spaghetti",
+        "image": "lunch/spaghetti.jpg",
+        "id": "Spaghetti",
+        "hashtag": "#Sandwich"
+    },
+    "Tacos":{
+        "name": "Tacos",
+        "image": "lunch/tacos.jpg",
+        "id": "Tacos",
+        "hashtag": "#Sandwich"
+    },
+
+    "Beef":{
+        "name": "Beef",
+        "image": "dinner/beefwellington.jpg",
+        "id": "Beef",
+        "hashtag": "#Sandwich"
+    },
+    "Risotto":{
+        "name": "Risotto",
+        "image": "dinner/risotto.jpg",
+        "id": "Risotto",
+        "hashtag": "#Sandwich"
+    },
+    "Vegetable Stew":{
+        "name": "Vegatable Stew",
+        "image": "dinner/vegetablestew.jpg",
+        "id": "Vegetable Stew",
+        "hashtag": "#Sandwich"
+    },    
+
+    "Cheesecake":{
+        "name": "Cheesecake",
+        "image": "dessert/cheesecake.jpg",
+        "id": "Cheesecake",
+        "hashtag": "#Sandwich"
+    },
+    "Cherry Cream Cheese":{
+        "name": "Cherry Cream Cheese",
+        "image": "dessert/cherrycreamcheese.jpg",
+        "id": "Cherry",
+        "hashtag": "#Sandwich"
+    },
+    "Nutella Taco":{
+        "name": "Nutella Taco",
+        "image": "dessert/nutellataco.jpg",
+        "id": "Nutella Taco",
+        "hashtag": "#Sandwich"
+    },
+
+    "Frittata":{
+        "name": "Frittata",
+        "image": "vegetarian/frittata.jpg",
+        "id": "Frittata",
+        "hashtag": "#Sandwich"
+    },
+    "Green Falafel":{
+        "name": "Green Falafel",
+        "image": "vegetarian/greenfalafel.jpg",
+        "id": "Green Falafel",
+        "hashtag": "#Sandwich"
+    },
+    "Lentil":{
+        "name": "Lentil",
+        "image": "vegetarian/lentil.jpg",
+        "id": "Lentil",
+        "hashtag": "#Sandwich"
+    },
+
+    "Pork Chops":{
+        "name": "Pork Chops",
+        "image": "glutenfree/caramelappleporkchops.png",
+        "id": "Pork Chops",
+        "hashtag": "#Sandwich"
+    },
+    "Grilled Sea Bass":{
+        "name": "Grilled Sea Bass",
+        "image": "glutenfree/grilledseabass.jpg",
+        "id": "Sea Bass",
+        "hashtag": "#Sandwich"
+    },
+    "Salmon Cakes":{
+        "name": "Salmon Cakes",
+        "image": "glutenfree/salmoncakes.jpg",
+        "id": "Salmon Cakes",
+        "hashtag": "#Sandwich"
     }
 }
