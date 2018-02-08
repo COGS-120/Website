@@ -5,10 +5,6 @@ exports.view = function(req, res) {
 	// Seperate the food data that we requested
 	var foodDataSpecific = foodDataAll[name];
 
-	console.log("The category name is: " + name);
-	console.log(foodDataAll);
-	console.log("Data: " + foodDataSpecific);
-
 	res.render("category", {
 		"categoryName" : name,
 		"category" : foodDataSpecific,
