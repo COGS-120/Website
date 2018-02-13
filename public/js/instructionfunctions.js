@@ -24,9 +24,15 @@ var sayTimeout = null;
 
 var voices = [];
 
+/**
+ * function populateVoiceList
+ * Populates the voice list with the device's available voices.
+ * Creates options in the voice select dropdown, and adds voices
+ */
 function populateVoiceList() {
 	voices = synth.getVoices();
-	var selectedIndex = voiceSelect.selectedIndex < 0 ? 0 : voiceSelect.selectedIndex;
+	var selectedIndex =
+		voiceSelect.selectedIndex < 0 ? 0 : voiceSelect.selectedIndex;
 	voiceSelect.innerHTML = '';
 	for (i = 0; i < voices.length; i++) {
 		var option = document.createElement('option');
@@ -41,40 +47,51 @@ function populateVoiceList() {
 		voiceSelect.appendChild(option);
 	}
 	voiceSelect.selectedIndex = selectedIndex;
+
+	if (speechSynthesis.onvoiceschanged !== undefined) {
+		speechSynthesis.onvoiceschanged = populateVoiceList;
+	}
 }
 
-populateVoiceList();
-if (speechSynthesis.onvoiceschanged !== undefined) {
-	speechSynthesis.onvoiceschanged = populateVoiceList;
-}
-
+/**
+ * function speak
+ * Speaks the given text in param stuffToSay with the current voice selected.
+ * The speaker will stop and speak newly given data if the speaker is
+ * interrupted by consectuive calls.
+ * 
+ * @param {*} stuffToSay - string of what to say
+ */
 function speak(stuffToSay) {
+	if (speechSynthesis.speaking) {
+		// SpeechSyn is currently speaking, cancel the current utterance(s)
+		speechSynthesis.cancel();
 
-		/*
-	// Make sure we don't create more than one timeout...
-	if (sayTimeout !== null)
-		clearTimeout(sayTimeout);
-
-	sayTimeout = setTimeout(function () { speak(stuffToSay); }, 250);
-*/
-
-	if (stuffToSay !== '') {
-		var utterThis = new SpeechSynthesisUtterance(stuffToSay);
-		utterThis.onend = function (event) {
-			console.log('SpeechSynthesisUtterance.onend');
+		// Make sure we don't create more than one timeout...
+		if (sayTimeout !== null) {
+			clearTimeout(sayTimeout);
 		}
-		utterThis.onerror = function (event) {
-			console.error('SpeechSynthesisUtterance.onerror');
-		}
-		var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
-		for (i = 0; i < voices.length; i++) {
-			if (voices[i].name === selectedOption) {
-				utterThis.voice = voices[i];
+
+		sayTimeout = setTimeout(function () { speak(stuffToSay) }, 250);
+	}
+	else {
+		if (stuffToSay !== '') {
+			var utterThis = new SpeechSynthesisUtterance(stuffToSay);
+			utterThis.onend = function (event) {
+				console.log('SpeechSynthesisUtterance.onend');
 			}
+			utterThis.onerror = function (event) {
+				console.error('SpeechSynthesisUtterance.onerror');
+			}
+			var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
+			for (i = 0; i < voices.length; i++) {
+				if (voices[i].name === selectedOption) {
+					utterThis.voice = voices[i];
+				}
+			}
+			utterThis.pitch = pitch.value;
+			utterThis.rate = rate.value;
+			synth.speak(utterThis);
 		}
-		utterThis.pitch = pitch.value;
-		utterThis.rate = rate.value;
-		synth.speak(utterThis);
 	}
 }
 
@@ -89,24 +106,15 @@ rate.onchange = function () {
 voiceSelect.onchange = function () {
 }
 
-function stopSpeaking() {
-	if (synth.speaking) {
-		synth.pause();
-		synth.cancel();
-	}
-}
-
 // Here is your shit Kenneth
 
 window.onload = function () {
-	console.log(what);
-	console.log(name);
+	populateVoiceList();
 	display();
 }
 
 document.onload = function () {
-	console.log(what);
-	console.log(name);
+	populateVoiceList();
 	display();
 }
 
@@ -125,15 +133,12 @@ function previousIndex() {
 	if (index < 0) {
 		index = 0;
 	}
-
 	display();
 }
 
 function display() {
-
 	var title = document.getElementById("stepTitle");
 	title.innerText = what[0].steplist[index].step;
-	stopSpeaking();
-	speak(what[0].steplist[index].step);
 
+	speak(what[0].steplist[index].step);
 }
