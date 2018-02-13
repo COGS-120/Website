@@ -16,32 +16,64 @@
 
   <div class="container">
 
-    <h1><strong>Instructions Page</strong></h1>
+    <h1>
+      <strong>Instructions Page</strong>
+    </h1>
 
 
-    <h3 id="stepTitle">Proceed to the first step<h3>
-
-    <a href="/">Back To Home</a>
-    <br>
-    <a href="/../finish/{{name}}">Next</a>
 
     <div class="row">
-      
-      <div class="col">
 
+      <div class="col">
+        <h3 id="stepTitle">Proceed to the first step</h3>
+        <a href="/">Back To Home</a>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <button type="button" onclick="previousIndex()">Back</button>
+        <button type="button" onclick="nextIndex()">Next</button>
       </div>
     </div>
 
-    <button type="button" onclick="previousIndex()">Back</button>
-    <button type="button" onclick="nextIndex()">Next</button>
+    <!-- Remove this whitespace later, do some styling -->
+    <br>
+    <br>
+    <br>
 
+    <div class="row">
+      <div class="col">
+        <h3>Speech synthesiser settings</h3>
+        <form>
+          <div>
+            <label for="rate">Rate</label>
+            <input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
+            <div class="rate-value">1</div>
+            <div class="clearfix"></div>
+          </div>
+          <div>
+            <label for="pitch">Pitch</label>
+            <input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
+            <div class="pitch-value">1</div>
+            <div class="clearfix"></div>
+          </div>
+          <select>
+
+          </select>
+          <div class="controls">
+            <button id="play" type="submit">Play</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
   </div>
 
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/js/navbar.js"></script>
   <script src="/js/bootstrap.min.js"></script>
-
   <script src="/js/instructionfunctions.js"></script>
 
 </body>
