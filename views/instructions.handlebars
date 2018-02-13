@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>EZ Cooking - {{categoryName}} Instructions</title>
+  <title>EZ Cooking - {{name}} Instructions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -18,7 +18,8 @@
 
     <h1><strong>Instructions Page</strong></h1>
 
-    <h3>Step 1: Wait until we implement this.</h3>
+
+    <h3 id="stepTitle">Step 1. Blah Blah<h3>
 
     <a href="/">Back To Home</a>
     <br>
@@ -31,11 +32,18 @@
       </div>
     </div>
 
+    <button type="button" onclick="previousIndex()">Back</button>
+    <button type="button" onclick="nextIndex()">Next</button>
+
+
   </div>
 
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/js/navbar.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+
+  <script src="/js/instructionfunctions.js"></script>
+
 </body>
 
 </html>
