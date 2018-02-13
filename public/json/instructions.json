@@ -1,23 +1,23 @@
  [ {
     "name" : "Risotto",
-    "ingredients": {
-            "ing0": "1 1/2 cups arborio rice",
-            "ing1": "4 cups chicken stock",
-            "ing2": "1/2 cup vermouth",
-            "ing3": "1 medium shallot",
-            "ing4": "3 tablespoons whole butter",
-            "ing5": "1 tablespoon vegetable oil",
-            "ing6": "1/4 cup Parmesan cheese (grated)",
-            "ing7": "1 tablespoon Italian parsley",
-            "ing8": "Kosher salt"
-    },
-    "tools": {
-            "tool0": "A medium sized sauce pan",
-            "tool1": "A large sauce pan",
-            "tool2": "Knife",
-            "tool3": "Wooden Spoon"
-    },
-    "steplist": [
+    "tools": [
+            {"tool-name" : "A medium sized sauce pan"},
+            {"tool-name": "A large sauce pan"},
+            {"tool-name": "Knife"},
+            {"tool-name": "Wooden Spoon"}
+    ],
+    "ingredients": [
+            {"ingredient-name": "1 1/2 cups arborio rice"},
+            {"ingredient-name": "4 cups chicken stock"},
+            {"ingredient-name": "1/2 cup vermouth"},
+            {"ingredient-name": "1 medium shallot"},
+            {"ingredient-name": "3 tablespoons whole butter"},
+            {"ingredient-name": "1 tablespoon vegetable oil"},
+            {"ingredient-name": "1/4 cup Parmesan cheese (grated)"},
+            {"ingredient-name": "1 tablespoon Italian parsley"},
+            {"ingredient-name": "Kosher salt"}
+    ],
+        "steplist": [
         {
             "step": "Step 1. Heat the stock to a simmer in a medium saucepan, then lower the heat so that the stock just stays hot.",
             "id": "step 1"

@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 
 <head>
-  <title>EZ Cooking - {{name}}</title>
+  <title>EZ Cooking - {{name}} Tools and Ingredients</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -17,11 +17,25 @@
   <div class="container">
 
     <h1>
-      <strong>Learn to cook {{name}}</strong>
+      <strong>Here are the tools and ingredients needed for {{name}}</strong>
     </h1>
 
+    {{#each tools}}
+    	<div> <h3>{{tool-name}}</h3>
+
+    	</div>
+
+    {{/each}}
     <br>
-    <h3>Here is some {{name}}.</h3>
+
+    {{#each ingredients}}
+    	<div> <h3> {{ingredient-name}}</h3>
+
+    	</div>
+    {{/each}}
+
+    <br>
+    <h3 id="itemsNeeded">Proceed onto cooking<h3>
 
     <div class="row">
 
@@ -38,18 +52,15 @@
 
       <div class="col">
         
-        <a href="/ingTool/{{name}}">Learn how to cook!</a>
+        <a href="/instructions/{{name}}">Learn how to cook!</a>
 
       </div>
     </div>
 
-    <div class="row food-card-img">
-      <div class="col food-card-img">
-        <img class="food-card-img" src="../images/{{image}}" alt="Card image">
-      </div>
-    </div>
+  
 
-    <h5>Page still under construction!</h5>
+    
+   
   </div>
 
   <script src="https://code.jquery.com/jquery.js"></script>
