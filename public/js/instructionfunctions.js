@@ -13,6 +13,11 @@ window.onload = function() {
 	display();
 }
 
+document.onload = function() {
+	console.log(what);
+	console.log(name);
+	display();
+}
 
 function nextIndex() {
 	if (what[0].steplist[index].hasOwnProperty("end")) {
