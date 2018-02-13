@@ -3,8 +3,9 @@ exports.view = function(req, res) {
 	var recipeData = require("../public/json/instructions.json");
 
 
-		res.render("instructions", {
+		res.render("ingredientsTools", {
 		"name" : name,
-		"recipe": recipeData
+		"tools": tools,
+		"ingredients": ingredients
 	});
 };

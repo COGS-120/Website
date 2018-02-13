@@ -1,0 +1,52 @@
+ [ {
+    "name" : "Risotto",
+    "tools": [
+            {"tool-name" : "A medium sized sauce pan"},
+            {"tool-name": "A large sauce pan"},
+            {"tool-name": "Knife"},
+            {"tool-name": "Wooden Spoon"}
+    ],
+    "ingredients": [
+            {"ingredient-name": "1 1/2 cups arborio rice"},
+            {"ingredient-name": "4 cups chicken stock"},
+            {"ingredient-name": "1/2 cup vermouth"},
+            {"ingredient-name": "1 medium shallot"},
+            {"ingredient-name": "3 tablespoons whole butter"},
+            {"ingredient-name": "1 tablespoon vegetable oil"},
+            {"ingredient-name": "1/4 cup Parmesan cheese (grated)"},
+            {"ingredient-name": "1 tablespoon Italian parsley"},
+            {"ingredient-name": "Kosher salt"}
+    ],
+        "steplist": [
+        {
+            "step": "Step 1. Heat the stock to a simmer in a medium saucepan, then lower the heat so that the stock just stays hot.",
+            "id": "step 1"
+        },
+        {
+            "step": "Step 2. In a large, heavy-bottomed saucepan, heat the oil and 1 tablespoon of the butter over medium heat. When the butter has melted, add the chopped shallot or onion. Sauté for 2 to 3 minutes or until slightly translucent.",
+            "id": "step 2"
+        },
+        {
+            "step": "Step 3. Add the rice to the pot and stir it briskly with a wooden spoon so that the grains are coated with the oil and melted butter. Sauté for another minute or so, until there is a slightly nutty aroma. But don't let the rice turn brown. Add the wine and cook while stirring, until the liquid is fully absorbed.",
+            "id": "step 3"
+        },
+        {
+            "step": "Step 4. Add a ladle of hot chicken stock to the rice and stir until the liquid is fully absorbed. When the rice appears almost dry, add another ladle of stock and repeat the process. It's important to stir constantly, especially while the hot stock gets absorbed, to prevent scorching, and add the next ladle as soon as the rice is almost dry.",
+            "id": "step 4"
+        },
+        {
+            "step": "Step 5. Continue adding stock, a ladle at a time, for 20 to 30 minutes or until the grains are tender but still firm to the bite, without being crunchy.",
+            "id": "step 5"
+        },
+        {
+            "step": "Step 6. If you run out of stock and the risotto still isn't done, you can finish the cooking using hot water. Just add the water as you did with the stock, a ladle at a time, stirring while it's absorbed.",
+            "id": "step 6"
+        },
+        {
+            "step": "Step 7. Stir in the remaining 2 tablespoons butter, the Parmesan cheese, and the parsley, and season to taste with Kosher salt.",
+            "id": "step 7",
+            "end": "yes"
+        }
+    ]
+}
+]

@@ -17,6 +17,7 @@ var food = require('./routes/food');
 var foodGallery = require('./routes/foodGallery');
 var instructions = require('./routes/instructions');
 var share = require('./routes/share');
+var ingTool = require('./routes/ingTool');
 
 var app = express();
 
@@ -49,6 +50,7 @@ app.get('/food/:name', food.view);
 app.get('/food/gallery/:gallery', foodGallery.view);
 app.get('/instructions/:name', instructions.view);
 app.get('/share/:name', share.view);
+app.get('/ingTool/:name', ingTool.view);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
