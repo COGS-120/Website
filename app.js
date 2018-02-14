@@ -1,7 +1,6 @@
 /**
  * Module dependencies.
  */
-
  
 var express = require('express');
 var http = require('http');
@@ -9,6 +8,8 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 // Routes
+var about = require("./routes/about");
+var favorites = require("./routes/favorites");
 var login = require("./routes/login");
 var index = require('./routes/index');
 var category = require('./routes/category');
@@ -44,6 +45,8 @@ if ('development' == app.get('env')) {
 // Add routes here
 app.get('/', index.view);
 app.get('/login', login.view);
+app.get('/about', about.view);
+app.get('/favorites', favorites.view);
 app.get('/category/:name', category.view);
 app.get('/finish/:name', finish.view);
 app.get('/food/:name', food.view);

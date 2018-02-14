@@ -59,8 +59,6 @@ function FirebaseWorker() {
 
     this.initFirebase();
     console.log("Initialized Firebase Worker");
-
-
 }
 
 /**
@@ -74,6 +72,9 @@ FirebaseWorker.prototype.initFirebase = function () {
     this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));
 };
 
+/** 
+ * Signs outs 
+ */
 FirebaseWorker.prototype.signOut = function () {
     this.auth.signOut();
 };
@@ -108,6 +109,10 @@ FirebaseWorker.prototype.onAuthStateChanged = function (user) {
 
 /** 
  * Checker function
+ * Checks whether setup has been completed.
+ * If you are getting this error, be sure that your html or handlebars file 
+ * contains the script includes at the top file comment.
+ * If all that has been done, and you're still getting this, contact Chris
  */
 FirebaseWorker.prototype.checkSetup = function () {
     if (!window.firebase || !(firebase.app instanceof Function) || !firebase.app().options) {

@@ -1,3 +1,21 @@
+/**
+ * firebaseLogin.js
+ * 
+ * This file should only be placed at the login, and handles a state of not
+ * being logged into the system. 
+ * 
+ * For the page to support this file, there needs to be the required Firebase 
+ * scripts included in the handlebars file. The full include is:  
+
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+  <script src="/js/firebaseCheck.js"></script>
+ 
+ */
+
 
 'use strict';
 
@@ -8,17 +26,23 @@ var config = {
     projectId: "ez-cooking-21ebe",
     storageBucket: "ez-cooking-21ebe.appspot.com",
     messagingSenderId: "796679434279"
-  };
-  firebase.initializeApp(config);
+};
+firebase.initializeApp(config);
 
-function FirebaseWorker() {
+/** 
+ * function FirebaseLoginWorker
+ * 
+ * Initializes the Firebase Login Worker.
+ * Makes modifications to the page necessary for login to exist
+ */
+function FirebaseLoginWorker() {
     this.checkSetup();
 
     this.signInButtonGoogle = document.getElementById("sign-in-google");
     this.signInButtonGuest = document.getElementById("sign-in-guest");
-    
+
     this.statusText = document.getElementById("login-status");
-    
+
     this.userName = document.getElementById('user-name');
 
     // Bind buttons
@@ -32,7 +56,7 @@ function FirebaseWorker() {
 /*
  * Initializes Firebase
  */
-FirebaseWorker.prototype.initFirebase = function () {
+FirebaseLoginWorker.prototype.initFirebase = function () {
     this.auth = firebase.auth();
     this.database = firebase.database();
     this.storage = firebase.storage();
@@ -40,48 +64,69 @@ FirebaseWorker.prototype.initFirebase = function () {
     this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));
 };
 
-FirebaseWorker.prototype.signInGoogle = function () {
+/** 
+ * Login provider for Google authentication.
+ * After successful login, the function onAuthStateChanged will be called and 
+ * the user will be redirected to the home page.
+ * This is true for the other login methods.
+ */
+FirebaseLoginWorker.prototype.signInGoogle = function () {
     var provider = new firebase.auth.GoogleAuthProvider();
     this.auth.signInWithPopup(provider);
 };
 
-FirebaseWorker.prototype.signInGuest = function () {
-    firebase.auth().signInAnonymously().catch(function(error) {
+/** 
+ * Login provider for Facebook Authentication
+ * 
+ * TODO: handle case where we want only one account per person.
+ */
+FirebaseLoginWorker.prototype.signInFacebook = function () {
+    var provider = new firebase.auth.FacebookAuthProvider();
+    //provider.addScope('user_birthday');
+    //firebase.auth().useDeviceLanguage();
+
+    // Authenticate
+    firebase.auth().signInWithPopup(provider).then(function (result) {
+        var facebookAccessToken = result.credential.accessToken;
+
+    }).catch(function (error) {
         // Handle Errors here
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log("Failed to log in anonymously. Error code " + errorCode);
+        console.log("Failed to log in with Facebook. Error code " + error.code);
         console.log(error.message);
-      });
+    });
 }
 
-FirebaseWorker.prototype.signOut = function () {
+/** 
+ * Login provider for guest account. 
+ */
+FirebaseLoginWorker.prototype.signInGuest = function () {
+    firebase.auth().signInAnonymously().catch(function (error) {
+        // Handle Errors here
+        console.log("Failed to log in anonymously. Error code " + error.code);
+        console.log(error.message);
+    });
+}
+
+/** 
+ * Sign out/log out feature
+ * Not sure if this will be used
+ */
+FirebaseLoginWorker.prototype.signOut = function () {
     this.auth.signOut();
 };
 
 // Triggers when the auth state change for instance when the user signs-in or signs-out.
-FirebaseWorker.prototype.onAuthStateChanged = function (user) {
-    if (user) { // User is signed in!
+FirebaseLoginWorker.prototype.onAuthStateChanged = function (user) {
+    if (user) { // User is signed in
         this.statusText.innerText = "LOGGED IN";
 
         var isAnonymous = user.isAnonymous;
         var uid = user.uid;
 
+        // Redirect to home page
         window.location.href = "/";
-        // Get profile pic and user's name from the Firebase user object.
-        //var profilePicUrl = user.photoURL;
-        //var userName = user.displayName;
 
         /*
-        // Set the user's profile pic and name.
-        this.userPic.style.backgroundImage = 'url(' + profilePicUrl + ')';
-        this.userName.textContent = userName;
-
-        // Show user's profile and sign-out button.
-        this.userName.removeAttribute('hidden');
-        this.userPic.removeAttribute('hidden');
-        this.signOutButton.removeAttribute('hidden');
-
         // Hide sign-in button.
         this.signInButton.setAttribute('hidden', 'true');
 
@@ -91,24 +136,21 @@ FirebaseWorker.prototype.onAuthStateChanged = function (user) {
         // We save the Firebase Messaging Device token and enable notifications.
         this.saveMessagingDeviceToken();
         */
-    } 
-    
-    else { // User is signed out!
-        //TODO: add logout button
-        /*
-        // Hide user's profile and sign-out button.
-        this.userName.setAttribute('hidden', 'true');
-        this.userPic.setAttribute('hidden', 'true');
-        this.signOutButton.setAttribute('hidden', 'true');
+    }
 
-        // Show sign-in button.
-        this.signInButton.removeAttribute('hidden');
-        */
+    else { // User is signed out
+        // Nothing should happen
     }
 };
 
-// Checks that the Firebase SDK has been correctly setup and configured.
-FirebaseWorker.prototype.checkSetup = function () {
+/** 
+ * Checker function
+ * Checks whether setup has been completed.
+ * If you are getting this error, be sure that your html or handlebars file 
+ * contains the script includes at the top file comment.
+ * If all that has been done, and you're still getting this, contact Chris
+ */
+FirebaseLoginWorker.prototype.checkSetup = function () {
     if (!window.firebase || !(firebase.app instanceof Function) || !firebase.app().options) {
         window.alert('You have not configured and imported the Firebase SDK. ' +
             'Make sure you go through the codelab setup instructions and make ' +
@@ -116,13 +158,15 @@ FirebaseWorker.prototype.checkSetup = function () {
     }
 };
 
-$(document).ready(startNetworking);
-
 /** 
  * function startNetworking
  * 
- * Starts the networking
+ * Starts the networking.
+ * Must be called when document is ready
  */
 function startNetworking() {
-    window.firebaseWorker = new FirebaseWorker();
+    window.FirebaseLoginWorker = new FirebaseLoginWorker();
 }
+
+
+$(document).ready(startNetworking);
