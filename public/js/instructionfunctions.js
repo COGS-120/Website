@@ -4,10 +4,6 @@ var speficRecipeData;
 var recipeName;
 var index = 0;
 var stepInformation;
-var recipeData = $.getJSON("../json/instructions.json", function (result) {
-	speficRecipeData = result;
-	recipeName = result[0].name;
-});
 
 // Window components
 // To be removed when we move text to speech options
@@ -27,11 +23,11 @@ var voices = [];
 
 // Window components that will remain when we move synthesizer code
 var buttonPlay = document.querySelector('#button-play');
-buttonPlay.addEventListener('click', function() {
+buttonPlay.addEventListener('click', function () {
 	speak(stepInformation);
 });
 var buttonStop = document.querySelector('#button-stop');
-buttonStop.addEventListener('click', function(){
+buttonStop.addEventListener('click', function () {
 	stop();
 });
 
@@ -120,7 +116,7 @@ function speak(stuffToSay) {
 			// Set voice parameters
 			utterThis.pitch = pitch.value;
 			utterThis.rate = rate.value;
-			
+
 			// Finally, say the phrase
 			synth.speak(utterThis);
 		}
@@ -153,15 +149,21 @@ voiceSelect.onchange = function () {
 
 // Here is your stuff Kenneth
 
-window.onload = function () {
-	populateVoiceList();
-	display();
+// We need to add events to the window loader differently because we have
+// multiple on load functions
+$(document).ready(open);
+
+function open() {
+
+	$.getJSON("../json/instructions.json", function (result) {
+		speficRecipeData = result;
+		recipeName = result[0].name;
+
+		populateVoiceList();
+		display();
+	});
 }
 
-document.onload = function () {
-	populateVoiceList();
-	display();
-}
 
 function nextIndex() {
 	if (speficRecipeData[0].steplist[index].hasOwnProperty("end")) {
