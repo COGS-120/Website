@@ -116,6 +116,13 @@ FirebaseWorker.prototype.checkSetup = function () {
     }
 };
 
-window.onload = function () {
+$(document).ready(startNetworking);
+
+/** 
+ * function startNetworking
+ * 
+ * Starts the networking
+ */
+function startNetworking() {
     window.firebaseWorker = new FirebaseWorker();
-};
+}
