@@ -1,11 +1,12 @@
 
 // JSON data
-var what;
-var name;
+var speficRecipeData;
+var recipeName;
 var index = 0;
+var stepInformation;
 var recipeData = $.getJSON("../json/instructions.json", function (result) {
-	what = result;
-	name = result[0].name;
+	speficRecipeData = result;
+	recipeName = result[0].name;
 });
 
 // Window components
@@ -24,16 +25,31 @@ var sayTimeout = null;
 
 var voices = [];
 
+// Window components that will remain when we move synthesizer code
+var buttonPlay = document.querySelector('#button-play');
+buttonPlay.addEventListener('click', function() {
+	speak(stepInformation);
+});
+var buttonStop = document.querySelector('#button-stop');
+buttonStop.addEventListener('click', function(){
+	stop();
+});
+
 /**
  * function populateVoiceList
  * Populates the voice list with the device's available voices.
  * Creates options in the voice select dropdown, and adds voices
  */
 function populateVoiceList() {
+	// Get list of voices
+	// The list of voices is browser dependent and we cannot expect
+	// any single voice to exist.
 	voices = synth.getVoices();
 	var selectedIndex =
 		voiceSelect.selectedIndex < 0 ? 0 : voiceSelect.selectedIndex;
 	voiceSelect.innerHTML = '';
+
+	// Populate list per option
 	for (i = 0; i < voices.length; i++) {
 		var option = document.createElement('option');
 		option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
@@ -48,6 +64,7 @@ function populateVoiceList() {
 	}
 	voiceSelect.selectedIndex = selectedIndex;
 
+	// tbh no idea what this does
 	if (speechSynthesis.onvoiceschanged !== undefined) {
 		speechSynthesis.onvoiceschanged = populateVoiceList;
 	}
@@ -59,21 +76,30 @@ function populateVoiceList() {
  * The speaker will stop and speak newly given data if the speaker is
  * interrupted by consectuive calls.
  * 
+ * TODO: speech buffer is very small, and long directions are not played
+ * entirely. We need to queue multiple statements when applicable.
+ * Solution will be based on 
+ * https://stackoverflow.com/questions/21947730/chrome-speech-synthesis-with-longer-texts
+ * 
  * @param {*} stuffToSay - string of what to say
  */
 function speak(stuffToSay) {
+	// on a conflicting speak, we need to cancel the currently playing speech
 	if (speechSynthesis.speaking) {
 		// SpeechSyn is currently speaking, cancel the current utterance(s)
 		speechSynthesis.cancel();
 
-		// Make sure we don't create more than one timeout...
+		// Make sure we don't create more than one timeout
 		if (sayTimeout !== null) {
 			clearTimeout(sayTimeout);
 		}
 
+		// This timeout is necessary because speechSynthesis does not like
+		// a speak immediatley after a cancel invocation.
 		sayTimeout = setTimeout(function () { speak(stuffToSay) }, 250);
 	}
 	else {
+		// Only say things on a valid, nonempty string
 		if (stuffToSay !== '') {
 			var utterThis = new SpeechSynthesisUtterance(stuffToSay);
 			utterThis.onend = function (event) {
@@ -82,16 +108,34 @@ function speak(stuffToSay) {
 			utterThis.onerror = function (event) {
 				console.error('SpeechSynthesisUtterance.onerror');
 			}
+
+			// Find voice to use
 			var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
 			for (i = 0; i < voices.length; i++) {
 				if (voices[i].name === selectedOption) {
 					utterThis.voice = voices[i];
 				}
 			}
+
+			// Set voice parameters
 			utterThis.pitch = pitch.value;
 			utterThis.rate = rate.value;
+			
+			// Finally, say the phrase
 			synth.speak(utterThis);
 		}
+	}
+}
+
+function pause() {
+	if (speechSynthesis.speaking) {
+		speechSynthesis.pause();
+	}
+}
+
+function stop() {
+	if (speechSynthesis.speaking) {
+		speechSynthesis.cancel();
 	}
 }
 
@@ -104,9 +148,10 @@ rate.onchange = function () {
 }
 
 voiceSelect.onchange = function () {
+	speak(stepInformation);
 }
 
-// Here is your shit Kenneth
+// Here is your stuff Kenneth
 
 window.onload = function () {
 	populateVoiceList();
@@ -119,8 +164,8 @@ document.onload = function () {
 }
 
 function nextIndex() {
-	if (what[0].steplist[index].hasOwnProperty("end")) {
-		window.location.href = "/../finish/" + name;
+	if (speficRecipeData[0].steplist[index].hasOwnProperty("end")) {
+		window.location.href = "/../finish/" + recipeName;
 	}
 	else {
 		index++;
@@ -138,7 +183,9 @@ function previousIndex() {
 
 function display() {
 	var title = document.getElementById("stepTitle");
-	title.innerText = what[0].steplist[index].step;
+	// Store this in a variable so we can use it in the document
+	stepInformation = speficRecipeData[0].steplist[index].step;
+	title.innerText = stepInformation;
 
-	speak(what[0].steplist[index].step);
+	speak(stepInformation);
 }
