@@ -1,13 +1,23 @@
 
 'use strict';
 
+var config = {
+    apiKey: "AIzaSyARfyMjd4yj6KkscpvHu2i0Xgw0xKcn7G8",
+    authDomain: "ez-cooking-21ebe.firebaseapp.com",
+    databaseURL: "https://ez-cooking-21ebe.firebaseio.com",
+    projectId: "ez-cooking-21ebe",
+    storageBucket: "ez-cooking-21ebe.appspot.com",
+    messagingSenderId: "796679434279"
+  };
+  firebase.initializeApp(config);
+
 function FirebaseWorker() {
     this.checkSetup();
 
     this.signInButtonGoogle = document.getElementById("sign-in-google");
     this.signOutButton = document.getElementById("sign-out");
     this.statusText = document.getElementById("login-status");
-
+    
     this.userName = document.getElementById('user-name');
 
     // Bind buttons
@@ -26,7 +36,6 @@ FirebaseWorker.prototype.initFirebase = function () {
     this.storage = firebase.storage();
 
     this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));
-
 };
 
 FirebaseWorker.prototype.signInGoogle = function () {
@@ -70,7 +79,6 @@ FirebaseWorker.prototype.onAuthStateChanged = function (user) {
     } 
     
     else { // User is signed out!
-        window.location.href = "/login";
         //TODO: add logout button
         /*
         // Hide user's profile and sign-out button.
@@ -92,23 +100,6 @@ FirebaseWorker.prototype.checkSetup = function () {
             'sure you are running the codelab using `firebase serve`');
     }
 };
-
-FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-    if (status == 'connected') {
-        window.location.href = "/";
-    }
-    else {
-        // WHAT DO I DO...theres 3 different logins
-    }
-});
-
-function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
-
 
 window.onload = function () {
     window.firebaseWorker = new FirebaseWorker();
