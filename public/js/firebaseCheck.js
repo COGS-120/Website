@@ -86,11 +86,17 @@ FirebaseWorker.prototype.onAuthStateChanged = function (user) {
         console.log("User has been logged in.");
         // After everything has been properly initialized, we can access information
         // freely.
+        var isAnonymous = user.isAnonymous;
+        var uid = user.uid;
         currentUser = firebase.auth().currentUser;
 
         this.userName = document.getElementById('profileName');
-        this.userName.innerText = "Profile - " + currentUser.displayName;
-
+        if (currentUser.isAnonymous) {
+            this.userName.innerText = "Profile - Anonymous User";
+        }
+        else {
+            this.userName.innerText = "Profile - " + currentUser.displayName;
+        }
         this.buttonLogout = document.getElementById('buttonLogout');
         this.buttonLogout.addEventListener('click', this.signOut.bind(this));
     }

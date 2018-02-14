@@ -15,13 +15,15 @@ function FirebaseWorker() {
     this.checkSetup();
 
     this.signInButtonGoogle = document.getElementById("sign-in-google");
-    this.signOutButton = document.getElementById("sign-out");
+    this.signInButtonGuest = document.getElementById("sign-in-guest");
+    
     this.statusText = document.getElementById("login-status");
     
     this.userName = document.getElementById('user-name');
 
     // Bind buttons
     this.signInButtonGoogle.addEventListener('click', this.signInGoogle.bind(this));
+    this.signInButtonGuest.addEventListener('click', this.signInGuest.bind(this));
 
     this.initFirebase();
     console.log("Initialized Firebase");
@@ -43,6 +45,16 @@ FirebaseWorker.prototype.signInGoogle = function () {
     this.auth.signInWithPopup(provider);
 };
 
+FirebaseWorker.prototype.signInGuest = function () {
+    firebase.auth().signInAnonymously().catch(function(error) {
+        // Handle Errors here
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log("Failed to log in anonymously. Error code " + errorCode);
+        console.log(error.message);
+      });
+}
+
 FirebaseWorker.prototype.signOut = function () {
     this.auth.signOut();
 };
@@ -52,10 +64,13 @@ FirebaseWorker.prototype.onAuthStateChanged = function (user) {
     if (user) { // User is signed in!
         this.statusText.innerText = "LOGGED IN";
 
+        var isAnonymous = user.isAnonymous;
+        var uid = user.uid;
+
         window.location.href = "/";
         // Get profile pic and user's name from the Firebase user object.
-        var profilePicUrl = user.photoURL;
-        var userName = user.displayName;
+        //var profilePicUrl = user.photoURL;
+        //var userName = user.displayName;
 
         /*
         // Set the user's profile pic and name.

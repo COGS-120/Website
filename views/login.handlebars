@@ -14,39 +14,38 @@
 
   <div class="container">
 
-    <h1>
-      <strong>Login Page</strong>
-    </h1>
+    <h2>
+      <strong>EZ Cooking</strong>
+    </h2>
+
+    <p>Log In!</p>
 
     <div class="row">
       <div class="col">
-        <button class="button" id="sign-in-google">
+        <div class="button" id="sign-in-google">
           <img class="img-responsive" src="/images/login/google_signin_buttons/web/2x/btn_google_signin_light_focus_web@2x.png">
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="col">
+        <button class="button img-responsive" id="sign-in-guest">
+          Sign in as guest
         </button>
       </div>
     </div>
 
+    <br>
+
     <div class="row">
       <div class="col">
-        <button class="button" id="sign-in-facebook">
-          <img class="img-responsive" src="/images/login/google_signin_buttons/web/2x/btn_google_signin_light_focus_web@2x.png">
-        </button>
+        <p id="login-status">You are not logged in.</p>
       </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col">
-      <button class="button" id="sign-in-google">
-        <img class="img-responsive" src="/images/login/google_signin_buttons/web/2x/btn_google_signin_light_focus_web@2x.png">
-      </button>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-      <h2 id="login-status">You are not logged in.</h2>
-    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery.js"></script>
@@ -57,15 +56,8 @@
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
-  <script src="/js/firebase.js"></script> <!-- Should be this, not firebaseCheck -->
+  <script src="/js/firebaseLogin.js"></script>
+  <!-- Should be this, not firebaseCheck -->
 
 </body>
-
-
-<footer>
-  <br>
-  <p>© 2018 EZ Cooking</p>
-</footer>
-
-
 </html>
