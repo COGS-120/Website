@@ -132,3 +132,18 @@ $(document).ready(startNetworking);
 function startNetworking() {
     window.firebaseWorker = new FirebaseWorker();
 }
+
+/**
+ * function wrtieUserData
+ * 
+ * Sets the user data at the specified key.
+ * Will always overwrite.
+ * @param {} userId 
+ * @param {*} key 
+ * @param {*} val 
+ */
+function writeUserData(userId, key, val) {
+    firebase.database().ref('users/' + userId + "/key").set({
+        value: val
+    });
+}

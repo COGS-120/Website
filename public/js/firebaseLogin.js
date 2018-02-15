@@ -39,6 +39,7 @@ function FirebaseLoginWorker() {
     this.checkSetup();
 
     this.signInButtonGoogle = document.getElementById("sign-in-google");
+    this.signInButtonFacebook = document.getElementById("sign-in-facebook");
     this.signInButtonGuest = document.getElementById("sign-in-guest");
 
     this.statusText = document.getElementById("login-status");
@@ -47,6 +48,7 @@ function FirebaseLoginWorker() {
 
     // Bind buttons
     this.signInButtonGoogle.addEventListener('click', this.signInGoogle.bind(this));
+    this.signInButtonFacebook.addEventListener('click', this.signInFacebook.bind(this));
     this.signInButtonGuest.addEventListener('click', this.signInGuest.bind(this));
 
     this.initFirebase();
@@ -118,7 +120,7 @@ FirebaseLoginWorker.prototype.signOut = function () {
 // Triggers when the auth state change for instance when the user signs-in or signs-out.
 FirebaseLoginWorker.prototype.onAuthStateChanged = function (user) {
     if (user) { // User is signed in
-        this.statusText.innerText = "LOGGED IN";
+        this.statusText.innerText = "Successful log in. Continuing...";
 
         var isAnonymous = user.isAnonymous;
         var uid = user.uid;
