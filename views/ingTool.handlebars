@@ -17,25 +17,31 @@
   <div class="container">
 
     <h1>
-      <strong>Here are the tools and ingredients needed for {{name}}</strong>
+      <strong>Tools and Ingredients: {{name}}</strong>
     </h1>
 
-    {{#each tools}}
-    <div>
-      <h3>{{tool-name}}</h3>
-
-    </div>
-
+    <!-- Testing Columns -->
+    <div class="row"> <!-- row 1 -->
+      {{#each tools}}
+        <div class="col-6">
+          <h3>{{tool-name}}</h3>
+        </div>
     {{/each}}
-    <br> {{#each ingredients}}
-    <div>
-      <h3> {{ingredient-name}}</h3>
+    </div> <!-- closing row 1 -->
+    <!-- closed Testing Columns -->
 
-    </div>
-    {{/each}}
+    <br> <!-- Ingredients -->
+    <div class="row">
+      {{#each ingredients}}
+      <div class="col-6">
+        <h3>{{ingredient-name}}</h3>
+      </div>
+      {{/each}} 
+    </div> <!-- end of ingredients -->
+    
 
     <br>
-    <h3 id="itemsNeeded">Proceed onto cooking
+    <h3 id="itemsNeeded">
       <h3>
 
         <div class="row">
@@ -43,7 +49,7 @@
           <div class="col">
 
 
-            <a href="/">Back To Categories</a>
+            <a href="/">Back To Dish</a>
 
           </div>
 
@@ -53,7 +59,7 @@
 
           <div class="col">
 
-            <a href="/instructions/{{name}}">Learn how to cook!</a>
+            <a href="/instructions/{{name}}">Next</a>
 
           </div>
         </div>
