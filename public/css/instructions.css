@@ -1,0 +1,16 @@
+#speech-selector {
+    padding: 2px;
+    width: 100%;
+}
+
+#bottom-bar {
+    padding : 5px;
+}
+
+.bottom-button{
+    width : 100%;
+}
+
+#tts-heard {
+    font-style: italic;
+}

@@ -7,7 +7,7 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-  <link href="/css/category.css" rel="stylesheet">
+  <link href="/css/instructions.css" rel="stylesheet">
 </head>
 
 <body>
@@ -16,9 +16,9 @@
 
   <div class="container">
 
-    <h2>
-      <strong>Instructions Page</strong>
-    </h2>
+    <h4>
+      <strong>Instructions</strong>
+    </h4>
 
     <div class="row">
 
@@ -28,37 +28,14 @@
 
     </div>
 
-    <div class="row">
-      <div class="col">
-        <button type="button" onclick="previousIndex()">Back</button>
-        <button type="button" onclick="nextIndex()">Next</button>
-      </div>
-    </div>
-
     <!-- Remove this whitespace later, do some styling -->
     <br>
-    <br>
-    <br>
 
     <div class="row">
       <div class="col">
-        <h3>Speech synthesiser settings</h3>
-        <p>Will be moved to a settings page later, when we design one.</p>
+        <p>Speech synthesiser settings</p>
         <form>
-          <div>
-            <label for="rate">Rate</label>
-            <input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
-            <div class="rate-value">1</div>
-            <div class="clearfix"></div>
-          </div>
-          <div>
-            <label for="pitch">Pitch</label>
-            <input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
-            <div class="pitch-value">1</div>
-            <div class="clearfix"></div>
-          </div>
-          <select>
-            
+          <select id="speech-selector">
           </select>
         </form>
       </div>
@@ -68,17 +45,40 @@
 
     <div class="row">
       <div class="col">
-        <button id="button-play" type="submit">Play</button>
-        <button id="button-stop" type="submit">Stop</button>
+        <p>Text to speech:</p>
+        <br>
+        <p id="tts-heard"></p>
       </div>
     </div>
+
+    <br>
+
+    <div class="row fixed-bottom" id="bottom-bar">
+      <div class="col-3">
+        <button class="bottom-button" type="button" onclick="previousIndex()">Back</button>
+      </div>
+      
+      <div class="col-3">
+        <button class="bottom-button" id="button-play">Play</button>
+      </div>
+      
+      <div class="col-3">
+        <button class="bottom-button" id="button-stop">Stop</button>
+      </div>
+      
+      <div class="col-3">
+        <button class="bottom-button" type="button" onclick="nextIndex()">Next</button>
+      </div>
+    </div>
+
   </div>
 
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/js/navbar.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
   <script src="/js/instructionfunctions.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>

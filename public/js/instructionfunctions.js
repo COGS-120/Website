@@ -6,20 +6,14 @@ var index = 0;
 var stepInformation;
 
 // Window components
-// To be removed when we move text to speech options
-// Will be replaced by loading in settings from Firebase, or using defaults
 var synth = window.speechSynthesis;
 var inputForm = document.querySelector('form');
 var voiceSelect = document.querySelector('select');
-
-var pitch = document.querySelector('#pitch');
-var pitchValue = document.querySelector('.pitch-value');
-var rate = document.querySelector('#rate');
-var rateValue = document.querySelector('.rate-value');
-
 var sayTimeout = null;
-
 var voices = [];
+
+var tts_feedback = document.querySelector('#tts-heard');
+var annyangTimeout = null;
 
 // Window components that will remain when we move synthesizer code
 var buttonPlay = document.querySelector('#button-play');
@@ -92,7 +86,7 @@ function speak(stuffToSay) {
 
 		// This timeout is necessary because speechSynthesis does not like
 		// a speak immediatley after a cancel invocation.
-		sayTimeout = setTimeout(function () { speak(stuffToSay) }, 250);
+		sayTimeout = setTimeout(function () { speak(stuffToSay) }, 500);
 	}
 	else {
 		// Only say things on a valid, nonempty string
@@ -114,8 +108,8 @@ function speak(stuffToSay) {
 			}
 
 			// Set voice parameters
-			utterThis.pitch = pitch.value;
-			utterThis.rate = rate.value;
+			utterThis.pitch = 1;
+			utterThis.rate = 1;
 
 			// Finally, say the phrase
 			synth.speak(utterThis);
@@ -133,14 +127,6 @@ function stop() {
 	if (speechSynthesis.speaking) {
 		speechSynthesis.cancel();
 	}
-}
-
-pitch.onchange = function () {
-	pitchValue.textContent = pitch.value;
-}
-
-rate.onchange = function () {
-	rateValue.textContent = rate.value;
 }
 
 voiceSelect.onchange = function () {
@@ -163,8 +149,98 @@ function open() {
 		display();
 	});
 
+	// Speech to text
+	if (annyang) {
+		// Let's define our first command. First the text we expect, 
+		// and then the function it should call
+		var commands = {
+			'next': function () {
+				nextIndex();
+			},
+			'next step': function () {
+				nextIndex();
+			},
+			'back': function () {
+				previousIndex();
+			},
+			'pause': function () {
+				stop();
+			},
+			'stop': function () {
+				stop();
+			},
+			'repeat': function () {
+				speak(stepInformation);
+			},
+			'restart': function () {
+				speak(stepInformation);
+			}
+
+		};
+
+
+		// Add our commands to annyang
+		annyang.addCommands(commands);
+
+		// add event callback
+		annyang.addCallback('resultMatch', function (userSaid, commandText, phrases) {
+			tts_feedback.innerText = userSaid;
+		});
+
+		annyang.addCallback('error', function () {
+			tts_feedback.innerText = 'Unknown error';
+		});
+
+		annyang.addCallback('errorNetwork', function () {
+			tts_feedback.innerText = "Annyang network error: cannot reach speech to text service.";
+		})
+
+		annyang.addCallback('errorPermissionBlocked', function () {
+			tts_feedback.innerText = 'Permission to use the microphone was blocked by the browser.';
+		});
+
+		annyang.addCallback('errorPermissionDenied', function () {
+			tts_feedback.innerText = 'Permission was denied to use the microphone by the user.';
+		});
+
+		annyang.addCallback('result', function (userSaid) {
+			tts_feedback.innerText = userSaid[0];
+		});
+
+		annyang.addCallback('soundstart', function () {
+			tts_feedback.innerText = 'Listening...';
+		});
+
+		annyang.addCallback('end', function() {
+			console.log("annyang ended, restarting...");
+			restartAnnyang(); // workaround call
+		})
+
+		// Start listening. You can call this here, or attach this call to an 
+		// event, button, etc.
+		restartAnnyang();
+	}
+	else {
+		console.log("Annyang speech to text not supported.");
+	}
+
 }
 
+/** 
+ * Currently a workaround for the Chrome bug detailed in 
+ * https://bugs.chromium.org/p/chromium/issues/detail?id=572697&thanks=572697&ts=1451323087
+ */
+function restartAnnyang() {
+
+	// Make sure we don't create more than one timeout
+	if (annyangTimeout !== null) {
+		clearTimeout(annyangTimeout);
+	}
+
+	annyangTimeout = setTimeout(function () {
+		annyang.start({ autoRestart: false, continuous: false })
+	}, 500);
+}
 
 function nextIndex() {
 	if (speficRecipeData[0].steplist[index].hasOwnProperty("end")) {
