@@ -6,7 +6,7 @@ exports.view = function(req, res) {
 	var index = 0;
 
 	console.log(recipeData);
-	while (10 == 10) {
+	for (index = 0; index < recipeData.length; index++) {
 		if (recipeData[index].name === name){
 			dataWeWant = recipeData[index];
 			break;
@@ -20,9 +20,19 @@ exports.view = function(req, res) {
 		index++;
 	}
 
-		res.render("ingTool", {
+
+if (typeof dataWeWant !== 'undefined') {
+    // the variable is defined
+    	res.render("ingTool", {
 		"name" : name,
 		"tools": dataWeWant.tools,
 		"ingredients": dataWeWant.ingredients
 	});
+}
+
+else {
+		res.render("ingTool", {
+		"name" : name
+	});
+}
 };
