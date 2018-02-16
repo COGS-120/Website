@@ -2,8 +2,10 @@
 // JSON data
 var speficRecipeData;
 var recipeName;
-var index = 0;
+var index = -1;
 var stepInformation;
+var extra_features_options = document.getElementById('extra-features-options');
+var title = document.getElementById("stepTitle");
 
 // Window components
 var synth = window.speechSynthesis;
@@ -15,6 +17,31 @@ var voices = [];
 var tts_feedback = document.querySelector('#tts-heard');
 var annyangTimeout = null;
 
+// Options to use the cool features
+var use_tts = true;
+var use_sr = true;
+var checkbox_tts = document.getElementById('activate-text-to-speech');
+checkbox_tts.addEventListener('change', function() {
+	use_tts = this.checked;
+	if (this.checked) {
+		speak(stepInformation);
+	}
+	else {
+		stop();
+	}
+});
+var checkbox_sr = document.getElementById('activate-speech-recognition');
+checkbox_sr.addEventListener('change', function() {
+	use_sr = this.checked;
+	if (this.checked) {
+		restartAnnyang();
+	}
+	else {
+		tts_feedback.innerText = "";
+	}
+});
+
+
 // Window components that will remain when we move synthesizer code
 var buttonPlay = document.querySelector('#button-play');
 buttonPlay.addEventListener('click', function () {
@@ -24,6 +51,8 @@ var buttonStop = document.querySelector('#button-stop');
 buttonStop.addEventListener('click', function () {
 	stop();
 });
+
+
 
 /**
  * function populateVoiceList
@@ -74,6 +103,7 @@ function populateVoiceList() {
  * @param {*} stuffToSay - string of what to say
  */
 function speak(stuffToSay) {
+
 	// on a conflicting speak, we need to cancel the currently playing speech
 	if (speechSynthesis.speaking) {
 		// SpeechSyn is currently speaking, cancel the current utterance(s)
@@ -141,6 +171,9 @@ $(document).ready(open);
 
 function open() {
 
+	// Index should start at -1
+	index = -1;
+
 	$.getJSON("../json/instructions.json", function (result) {
 		speficRecipeData = result;
 		recipeName = result[0].name;
@@ -182,7 +215,7 @@ function open() {
 		// Add our commands to annyang
 		annyang.addCommands(commands);
 
-		// add event callback
+		// add event callbacks. code is very self explanatory
 		annyang.addCallback('resultMatch', function (userSaid, commandText, phrases) {
 			tts_feedback.innerText = userSaid;
 		});
@@ -232,6 +265,10 @@ function open() {
  */
 function restartAnnyang() {
 
+	if (use_sr == false) {
+		return;
+	}
+
 	// Make sure we don't create more than one timeout
 	if (annyangTimeout !== null) {
 		clearTimeout(annyangTimeout);
@@ -243,7 +280,7 @@ function restartAnnyang() {
 }
 
 function nextIndex() {
-	if (speficRecipeData[0].steplist[index].hasOwnProperty("end")) {
+	if (index > 0 && speficRecipeData[0].steplist[index].hasOwnProperty("end")) {
 		window.location.href = "/../finish/" + recipeName;
 	}
 	else {
@@ -254,17 +291,30 @@ function nextIndex() {
 
 function previousIndex() {
 	index--;
-	if (index < 0) {
-		index = 0;
+	if (index < -1) {
+		window.location.href = "/../ingTool/" + recipeName;
 	}
 	display();
 }
 
 function display() {
-	var title = document.getElementById("stepTitle");
-	// Store this in a variable so we can use it in the document
-	stepInformation = speficRecipeData[0].steplist[index].step;
-	title.innerText = stepInformation;
 
-	speak(stepInformation);
+	// Make sure to show the options for 
+	if (index <= -1) {
+		extra_features_options.style.display = "block";
+		title.innerText = "Synthesizer and voice command options";
+		stepInformation = title.innerText;
+	}
+	else {
+		extra_features_options.style.display = "none";
+		stepInformation = speficRecipeData[0].steplist[index].step;
+		title.innerText = stepInformation;
+	
+	}
+
+	// Speak on next one, if user wants
+	if (use_tts) {
+		speak(stepInformation);
+	}
+
 }

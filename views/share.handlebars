@@ -2,12 +2,12 @@
 <html>
 
 <head>
-  <title>EZ Cooking - {{name}} Instructions</title>
+  <title>EZ Cooking - {{name}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-  <link href="/css/category.css" rel="stylesheet">
+  <link href="/css/share.css" rel="stylesheet">
 </head>
 
 <body>
@@ -16,16 +16,34 @@
 
   <div class="container">
 
-    <h1><strong>Share Page</strong></h1>
-
-    <h3>Share somewhere</h3>
-
-    <a href="/">Back To Home</a>
 
     <div class="row">
-      
+
       <div class="col">
 
+        <h3>
+          <strong>Share Your Creation</strong>
+        </h3>
+
+        <p>Take a picture of your food.</p>
+
+        <input type="file" accept="image/*">
+
+        <!-- <button type="button" onclick="take_picture()">Take a picture</button> -->
+
+        <!-- <img src="" id="image-preview" class="img-fluid" alt="image preview"> -->
+
+        <br>
+
+        <button type="button" onclick="share()">Share</button>
+
+        <br>
+
+        <p id="share-status" style="display:none">Image shared</p>
+
+        <br>
+
+        <a href="/">Back To Home</a>
       </div>
     </div>
 
@@ -34,12 +52,14 @@
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/js/navbar.js"></script>
   <script src="/js/bootstrap.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
   <script src="/js/firebaseCheck.js"></script>
+
+  <script src="/js/share.js"></script>
 </body>
 
 </html>

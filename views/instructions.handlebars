@@ -28,12 +28,28 @@
 
     </div>
 
-    <!-- Remove this whitespace later, do some styling -->
-    <br>
-
-    <div class="row">
+    <div class="row" id="extra-features-options">
       <div class="col">
-        <p>Speech synthesiser settings</p>
+        <p>EZ Cooking provides both text-to-speech (TTS) and voice recognition services so that you can prepare your meal without
+          contacting your phone with dirty fingers.
+        </p>
+        <p>Speech recognition commands:</p>
+        <ul>
+          <li>
+            <em>next</em>: Next step</li>
+          <li>
+            <em>back</em>: Back one step</li>
+          <li>
+            <em>stop</em>: Tell TTS to stop </li>
+          <li>
+            <em>repeat</em>: Tell TTS to repeat the step</li>
+        </ul>
+        <input id="activate-text-to-speech" type="checkbox" checked>
+        <label for="activate-text-to-speech">Activate text to speech</label>
+        <br>
+        <input id="activate-speech-recognition" type="checkbox" checked>
+        <label for="activate-speech-recognition">Activate speech recognition</label>
+        <p>Speech synthesiser voice:</p>
         <form>
           <select id="speech-selector">
           </select>
@@ -41,12 +57,12 @@
       </div>
     </div>
 
+    <!-- Remove this whitespace later, do some styling -->
     <br>
 
     <div class="row">
       <div class="col">
         <p>Text to speech:</p>
-        <br>
         <p id="tts-heard"></p>
       </div>
     </div>
@@ -57,15 +73,15 @@
       <div class="col-3">
         <button class="bottom-button" type="button" onclick="previousIndex()">Back</button>
       </div>
-      
+
       <div class="col-3">
         <button class="bottom-button" id="button-play">Play</button>
       </div>
-      
+
       <div class="col-3">
         <button class="bottom-button" id="button-stop">Stop</button>
       </div>
-      
+
       <div class="col-3">
         <button class="bottom-button" type="button" onclick="nextIndex()">Next</button>
       </div>
