@@ -93,10 +93,10 @@ FirebaseWorker.prototype.onAuthStateChanged = function (user) {
 
         this.userName = document.getElementById('profileName');
         if (currentUser.isAnonymous) {
-            this.userName.innerText = "Profile - Anonymous User";
+            this.userName.innerText = "User - Anonymous User";
         }
         else {
-            this.userName.innerText = "Profile - " + currentUser.displayName;
+            this.userName.innerText = "User - " + currentUser.displayName;
         }
         this.buttonLogout = document.getElementById('buttonLogout');
         this.buttonLogout.addEventListener('click', this.signOut.bind(this));

@@ -34,3 +34,12 @@
 html{
     height: 100%;
 }
+
+.bg-half-dark {
+    background:rgba(34, 34, 34, 0.5);
+}
+
+.grayscale {
+    -webkit-filter: grayscale(100%);
+    filter: gray;
+}
