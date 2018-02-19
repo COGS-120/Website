@@ -17,56 +17,45 @@
   <div class="container">
 
     <h3>
-      <strong>Tools and Ingredients: {{name}}</strong>
+      <strong>Tools for {{name}}</strong>
     </h3>
 
     <!-- Testing Columns -->
-    <div class="row"> <!-- row 1 -->
+    <div class="row">
+      <!-- row 1 -->
       {{#each tools}}
-        <div class="col-6">
-          <p>{{tool-name}}</p>
-        </div>
-    {{/each}}
-    </div> <!-- closing row 1 -->
+      <div class="col-6">
+        <p>{{tool-name}}</p>
+      </div>
+      {{/each}}
+    </div>
+    <!-- closing row 1 -->
     <!-- closed Testing Columns -->
 
-    <br> <!-- Ingredients -->
+    <h3>
+      <strong>Ingredients for {{name}}</strong>
+    </h3>
+    <!-- Ingredients -->
     <div class="row">
       {{#each ingredients}}
       <div class="col-6">
         <p>{{ingredient-name}}</p>
       </div>
-      {{/each}} 
-    </div> <!-- end of ingredients -->
-    
+      {{/each}}
+    </div>
+    <!-- end of ingredients -->
 
-    <br>
     <h3 id="itemsNeeded">
-      <h3>
+    </h3>
 
-        <div class="row">
-
-          <div class="col">
-
-
-            <a href="/food/{{name}}">Back To Dish</a>
-
-          </div>
-
-          <div class="col">
-
-          </div>
-
-          <div class="col">
-
-            <a href="/instructions/{{name}}">Next</a>
-
-          </div>
-        </div>
-
-
-
-
+    <div class="row">
+      <div class="col">
+        <a href="/food/{{name}}">Back To Dish</a>
+      </div>
+      <div class="col">
+        <a href="/instructions/{{name}}">Next</a>
+      </div>
+    </div>
 
   </div>
 

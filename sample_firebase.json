@@ -1,0 +1,13 @@
+{
+    "users": {
+        "id1" : {
+            "favorites" : {
+
+            },
+            "last cooked" : "xxx"
+        },
+        "id2" : {
+
+        }
+    }
+}

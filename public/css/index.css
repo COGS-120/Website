@@ -8,15 +8,15 @@
 }
 
 .row p {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: -10px;
 }
 
 .row .food-categories {
     position: relative;
-  }
+}
 
 .inner-name {
     background-color: rgba(34, 34, 34, 0.8);
@@ -31,12 +31,10 @@
     justify-content: center;
     flex-direction: column;
 }
- /** Black and White images for A5 Screens **/
+
+
+/** Black and White images for A5 Screens
 img {
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
-  }
-
-
-
-
+}*/

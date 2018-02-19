@@ -33,6 +33,7 @@
 'use strict';
 
 var currentUser;
+var database;
 
 /** 
  * Configuration variables
@@ -59,6 +60,8 @@ function FirebaseWorker() {
 
     this.initFirebase();
     console.log("Initialized Firebase Worker");
+
+    database = firebase.database();
 }
 
 /**
@@ -143,7 +146,11 @@ function startNetworking() {
  * @param {*} val 
  */
 function writeUserData(userId, key, val) {
-    firebase.database().ref('users/' + userId + "/key").set({
+    database.ref('users/' + userId + "/" + key).set({
         value: val
     });
+}
+
+function checkIfFavorite(foodName) {
+
 }

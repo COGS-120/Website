@@ -1,6 +1,6 @@
  [ {
     "name" : "Risotto",
-    "time" : "Estimate of time to fully finish cooking: 40 minutes",
+    "time" : "Estimate time: 40 minutes",
     "tools": [
             {"tool-name": "A medium sized sauce pan"},
             {"tool-name": "A large sauce pan"},

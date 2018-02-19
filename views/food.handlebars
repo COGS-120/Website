@@ -16,51 +16,45 @@
 
   <div class="container">
 
-    <h3>
-      <strong>Learn to cook {{name}}</strong>
-    </h3>
-
-    <br>
-  
-  
     <div class="row">
+      <div class="col">
+        <h3>{{name}}</h3>
+      </div>
 
       <div class="col">
-
         
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col text-left">
         <a href="/">Back To Dishes</a>
-
       </div>
 
-    <div class="col">
-
-    </div>
-
-      <div class="col">
-        
+      <div class="col text-right">
         <a href="/ingTool/{{name}}">Start Cooking!</a>
-
       </div>
     </div>
 
-    <div class="row food-card-img">
-      <div class="col food-card-img">
-        <img class="food-card-img" src="../images/{{image}}" alt="Card image">
+    <div class="row">
+      <div class="col">
+        <img class="img-fluid food-card-img" src="../images/{{image}}" alt="Card image">
       </div>
     </div>
 
+    <h5>Summary for cooking {{name}}</h5>
     <p>{{time}}</p>
     {{#each steplist}}
-
     <p>{{summary}}</p>
-
     {{/each}}
+
   </div>
 
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/js/navbar.js"></script>
   <script src="/js/bootstrap.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
