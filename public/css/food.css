@@ -1,4 +1,6 @@
 .food-card-img {
     padding-top: 10px;
     padding-bottom: 10px;
+    width: 600px;
+    max-width: 100%;
 }
