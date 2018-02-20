@@ -225,9 +225,12 @@ function enumerateFavorites() {
         var favorites = database.ref(userPath() + "favorites").once("value", function (snapshot) {
             var favoriteList = snapshot.val();
 
+            var counter = 0; // Counter needed here because firebase has no counter
             $.each(favoriteList, function (key, value) {
 
                 if (value != 'none') {
+                    counter += 1;
+
                     var imageString;
                     // Find the image data
                     $.each(foodJsonData, function (key, category) {
@@ -240,7 +243,7 @@ function enumerateFavorites() {
 
                     // for each favorite, add in the relevant div
                     var stringToAdd = "";
-                    
+
                     // string building pattern
                     stringToAdd += '<div class="col-4 food-column">';
                     stringToAdd += '<a href="../food/' + value + '" id="' + value + '">';
@@ -254,6 +257,14 @@ function enumerateFavorites() {
                 }
 
             });
+            
+            // Case where counter is 0. Show the 'no favorites' essage
+            if (counter === 0)  {
+                document.getElementById("no-favorites-message").style.display = "block";
+            }
+            else {
+                document.getElementById("no-favorites-message").style.display = "none";
+            }
         });
     }
 }
