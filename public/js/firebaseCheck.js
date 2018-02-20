@@ -34,6 +34,8 @@
 
 var currentUser;
 var database;
+var pageType;
+var pageVar1;
 
 /** 
  * Configuration variables
@@ -103,6 +105,10 @@ FirebaseWorker.prototype.onAuthStateChanged = function (user) {
         }
         this.buttonLogout = document.getElementById('buttonLogout');
         this.buttonLogout.addEventListener('click', this.signOut.bind(this));
+
+        // Record last activity
+        var currentDate = new Date();
+        writeUserData("last-activity", currentDate.getTime());
     }
 
     else { // User is signed out!
@@ -141,16 +147,152 @@ function startNetworking() {
  * 
  * Sets the user data at the specified key.
  * Will always overwrite.
- * @param {} userId 
  * @param {*} key 
  * @param {*} val 
  */
-function writeUserData(userId, key, val) {
-    database.ref('users/' + userId + "/" + key).set({
-        value: val
+function writeUserData(key, val) {
+    database.ref(userPath() + key).set(val);
+
+    console.log("Wrote " + val + " to database at " + userPath() + key);
+}
+
+/**
+ * Checks if the given food name is the favorite
+ * @param {string} foodName 
+ */
+function checkIfFavorite(foodName, toggle) {
+    if (currentUser) {
+        addKeyIfNonexistent("favorites");
+
+        // Get data from database
+        var favorites = database.ref(userPath() + "favorites").once("value", function (snapshot) {
+            var favoriteList = snapshot.val();
+            var isAFavorite = false;
+            var containingKey;
+
+            $.each(favoriteList, function (key, value) {
+                if (value === foodName) {
+                    isAFavorite = true;
+                    containingKey = key;
+                }
+            });
+
+            // Change value if we want to toggle. Also change star
+            if (toggle === true) {
+                if (isAFavorite === true) {
+                    // Remove from database
+                    database.ref(userPath() + "favorites").child(containingKey).remove();
+                    $('#favorites-star').attr("src", "../images/favorites/star_unchecked.svg");
+                    $('#favorites-message').html("Removed from favorites");
+                }
+                else {
+                    // Add to database
+                    database.ref(userPath() + "favorites").push(foodName);
+                    $('#favorites-star').attr("src", "../images/favorites/star_checked.svg");
+                    $('#favorites-message').html("Added to favorites");
+                }
+            }
+            else {
+                // change image based on favorites setting
+                if (isAFavorite === true) {
+                    $('#favorites-star').attr("src", "../images/favorites/star_checked.svg");
+                }
+                else {
+                    $('#favorites-star').attr("src", "../images/favorites/star_unchecked.svg");
+                }
+            }
+
+        });
+    }
+}
+
+/** 
+ * Enumerates all the favorites in the favorites page
+ * 
+ * PREDONDITION: pageType == "Favorites" 
+ */
+function enumerateFavorites() {
+    if (currentUser) {
+        addKeyIfNonexistent("favorites");
+
+        // Get data from JSON
+        var foodJsonData;
+        $.getJSON("../json/food.json", function (result) {
+            foodJsonData = result;
+        });
+
+        // Get data from database
+        var favorites = database.ref(userPath() + "favorites").once("value", function (snapshot) {
+            var favoriteList = snapshot.val();
+
+            $.each(favoriteList, function (key, value) {
+
+                if (value != 'none') {
+                    var imageString;
+                    // Find the image data
+                    $.each(foodJsonData, function (key, category) {
+                        $.each(category, function (key, foodval) {
+                            if (foodval.name === value) {
+                                imageString = foodval.image;
+                            }
+                        });
+                    });
+
+                    // for each favorite, add in the relevant div
+                    var stringToAdd = "";
+                    
+                    // string building pattern
+                    stringToAdd += '<div class="col-4 food-column">';
+                    stringToAdd += '<a href="../food/' + value + '" id="' + value + '">';
+                    stringToAdd += '<div class="card text-white border-0 food-card-other">';
+                    stringToAdd += '<img class="food-card-img" src="../images/' + imageString + '" alt="Card image">';
+                    stringToAdd += '<div class="card-img-overlay text-center align-middle outer-name">';
+                    stringToAdd += '<h3 class="inner-name">';
+                    stringToAdd += value;
+                    stringToAdd += '</h3></div></div></a></div>';
+                    document.getElementById('food-row').innerHTML += stringToAdd;
+                }
+
+            });
+        });
+    }
+}
+
+function userPath() {
+    return "users/" + currentUser.uid + "/";
+}
+
+
+function addKeyIfNonexistent(key) {
+    var usersRef = database.ref(userPath());
+    usersRef.child(key).once('value', function (snapshot) {
+        var exists = (snapshot.val() !== null);
+        if (exists === false) {
+            setBlankValue(key);
+        }
     });
 }
 
-function checkIfFavorite(foodName) {
+function setBlankValue(key) {
+    database.ref(userPath() + key).set({ "iii": "none" });
+}
 
+/**
+ * Sets the page type.
+ * Depending on the page type, this script will activate different behaviors
+ * 
+ * @param {*} type 
+ * @param {*} var1 
+ */
+function setPageType(type, var1) {
+    pageType = type;
+    pageVar1 = var1;
+
+    if (pageType == "Food") { // double equals is intentional here, don't ===
+        checkIfFavorite(pageVar1, false);
+    }
+
+    if (pageType == "Favorites") {
+        enumerateFavorites();
+    }
 }
