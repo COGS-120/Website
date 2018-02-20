@@ -6,9 +6,9 @@ exports.view = function(req, res) {
 
 	var foodDataSpecific = foodDataAll[name];
 
-
 	var dataWeWant;
 	var index = 0;
+
 
 	
 
@@ -28,10 +28,15 @@ if (typeof dataWeWant !== 'undefined') {
 		"image": foodDataSpecific.image,
 		"name" : name,
 		"steplist": dataWeWant.steplist,
-		"time": dataWeWant.time
+		"time": dataWeWant.time,
+		"category": foodDataSpecific.cat
 	});
 }
 else {
-	res.render("food", foodDataSpecific);
+	res.render("food", {
+		"image": foodDataSpecific.image,
+		"name" : name, 
+		"category": foodDataSpecific.cat
+	});
 }
 };

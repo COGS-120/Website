@@ -32,6 +32,10 @@
     flex-direction: column;
 }
 
+.text-right {
+    text-align: right !important ; 
+}
+
 
 /** Black and White images for A5 Screens
 img {

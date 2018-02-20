@@ -59,10 +59,8 @@ firebase.initializeApp(config);
  */
 function FirebaseWorker() {
     this.checkSetup();
-
     this.initFirebase();
     console.log("Initialized Firebase Worker");
-
     database = firebase.database();
 }
 
@@ -73,7 +71,6 @@ FirebaseWorker.prototype.initFirebase = function () {
     this.auth = firebase.auth();
     this.database = firebase.database();
     this.storage = firebase.storage();
-
     this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));
 };
 
@@ -125,9 +122,7 @@ FirebaseWorker.prototype.onAuthStateChanged = function (user) {
  */
 FirebaseWorker.prototype.checkSetup = function () {
     if (!window.firebase || !(firebase.app instanceof Function) || !firebase.app().options) {
-        window.alert('You have not configured and imported the Firebase SDK. ' +
-            'Make sure you go through the codelab setup instructions and make ' +
-            'sure you are running the codelab using `firebase serve`');
+        window.alert('You have not configured and imported the Firebase SDK. ');
     }
 };
 
