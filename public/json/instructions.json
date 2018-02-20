@@ -1,9 +1,9 @@
  [ {
     "name" : "Risotto",
-    "time" : "Estimate time: 40 minutes",
+    "time" : "Time to complete: 40 minutes",
     "tools": [
-            {"tool-name": "A medium sized sauce pan"},
-            {"tool-name": "A large sauce pan"},
+            {"tool-name": "Medium sauce pan"},
+            {"tool-name": "Large sauce pan"},
             {"tool-name": "Knife"},
             {"tool-name": "Wooden Spoon"}
     ],

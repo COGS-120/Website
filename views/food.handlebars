@@ -30,11 +30,15 @@
 
     <div class="row">
       <div class="col text-left">
-        <a href="/category/{{category}}">Back</a>
+        <button class="button">
+        <a href="/category/{{category}}">Back To Dishes</a>
+        </button>
       </div>
 
       <div class="col text-right">
+        <button class="button">
         <a href="/ingTool/{{name}}">Start Cooking!</a>
+        </button>
       </div>
     </div>
 
@@ -44,10 +48,11 @@
       </div>
     </div>
 
-    <h5>Summary for cooking {{name}}</h5>
-    <p>{{time}}</p>
+    <h5>Overview: {{name}}</h5>
+
+    <p id="eta">{{time}}</p>
     {{#each steplist}}
-    <p>{{summary}}</p>
+    <p id="steps">{{summary}}</p>
     {{/each}}
 
   </div>
