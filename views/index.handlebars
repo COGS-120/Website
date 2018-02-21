@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
   <link href="/css/index.css" rel="stylesheet">
-  <link href="/css/ez_styles.css" rel="stylesheet">
 
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -22,31 +21,26 @@
   <div id="topNavBar"></div>
 
   <div class="container">
+    <h3 id="title">Learn to cook!</h3>
 
-    <h2 id="center-small-title">Learn to cook!</h2>
+    <div class="row">
 
-    <div class="search-bar">
-      <!-- To be implemented -->
-    </div>
+      {{#each categories}}
+      <div class="col-12">
 
-    {{#each categories}}
-    <div class="row justify-content-center">
-      <div class="col">
-
-        <a href="category/{{name}}" id="{{id}}">
-          <div class="card bg-dark text-white border-0">
-            <img class="card-img" src="images/{{image}}" alt="Card image">
-            <div class="card-img-overlay text-center align-middle outer-name">
-              <h3 class="inner-name">
-                {{name}}
-              </h3>
-            </div>
+        <a class="food-link" href="category/{{name}}" id="{{id}}">
+          <div class="food-card">
+            <img class="food-img" src="images/{{image}}">
+            <h5 class="inner-name">{{name}}</h5>
+            <p class="inner-caption">{{caption}}</p>
           </div>
         </a>
 
       </div>
+
+      {{/each}}
     </div>
-    {{/each}}
+
 
   </div>
 

@@ -14,48 +14,37 @@
 
   <div id="topNavBar"></div>
 
+  <img class="img-fluid" src="../images/{{image}}" alt="Card image">
+
   <div class="container">
 
-    <div class="row">
-      <div class="col-auto">
-        <h3 class="align-middle">{{name}}</h3>
-      </div>
-
-      <div class="col-auto">
-        <img id="favorites-star" src="../images/favorites/star_unchecked.svg"
-        onclick="checkIfFavorite('{{name}}', true)">
-      </div>
-
-      <div class="col">
-        <p id="favorites-message"></p>
+    <div class="row justify-content-md-center">
+      <div class="col align-self-center">
+        <div>
+          <h5>{{name}}</h5>
+        </div>
       </div>
     </div>
 
-
-
-    <div class="row">
-      <div class="col text-left">
-        <button class="button">
-        <a href="/category/{{category}}">Back To Dishes</a>
-        </button>
-      </div>
-
-      <div class="col text-right">
-        <button class="button">
-        <a href="/ingTool/{{name}}">Start Cooking!</a>
-        </button>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
-        <img class="img-fluid food-card-img" src="../images/{{image}}" alt="Card image">
-      </div>
-    </div>
-
-    <h5>Overview: {{name}}</h5>
+    <img id="favorites-star" src="../images/favorites/star_unchecked.svg" onclick="checkIfFavorite('{{name}}', true)">
 
     <p id="eta">{{time}}</p>
+    <p id="favorites-message"></p>
+
+    <div class="row">
+      <div class="col-6 text-left">
+        <button class="button">
+          <a href="/category/{{category}}">Back To Dishes</a>
+        </button>
+      </div>
+
+      <div class="col-6 text-right">
+        <button class="button">
+          <a href="/ingTool/{{name}}">Start Cooking!</a>
+        </button>
+      </div>
+    </div>
+
     {{#each steplist}}
     <p id="steps">{{summary}}</p>
     {{/each}}
@@ -75,4 +64,3 @@
 </body>
 
 </html>
-

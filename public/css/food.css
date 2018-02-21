@@ -1,39 +1,43 @@
-.food-card-img {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 600px;
-    max-width: 100%;
+.container {
+    max-width: 700px;
 }
 
 #favorites-star {
     height : 1.75rem;
+    padding-top: 2px;
+    float: right;
 }
-h5{
+
+#favorites-message {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h5 {
 	font-size: 2em;
 	text-align: center;
-}
+} 
 #eta {
 	text-align: center;
 	font-style: italic;
 }
 
 .button {
-  display: inline-block;
-  border-radius: 4px;
+  border-radius: 3px;
   background-color: #e7e7e7;
   border: none;
   color: #FFFFFF;
   text-align: center;
   font-size: 18px; 
-  padding: 15px;
-  width: 160px;
+  padding: 12px;
+  max-width: 160px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 0px;
 }
 
 #steps{
-	font-size: 1.3em;
+	font-size: 1em;
 }
 
 .row-adj {
@@ -47,8 +51,8 @@ h5{
 	text-align: center;
 }
 
-
-
-
-
-
+#picture-wrapper {
+    position: relative;
+    text-align: center;
+    color: black;
+}

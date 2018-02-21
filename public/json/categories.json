@@ -3,31 +3,37 @@
         {
             "name": "Breakfast",
             "image": "breakfast.jpg",
+            "caption": "Start the day off with a great meal.",
             "id": "Breakfast"
         },
         {
             "name": "Lunch",
             "image": "lunch.jpg",
+            "caption": "Perfect for work, Sundays, or anything else.",
             "id": "Lunch"
         },
         {
             "name": "Dinner",
             "image": "dinner.jpg",
+            "caption": "To impress that special someone of yours.",
             "id": "Dinner"
         },
         {
             "name": "Dessert",
             "image": "dessert.jpg",
+            "caption": "Treat yourself.",
             "id": "Desert"
         },
         {
             "name": "Vegetarian",
             "image": "vegetarian.jpg",
+            "caption": "Some text goes here",
             "id": "Vegetarian"
         },
         {
             "name": "Gluten Free",
             "image": "glutenfree.jpg",
+            "caption": "Some text goes here",
             "id": "Gluten Free"
         }
     ]

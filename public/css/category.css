@@ -8,19 +8,17 @@
     height: 25vw;
 }
 
-  .inner-name {
-      background-color: rgba(34, 34, 34, 0.8);
-      padding: 2.5%;
-      border-radius: 10px;
-      margin: auto;
-      font-size: 3.5vw;
-  }
-  
-  .outer-name {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-  }
-  
-  /** Black and White images for A5 Screens **/
+.inner-name {
+    background-color: rgba(34, 34, 34, 0.8);
+    padding: 2.5%;
+    border-radius: 10px;
+    margin: auto;
+    font-size: 3.5vw;
+}
+
+.outer-name {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 

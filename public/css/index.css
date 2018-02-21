@@ -1,29 +1,16 @@
-#center-small-title {
-    text-align: center;
-}
-
-#center-title {
-    text-align: center;
-    font-size: 300%;
-}
-
-.row p {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: -10px;
-}
-
-.row .food-categories {
-    position: relative;
+#title {
+    padding: 10px;
 }
 
 .inner-name {
-    background-color: rgba(34, 34, 34, 0.8);
-    padding: 1.5%;
-    border-radius: 10px;
-    margin: auto;
-    font-size: 5vw;
+    padding-left: 10px;
+    padding-top:5px;
+    color: black;
+}
+
+.inner-caption {
+    padding-left: 10px;
+    color: black;
 }
 
 .outer-name {
@@ -32,13 +19,22 @@
     flex-direction: column;
 }
 
-.text-right {
-    text-align: right !important ; 
+.container {
+    padding : 0px;
 }
 
+.food-card {
+    padding-bottom: 20px;
+}
 
-/** Black and White images for A5 Screens
-img {
-  -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-}*/
+.food-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 25vh;
+    object-fit: cover;
+}
+
+.food-link{
+    text-decoration: none !important;;
+}
