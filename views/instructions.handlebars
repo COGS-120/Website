@@ -12,7 +12,12 @@
 
 <body>
 
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="dummyBar">
+    <a class="navbar-brand" href="/">EZ Cooking</a>
+  </nav>
   <div id="topNavBar"></div>
+
 
   <div class="container">
 
@@ -75,11 +80,11 @@
       </div>
 
       <div class="col-3">
-        <button class="bottom-button" id="button-play">Play</button>
+        <button class="bottom-button" id="button-play"><i class="fas fa-play"></i></button>
       </div>
 
       <div class="col-3">
-        <button class="bottom-button" id="button-stop">Stop</button>
+        <button class="bottom-button" id="button-stop"><i class="fas fa-stop"></i></button>
       </div>
 
       <div class="col-3">
@@ -90,6 +95,7 @@
   </div>
 
   <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <script src="/js/navbar.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
@@ -99,7 +105,7 @@
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
-  <script src="/js/firebaseCheck.js"></script>
+  <script defer src="/js/firebaseCheck.js"></script>
 
 </body>
 

@@ -5,6 +5,7 @@
 #favorites-star {
     height : 1.75rem;
     padding-top: 2px;
+    display: flex;
     float: right;
 }
 
@@ -55,4 +56,27 @@ h5 {
     position: relative;
     text-align: center;
     color: black;
+}
+
+#img-top {
+    padding: 0;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#name-row {
+    padding-top : 6px;
+}
+
+#button-row {
+    padding-bottom: 10px;
+}
+
+.text-no-hyperlink {
+  text-decoration: none !important;
+  color: black;
 }

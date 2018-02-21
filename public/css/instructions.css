@@ -5,12 +5,28 @@
 
 #bottom-bar {
     padding : 5px;
+    background-color: white;
 }
 
 .bottom-button{
     width : 100%;
-}
+    border-radius: 3px;
+    background-color: #e7e7e7;
+    border: none;
+    color: black;
+    text-align: center;
+    font-size: 18px; 
+    padding: 12px;
+    max-width: 160px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0px;
+  }
 
 #tts-heard {
     font-style: italic;
+}
+
+.fa-play, .fa-stop {
+    font-size : 1.5rem;
 }

@@ -8,39 +8,42 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
   <link href="/css/food.css" rel="stylesheet">
+  <link href="/css/animate.min.css" rel="stylesheet">
 </head>
 
 <body onload="setPageType('Food', '{{name}}');">
 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="dummyBar">
+    <a class="navbar-brand" href="/">EZ Cooking</a>
+  </nav>
   <div id="topNavBar"></div>
 
-  <img class="img-fluid" src="../images/{{image}}" alt="Card image">
+  <img id="img-top" class="animated fadeInDown" src="../images/{{image}}" alt="Card image">
 
   <div class="container">
 
-    <div class="row justify-content-md-center">
-      <div class="col align-self-center">
-        <div>
-          <h5>{{name}}</h5>
-        </div>
+    <div id="name-row" class="row">
+      <div class="col-8 offset-2">
+        <h5>{{name}}</h5>
+      </div>
+      <div class="col-2">
+        <img id="favorites-star" src="../images/favorites/star_unchecked.svg" onclick="checkIfFavorite('{{name}}', true)">
       </div>
     </div>
-
-    <img id="favorites-star" src="../images/favorites/star_unchecked.svg" onclick="checkIfFavorite('{{name}}', true)">
 
     <p id="eta">{{time}}</p>
     <p id="favorites-message"></p>
 
-    <div class="row">
+    <div class="row" id="button-row">
       <div class="col-6 text-left">
         <button class="button">
-          <a href="/category/{{category}}">Back To Dishes</a>
+          <a class="text-no-hyperlink" href="/category/{{category}}">Back To Dishes</a>
         </button>
       </div>
 
       <div class="col-6 text-right">
         <button class="button">
-          <a href="/ingTool/{{name}}">Start Cooking!</a>
+          <a class="text-no-hyperlink" href="/ingTool/{{name}}">Start Cooking!</a>
         </button>
       </div>
     </div>
@@ -57,7 +60,6 @@
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
   <script src="/js/firebaseCheck.js"></script>
 
