@@ -4,7 +4,7 @@
 
 .inner-name {
     padding-left: 10px;
-    padding-top:5px;
+    padding-top:8px;
     color: black;
 }
 
@@ -21,6 +21,8 @@
 
 .container {
     padding : 0px;
+    width: 100%;
+    max-width: 700px;
 }
 
 .food-card {

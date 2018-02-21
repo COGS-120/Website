@@ -19,31 +19,30 @@
 
   <div id="topNavBar"></div>
 
+  <img id="top-image" src="../images/{{categoryName}}.jpg">
+
   <div class="container">
 
-    <h3 class="text-left">{{categoryName}}</h3>
-
-    <div class="col text-left">
-      <a href="/">Back</a>
-    </div>
+    <h3 id="top-text">{{categoryName}}</h3>
 
     <div class="row">
 
       {{#each category }}
-      <div class="col-6">
-        <a href="../food/{{name}}" id="{{id}}">
-          <div class="card text-white">
-            <img class="food-card-img" src="../images/{{image}}" alt="Card image">
-            <div class="card-img-overlay text-center align-middle outer-name">
-              <h3 class="inner-name">
-                {{name}}
-              </h3>
-            </div>
-          </div>
+      <div class="col-8">
+        <a href="../food/{{name}}">
+          <img class="food-card-img" src="../images/{{image}}" alt="Card image">
+        </a>
+      </div>
+      <div class="col-4 col-info">
+        <a class="food-link" href="../food/{{name}}">
+          <h5 class="inner-name">
+            {{name}}
+          </h5>
+          <p>{{time}}</p>
         </a>
       </div>
       {{/each}}
-      
+
     </div>
 
   </div>

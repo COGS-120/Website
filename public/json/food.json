@@ -3,37 +3,44 @@
         {
             "name": "Bacon",
             "image": "breakfast/bacon.jpg",
-            "id": "Bacon"
+            "id": "Bacon",
+            "time": "10 minutes"
         },
         {
             "name": "Eggs",
             "image": "breakfast/eggs.jpg",
-            "id": "Eggs"
+            "id": "Eggs",
+            "time": "10 minutes"
         },
         {
             "name": "French Toast",
             "image": "breakfast/french toast.jpg",
-            "id": "French Toast"
+            "id": "French Toast",
+            "time": "10 minutes"
         },
         {
             "name": "Oatmeal",
             "image": "breakfast/oatmeal.jpg",
-            "id": "Oatmeal"
+            "id": "Oatmeal",
+            "time": "10 minutes"
         },
         {
             "name": "Pancakes",
             "image": "breakfast/pancakes.jpg",
-            "id": "Pancakes"
+            "id": "Pancakes",
+            "time": "10 minutes"
         },
         {
             "name": "Poached Eggs",
             "image": "breakfast/poached eggs.jpg",
-            "id": "Poached Eggs"
+            "id": "Poached Eggs",
+            "time": "10 minutes"
         },
         {
             "name": "Waffles",
             "image": "breakfast/waffles.jpg",
-            "id": "Waffles"
+            "id": "Waffles",
+            "time": "10 minutes"
         }
     ],
 
@@ -41,17 +48,20 @@
         {
             "name": "Sandwich",
             "image": "lunch/sandwich.jpg",
-            "id": "Sandwich"
+            "id": "Sandwich",
+            "time": "10 minutes"
         },
         {
             "name": "Spaghetti",
             "image": "lunch/spaghetti.jpg",
-            "id": "Spaghetti"
+            "id": "Spaghetti",
+            "time": "10 minutes"
         },
         {
             "name": "Tacos",
             "image": "lunch/tacos.jpg",
-            "id": "Tacos"
+            "id": "Tacos",
+            "time": "10 minutes"
         }
     ],
 
@@ -59,17 +69,20 @@
         {
             "name": "Beef",
             "image": "dinner/beefwellington.jpg",
-            "id": "Beef"
+            "id": "Beef",
+            "time": "10 minutes"
         },
         {
             "name": "Risotto",
             "image": "dinner/risotto.jpg",
-            "id": "Risotto"
+            "id": "Risotto",
+            "time": "10 minutes"
         },
         {
             "name": "Vegetable Stew",
             "image": "dinner/vegetablestew.jpg",
-            "id": "Vegetable Stew"
+            "id": "Vegetable Stew",
+            "time": "10 minutes"
         }        
     ],
 
@@ -77,17 +90,20 @@
         {
             "name": "Cheesecake",
             "image": "dessert/cheesecake.jpg",
-            "id": "Cheesecake"
+            "id": "Cheesecake",
+            "time": "10 minutes"
         },
         {
             "name": "Cherry Cream Cheese",
             "image": "dessert/cherrycreamcheese.jpg",
-            "id": "Cherry"
+            "id": "Cherry",
+            "time": "10 minutes"
         },
         {
             "name": "Nutella Taco",
             "image": "dessert/nutellataco.jpg",
-            "id": "Nutella Taco"
+            "id": "Nutella Taco",
+            "time": "10 minutes"
         }
     ],
 
@@ -95,17 +111,20 @@
         {
             "name": "Frittata",
             "image": "vegetarian/frittata.jpg",
-            "id": "Frittata"
+            "id": "Frittata",
+            "time": "10 minutes"
         },
         {
             "name": "Green Falafel",
             "image": "vegetarian/greenfalafel.jpg",
-            "id": "Green Falafel"
+            "id": "Green Falafel",
+            "time": "10 minutes"
         },
         {
             "name": "Lentil",
             "image": "vegetarian/lentil.jpg",
-            "id": "Lentil"
+            "id": "Lentil",
+            "time": "10 minutes"
         }
     ],
 
@@ -113,17 +132,20 @@
         {
             "name": "Pork Chops",
             "image": "glutenfree/caramelappleporkchops.png",
-            "id": "Pork Chops"
+            "id": "Pork Chops",
+            "time": "10 minutes"
         },
         {
             "name": "Grilled Sea Bass",
             "image": "glutenfree/grilledseabass.jpg",
-            "id": "Sea Bass"
+            "id": "Sea Bass",
+            "time": "10 minutes"
         },
         {
             "name": "Salmon Cakes",
             "image": "glutenfree/salmoncakes.jpg",
-            "id": "Salmon Cakes"
+            "id": "Salmon Cakes",
+            "time": "10 minutes"
         }
     ]
 }
