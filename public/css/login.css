@@ -39,6 +39,11 @@ html{
     background:rgba(34, 34, 34, 0.5);
 }
 
+#footer {
+    padding-top : 10px;
+    padding-left: 10px;
+}
+
 .grayscale {
     -webkit-filter: grayscale(100%);
     filter: gray;
