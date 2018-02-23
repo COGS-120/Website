@@ -8,24 +8,23 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
   <link href="/css/instructions.css" rel="stylesheet">
+  <link href="/css/ez-styles.css" rel="stylesheet">
+
 </head>
 
 
 <body onload="extractRecipe('{{name}}');">
 
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="dummyBar">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="dummyBar">
     <a class="navbar-brand" href="/">EZ Cooking</a>
   </nav>
   <div id="topNavBar"></div>
 
 
-  <div class="container">
+  <div class="container px-3 px-md-0">
 
-    <h4>
-      <strong>Instructions</strong>
-    </h4>
-
+  <h3 id="title-no-lr-padding">Instructions</h3>
+  
     <div class="row">
 
       <div class="col">
@@ -81,11 +80,15 @@
       </div>
 
       <div class="col-3">
-        <button class="bottom-button" id="button-play"><i class="fas fa-play"></i></button>
+        <button class="bottom-button" id="button-play">
+          <i class="fas fa-play"></i>
+        </button>
       </div>
 
       <div class="col-3">
-        <button class="bottom-button" id="button-stop"><i class="fas fa-stop"></i></button>
+        <button class="bottom-button" id="button-stop">
+          <i class="fas fa-stop"></i>
+        </button>
       </div>
 
       <div class="col-3">
