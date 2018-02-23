@@ -2,23 +2,23 @@
     "name" : "Risotto",
     "time" : "Time to complete: 40 minutes",
     "tools": [
-            {"tool-name": "Medium sauce pan"},
-            {"tool-name": "Large sauce pan"},
-            {"tool-name": "Knife"},
-            {"tool-name": "Wooden Spoon"}
+        {"tool-name": "Medium sauce pan"},
+        {"tool-name": "Large sauce pan"},
+        {"tool-name": "Knife"},
+        {"tool-name": "Wooden Spoon"}
     ],
     "ingredients": [
-            {"ingredient-name": "1 1/2 cups arborio rice"},
-            {"ingredient-name": "4 cups chicken stock"},
-            {"ingredient-name": "1/2 cup vermouth"},
-            {"ingredient-name": "1 medium shallot"},
-            {"ingredient-name": "3 tablespoons whole butter"},
-            {"ingredient-name": "1 tablespoon vegetable oil"},
-            {"ingredient-name": "1/4 cup Parmesan cheese (grated)"},
-            {"ingredient-name": "1 tablespoon Italian parsley"},
-            {"ingredient-name": "Kosher salt"}
+        {"ingredient-name": "1 1/2 cups arborio rice"},
+        {"ingredient-name": "4 cups chicken stock"},
+        {"ingredient-name": "1/2 cup vermouth"},
+        {"ingredient-name": "1 medium shallot"},
+        {"ingredient-name": "3 tablespoons whole butter"},
+        {"ingredient-name": "1 tablespoon vegetable oil"},
+        {"ingredient-name": "1/4 cup Parmesan cheese (grated)"},
+        {"ingredient-name": "1 tablespoon Italian parsley"},
+        {"ingredient-name": "Kosher salt"}
     ],
-        "steplist": [
+    "steplist": [
         {
             "summary": "Step 1. Heating the stock",
             "step": "Step 1. Heat the stock to a simmer in a medium saucepan, then lower the heat so the stock stays hot.",
@@ -50,5 +50,424 @@
             "end": "yes"
         }
     ]
+},
+
+{
+  "name" : "Beef",
+  "time" : "Time to complete: 1 hour",
+  "tools": [
+    {"tool-name": "Small baking dish"},
+    {"tool-name": "Skillet"},
+    {"tool-name": "9 by 13 inch baking dish"},
+    {"tool-name": "Small saucepan"}
+],
+  "ingredients": [
+    {"ingredient-name": "2 1/2 pounds beef tenderloin"},
+    {"ingredient-name": "2 tablespoons butter, softened"},
+    {"ingredient-name": "2 tablespoons butter"},
+    {"ingredient-name": "1 onion, chopped"},
+    {"ingredient-name": "1/2 cup sliced fresh mushrooms"},
+    {"ingredient-name": "2 ounces liver pate"},
+    {"ingredient-name": "2 tablespoons butter, softened"},
+    {"ingredient-name": "salt and pepper"},
+    {"ingredient-name": "1 (17.5 ounce) package frozen puff pastry, thawed"},
+    {"ingredient-name": "1 egg yolk, beaten"},
+    {"ingredient-name": "1 (10.5 ounce) can beef broth"},
+    {"ingredient-name": "2 tablespoons red wine"}
+],
+  "steplist": [
+    {
+        "summary": "Step 1. Preheating the oven",
+        "step": "Step 1. Preheat the oven to 425 degrees Fahrenheit.",
+        "id": "step 1"
+    },
+    {   "summary": "Step 2. Baking the beef",
+        "step": "Step 2. Place beef in a small baking dish, and spread 2 tablespoons softened butter. Bake for 10 to 15 minutes. Remove from pan, and let it cool completely.",
+        "id": "step 2"
+    },
+    {   "summary": "Step 3. Saute onion and mushrooms",
+        "step": "Step 3. Melt 2 tablespoons butter in skillet over medium heat. Saute onion and mushrooms for 5 minutes. Remove from heat and let it cool.",
+        "id": "step 3"
+    },
+    {   "summary": "Step 4. Seasoning the beef",
+        "step": "Step 4. Mix pate and 2 tablespoons softened butter, salt, pepper. Spread pate over beef with onion and mushroom mixture.",
+        "id": "step 4"
+    },
+    {   "summary": "Step 5. Placing beef in pastry dough",
+        "step": "Step 5. Roll out pastry dough and put beef in the center. Fold up and seal all edges. Place beef in a 9 by 13 inch baking dish, and brush with egg yolk.",
+        "id": "step 5"
+    },
+    {   "summary": "Step 6. Baking the beef and dough",
+        "step": "Step 6. Bake at 450 degrees Fahrenheit for 10 minutes, then heat to 425 degrees Fahrenheit for 10 to 15 minutes. Set it aside then keep warm.",
+        "id": "step 6"
+    },
+    {   "summary": "Step 7. Mixing the sauce",
+        "step": "Step 7. Stir in beef stock, red wine, and the leftover beef juices over high heat in a small saucepan. Boil for 10 to 15 minutes and serve with the beef.",
+        "id": "step 7",
+        "end": "yes"
+    }
+]
+},
+
+{
+  "name" : "Vegetable Stew",
+  "time" : "Time to complete: 1 hour, 15 minutes",
+  "tools": [
+    {"tool-name": "Large saucepan"},
+    {"tool-name": "Small bowl"}
+],
+  "ingredients": [
+    {"ingredient-name": "1 tablespoon vegetable oil"},
+    {"ingredient-name": "1 1/2 cups sliced onions"},
+    {"ingredient-name": "2 garlic cloves, minced"},
+    {"ingredient-name": "1 cup carrot, cut into 1 inch slices"},
+    {"ingredient-name": "1 cup celery, cut into 1 inch slices"},
+    {"ingredient-name": "4 cups mushrooms, cut into quarters"},
+    {"ingredient-name": "3 medium potatoes, cut into 1 inch chunks"},
+    {"ingredient-name": "1 (lb) can tomatoes"},
+    {"ingredient-name": "2 cups cooked kidney beans"},
+    {"ingredient-name": "1 (8 ounce) can tomato sauce"},
+    {"ingredient-name": "1 cup water"},
+    {"ingredient-name": "1 teaspoon dried thyme"},
+    {"ingredient-name": "1 bay leaf"},
+    {"ingredient-name": "salt and pepper"},
+    {"ingredient-name": "3 tablespoons flour"},
+    {"ingredient-name": "1/4 cup water"},
+    {"ingredient-name": "1/4 cup red wine"}
+],
+  "steplist": [
+    {
+        "summary": "Step 1. Heating oil in a saucepan",
+        "step": "Step 1. Heat oil in a large, saucepan over medium heat.",
+        "id": "step 1"
+    },
+    {   "summary": "Step 2. Adding vegetables",
+        "step": "Step 2. Add onions, garlic, carrots, celery, and mushrooms.",
+        "id": "step 2"
+    },
+    {   "summary": "Step 3. Cooking while stirring",
+        "step": "Step 3. Cook 10 minutes, stirring frequently.",
+        "id": "step 3"
+    },
+    {   "summary": "Step 4. Adding water",
+        "step": "Step 4. Add small amounts of water, if necessary, to prevent sticking.",
+        "id": "step 4"
+    },
+    {   "summary": "Step 5. Adding the remaining ingredients",
+        "step": "Step 5. Add remaining ingredients, except flour, 1/4 cup water, and wine.",
+        "id": "step 5"
+    },
+    {   "summary": "Step 6. Simmering vegetables",
+        "step": "Step 6. Cover, reduce heat to low, and simmer 30 minutes, or until vegetables are tender.",
+        "id": "step 6"
+    },
+    {   "summary": "Step 7. Continue stirring",
+        "step": "Step 7. Stir occasionally while cooking.",
+        "id": "step 7"
+    },
+    {   "summary": "Step 8. Stirring flour and water in a bowl",
+        "step": "Step 8. In a small bowl, gradually stir flour into 1/4 cup water until smooth.",
+        "id": "step 8"
+    },
+    {   "summary": "Step 9. Adding mix and wine to stew",
+        "step": "Step 9. Add to stew, along with wine.",
+        "id": "step 9"
+    },
+    {   "summary": "Step 10. Cooking while stirring",
+        "step": "Step 10. Cook, stirring for 5 more minutes.",
+        "id": "step 10"
+    },
+    {   "summary": "Step 11. Remove bay leaf and serve",
+        "step": "Step 11. Remove and discard bay leaf before serving.",
+        "id": "step 11",
+        "end": "yes"
+    }
+]
+},
+
+{
+  "name" : "Cheesecake",
+  "time" : "Time to complete: 6 hours, 25 minutes",
+  "tools": [
+    {"tool-name": "9 inch springform pan"},
+    {"tool-name": "Large bowl"},
+    {"tool-name": "Knife"},
+    {"tool-name": "Mixer"}
+],
+  "ingredients": [
+    {"ingredient-name": "1 3/4 cups HONEY MAID Graham Cracker Crumbs"},
+    {"ingredient-name": "1/3 cup butter, melted"},
+    {"ingredient-name": "1 1/4 cups sugar, divided"},
+    {"ingredient-name": "3 (8 ounce) packages PHILADELPHIA Cream Cheese, softened"},
+    {"ingredient-name": "1 cup BREAKSTONE'S or KNUDSEN Sour Cream"},
+    {"ingredient-name": "2 teaspoons vanilla"},
+    {"ingredient-name": "3 eggs"},
+    {"ingredient-name": "1 (21 ounce) can cherry pie filling"}
+],
+  "steplist": [
+    {
+        "summary": "Step 1. Heating the oven",
+        "step": "Step 1. Heat oven to 350 degrees Fahrenheit",
+        "id": "step 1"
+    },
+    {   "summary": "Step 2. Mixing ingredients into pan",
+        "step": "Step 2. Mix graham crumbs, butter and 1/4 cup sugar; press onto bottom of 9-inch springform pan.",
+        "id": "step 2"
+    },
+    {   "summary": "Step 3. Making the cream cheese mixture",
+        "step": "Step 3. Beat cream cheese and remaining sugar in large bowl with mixer until blended. Add sour cream and vanilla.",
+        "id": "step 3"
+    },
+    {   "summary": "Step 4. Addings eggs",
+        "step": "Step 4. Add eggs, 1 at a time, beating on low speed after each addition just until blended. Pour over crust.",
+        "id": "step 4"
+    },
+    {   "summary": "Step 5. Baking and refrigerating the cheesecake",
+        "step": "Step 5. Bake 1 hour to 1 hour 10 minute or until center is almost set. Run knife around rim of pan to loosen cake; cool before removing rim. Refrigerate cheesecake 4 hours.",
+        "id": "step 5"
+    },
+    {   "summary": "Step 6. Adding pie filling to the top",
+        "step": "Step 6. Top with pie filling before serving.",
+        "id": "step 6",
+        "end": "yes"
+    }
+]
+},
+
+{
+    "name" : "Cherry Cream Cheese",
+    "time" : "Time to complete: 15 minutes",
+    "tools": [
+        {"tool-name": "8 dessert dishes"},
+        {"tool-name": "2 mall bowls"}
+    ],
+    "ingredients": [
+        {"ingredient-name": "3/4 cup graham cracker crumbs"},
+        {"ingredient-name": "2 tablespoons sugar"},
+        {"ingredient-name": "2 tablespoons butter, melted"},
+        {"ingredient-name": "1 package (8 ounces) cream cheese, softened"},
+        {"ingredient-name": "1 can (14 ounces) sweetened condensed milk"},
+        {"ingredient-name": "1/3 cup lemon juice"},
+        {"ingredient-name": "1 teaspoon vanilla extract"},
+        {"ingredient-name": "1 can (21 ounces) cherry pie filling"}
+    ],
+    "steplist": [
+        {
+            "summary": "Step 1. Mixing ingredients in a small bowl",
+            "step": "Step 1. In a small bowl, combine cracker crumbs, sugar and butter.",
+            "id": "step 1"
+        },
+        {   "summary": "Step 2. Dividing mixture into 8 dessert dishes",
+            "step": "Step 2. Divide among 8 dessert dishes, about 4 teaspoonfuls each.",
+            "id": "step 2"
+        },
+        {   "summary": "Step 3. Making the cream cheese mixture",
+            "step": "Step 3. In a small bowl, beat cream cheese until smooth. Gradually, add milk until blended.",
+            "id": "step 3"
+        },
+        {   "summary": "Step 4. Adding in lemon juice and vanilla",
+            "step": "Step 4. Beat in lemon juice and vanilla and spoon 1/4 cup into each dish.",
+            "id": "step 4"
+        },
+        {   "summary": "Step 5. Topping with pie filling",
+            "step": "Step 5. Top wih pie filling, about 1/4 cup in each.",
+            "id": "step 5",
+            "end": "yes"
+        }
+    ]
+},
+
+
+{
+  "name" : "Nutella Taco",
+  "time" : "Time to complete: 11 minutes",
+  "tools": [
+    {"tool-name": "Large dish"},
+    {"tool-name": "Large skillet"},
+    {"tool-nane": "Tongs"},
+    {"tool-name": "Stand mixer"},
+    {"tool-name": "Whisk"},
+    {"tool-name": "Piping bag"},
+    {"tool-name": "Ziplock baggy"}
+],
+  "ingredients": [
+    {"ingredient-name": "1/2 cup white granulated sugar"},
+    {"ingredient-name": "1 tablespoon cinnamon"},
+    {"ingredient-name": "1 cup vegetable oil"},
+    {"ingredient-name": "4 flour tortilla, fajita size"},
+    {"ingredient-name": "1 cup fresh strawberries, diced"},
+    {"ingredient-name": "1/2 cup fresh raspberries"},
+    {"ingredient-name": "1/4 cup nutella"},
+    {"ingredient-name": "1 cup heavy whipping cream"},
+    {"ingredient-name": "1/4 cup powdered sugar"}
+],
+  "steplist": [
+    {
+        "summary": "Step 1. Mixing ingredients in a large dish",
+        "step": "Step 1. In a large dish mix together the granulated sugar and the cinnamon. Set to the side.",
+        "id": "step 1"
+    },
+    {   "summary": "Step 2. Heating canola oil",
+        "step": "Step 2. In a large skillet heat the canola oil until bubbly and hot.",
+        "id": "step 2"
+    },
+    {   "summary": "Step 3. Cooking the tortilla",
+        "step": "Step 3. Place one tortilla in the skillet cook for 10 seconds then using tongs flip over, and  begin to fold in half.",
+        "id": "step 3"
+    },
+    {   "summary": "Step 4. Flipping the tortilla",
+        "step": "Step 4. Continue to hold one side of the tortilla with tongs. Then flip to ensure the other side cooks evenly. Remove from the skillet",
+        "id": "step 4"
+    },
+    {   "summary": "Step 5. Dip tortilla in cinnamon",
+        "step": "Step 5. Dip both sides in the cinnamon sugar and sprinkle cinnamon sugar in the inside of the taco shell.",
+        "id": "step 5"
+    },
+    {   "summary": "Step 6. Cutting strawberries",
+        "step": "Step 6. Once the taco shells are cooked, chop 1 cup fresh strawberries and rinse half cup raspberries. Place them off to the side.",
+        "id": "step 6"
+    },
+    {   "summary": "Step 7. Mixing cream and powdered sugar in stand mixer",
+        "step": "Step 7. Add heavy cream and powdered sugar to a stand mixer with a whisk attachment and whip for about 1 minute.",
+        "id": "step 7"
+    },
+    {   "summary": "Step 8. Placing mixture in a piping bag",
+        "step": "Step 8. Place in a piping bag or a ziplock baggy and cut a corner tip off to pipe.",
+        "id": "step 8"
+    },
+    {   "summary": "Step 9. Adding nutella into a ziplock baggy",
+        "step": "Step 9. Add Nutella into a ziplock baggy and cut one side of the corner with scissors.",
+        "id": "step 9"
+    },
+    {   "summary": "Step 10. Piping nutella into taco",
+        "step": "Step 10. Pipe the nutella evenly and add in fruit. Lastly, add whipped cream on top.",
+        "id": "step 10",
+        "end": "yes"
+    }
+
+]
+},
+
+{
+  "name" : "Sandwich",
+  "time" : "Time to complete: 7 minute",
+  "tools": [
+    {"tool-name": "Butter knife"}
+],
+  "ingredients": [
+    {"ingredient-name": "2 slices wheat bread"},
+    {"ingredient-name": "1/4 cup mayonnaise"},
+    {"ingredient-name": "3 lettuce leaves"},
+    {"ingredient-name": "1 tomato thinly sliced"},
+    {"ingredient-name": "3 slices turkey"},
+    {"ingredient-name": "3 bacon strips"},
+    {"ingredient-name": "3 slices cheddar cheese"}
+],
+  "steplist": [
+    {
+        "summary": "Step 1. Toasting the bread",
+        "step": "Step 1. Toast the bread slices.",
+        "id": "step 1"
+    },
+    {   "summary": "Step 2. Spreading mayonnaise on top",
+        "step": "Step 2. Spread a thin layer of mayonnaise on each slice.",
+        "id": "step 2"
+    },
+    {   "summary": "Step 3. Adding the meat and vegetables",
+        "step": "Step 3. Layer bottom slice with letuce, tomato, turkey, bacon, cheese",
+        "id": "step 3"
+    },
+    {   "summary": "Step 4. Adding second slice of bread on top",
+        "step": "Step 4. Put the second slice of bread on top.",
+        "id": "step 4"
+    },
+    {   "summary": "Step 5. Microwave to melt the cheese",
+        "step": "Step 5. Heat in microwave for 30 seconds to 1 minute, or until cheese is melted.",
+        "id": "step 5",
+        "end": "yes"
+    }
+]
+},
+
+{
+  "name" : "Spaghetti",
+  "time" : "Time to complete: 30 minutes",
+  "tools": [
+    {"tool-name": "Medium sauce pan"},
+    {"tool-name": "MEdium pot"}
+],
+  "ingredients": [
+    {"ingredient-name": "1 small onion (chopped)"},
+    {"ingredient-name": "1 bell pepper (chopped)"},
+    {"ingredient-name": "2 tablespoons garlic powder"},
+    {"ingredient-name": "3 tablespoons butter"},
+    {"ingredient-name": "1 teaspoon salt"},
+    {"ingredient-name": "1 teaspoon pepper"},
+    {"ingredient-name": "2 (15 ounce) cans tomato sauce"},
+    {"ingredient-name": "1 (16 ounce) box spaghetti noodles"},
+    {"ingredient-name": "1.5 lb hamburger meat"}
+],
+  "steplist": [
+    {
+        "summary": "Step 1. Melting butter and sautee vegetables",
+        "step": "Step 1. On medium heat melt the butter and sautee the onion and bell peppers.",
+        "id": "step 1"
+    },
+    {   "summary": "Step 2. Cook the hamgurber meat",
+        "step": "Step 2. Add the hamburger meat and cook until meat is well done.",
+        "id": "step 2"
+    },
+    {   "summary": "Step 3. Adding condiments together",
+        "step": "Step 3. Add the tomato sauce, salt, pepper and garlic powder.",
+        "id": "step 3"
+    },
+    {   "summary": "Step 4. Cooking the noddles",
+        "step": "Step 4. Cook the noodles as directed on the label.",
+        "id": "step 4"
+    },
+    {   "summary": "Step 5. Mixing the sauce and noddles",
+        "step": "Step 5. Mix the sauce and noodles.",
+        "id": "step 5",
+        "end": "yes"
+    }
+]
+},
+
+
+{
+  "name" : "Tacos",
+  "time" : "Time to complete: 30 minutes",
+  "tools": [
+    {"tool-name": "10 inch skillet"}
+],
+  "ingredients": [
+    {"ingredient-name": "1 lb lean ground beef"},
+    {"ingredient-name": "1 cup Old El Paso Thick 'n Chunky Salsa"},
+    {"ingredient-name": "10 Old El Paso Taco Shells"},
+    {"ingredient-name": "1/2 Head lettuce, shredded"},
+    {"ingredient-name": "1 medium tomato, chopped"},
+    {"ingredient-name": "1 cup shredded cheddar cheese"}
+],
+  "steplist": [
+    {
+        "summary": "Step 1. Melting butter and sautee vegetables",
+        "step": "Step 1. Cook beef in 10-inch skillet over medium heat 8 to 10 minutes, stirring occasionally until brown.",
+        "id": "step 1"
+    },
+    {   "summary": "Step 2. Cook the hamgurber meat",
+        "step": "Step 2. Stir salsa into beef. Heat to boiling, stirring constantly; reduce heat to medium-low.",
+        "id": "step 2"
+    },
+    {   "summary": "Step 3. Adding condiments together",
+        "step": "Step 3. Cook 5 minutes, stirring occasionally. Pour beef mixture into large serving bowl.",
+        "id": "step 3"
+    },
+    {   "summary": "Step 4. Cooking the noddles",
+        "step": "Step 4. Heat taco shells as directed on package. Serve taco shells with beef mixture, lettuce, tomato and cheese.",
+        "id": "step 4",
+        "end": "yes"
+    }
+]
 }
+
 ]

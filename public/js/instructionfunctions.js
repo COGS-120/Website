@@ -6,6 +6,8 @@ var index = -1;
 var stepInformation;
 var extra_features_options = document.getElementById('extra-features-options');
 var title = document.getElementById("stepTitle");
+var dishName;
+var indexOfDish;
 
 // Window components
 var synth = window.speechSynthesis;
@@ -167,8 +169,10 @@ voiceSelect.onchange = function () {
 
 // We need to add events to the window loader differently because we have
 // multiple on load functions
-$(document).ready(open);
 
+/**
+ * Function called in extractRecipe
+ */
 function open() {
 
 	// Index should start at -1
@@ -176,8 +180,23 @@ function open() {
 
 	$.getJSON("../json/instructions.json", function (result) {
 		speficRecipeData = result;
-		recipeName = result[0].name;
+		console.log("result length " + result.length);
+		indexOfDish = 0;
 
+			for (var i = 0; i < result.length; i++)
+			{
+				console.log(result[i].name);
+				if (result[i].name == dishName)
+				{
+					indexOfDish = i;
+					console.log("found");
+				}
+			}
+
+			console.log("index: " + indexOfDish);	
+
+
+		recipeName = result[indexOfDish].name;
 		populateVoiceList();
 		display();
 	});
@@ -280,7 +299,7 @@ function restartAnnyang() {
 }
 
 function nextIndex() {
-	if (index > 0 && speficRecipeData[0].steplist[index].hasOwnProperty("end")) {
+	if (index > 0 && speficRecipeData[indexOfDish].steplist[index].hasOwnProperty("end")) {
 		window.location.href = "/../finish/" + recipeName;
 	}
 	else {
@@ -297,6 +316,21 @@ function previousIndex() {
 	display();
 }
 
+
+function extractRecipe(tempName) {
+	dishName = tempName;
+
+	open();
+
+	console.log("Extract Recipe " + tempName);
+	// dishName is a string of the food a user wants to cook
+
+}
+
+
+
+
+
 function display() {
 
 	// Make sure to show the options for 
@@ -307,7 +341,7 @@ function display() {
 	}
 	else {
 		extra_features_options.style.display = "none";
-		stepInformation = speficRecipeData[0].steplist[index].step;
+		stepInformation = speficRecipeData[indexOfDish].steplist[index].step;
 		title.innerText = stepInformation;
 	
 	}
