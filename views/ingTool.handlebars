@@ -21,12 +21,13 @@
 
   <div class="container">
 
-    <h3 class="center">
+    
+    <h3>
       <strong class="tools">Tools</strong>
     </h3>
 
     <!-- Testing Columns -->
-    <div class="row row-adj center">
+    <div class="row row-adj ">
       <!-- row 1 -->
       {{#each tools}}
       <div class="col-6">
@@ -37,11 +38,11 @@
     <!-- closing row 1 -->
     <!-- closed Testing Columns -->
 
-    <h3 class="center">
+    <h3>
       <strong>Ingredients</strong>
     </h3>
     <!-- Ingredients -->
-    <div class="row row-adj center">
+    <div class="row row-adj">
       {{#each ingredients}}
       <div class="col-6">
         <p>{{ingredient-name}}</p>
@@ -53,13 +54,13 @@
     <h3 id="itemsNeeded">
     </h3>
 
-    <div class="row center">
+    <div class="row">
       <div class="col">
         <button class="button">
         <a class="text-no-hyperlink" href="/food/{{name}}">Back To Dish</a>
         </button>
       </div>
-      <div class="col">
+      <div class="col right">
         <button class="button">
         <a class="text-no-hyperlink" href="/instructions/{{name}}">Next</a>
         </button>

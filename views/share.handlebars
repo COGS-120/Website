@@ -30,25 +30,27 @@
           <strong>Share Your Creation</strong>
         </h3>
 
-        <p>Take a picture of your food.</p>
+        <h4 class="center">Snap a picture of your meal!</h4>
 
-        <input type="file" accept="image/*">
+        <div id= "choose-file">
+          <input type="file" accept="image/*">
+        </div>
 
         <!-- <button type="button" onclick="take_picture()">Take a picture</button> -->
 
         <!-- <img src="" id="image-preview" class="img-fluid" alt="image preview"> -->
 
         <br>
+        <div id="share">
+          <button type="button" onclick="share()">Share</button>
 
-        <button type="button" onclick="share()">Share</button>
+          <br>
 
+          <p id="share-status" style="display:none">Image shared</p>
+        </div>
+        
         <br>
-
-        <p id="share-status" style="display:none">Image shared</p>
-
-        <br>
-
-        <a href="/">Back To Home</a>
+        <button><a href="/">Back To Home</a></button>
       </div>
     </div>
 

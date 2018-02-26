@@ -36,3 +36,10 @@
 .col-info {
     padding-left: 0px;
 }
+.center {
+    text-align: center;
+}
+
+body {
+    background-color: #EEFFFF;
+}

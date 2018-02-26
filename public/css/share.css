@@ -1,3 +1,25 @@
 #image-preview {
     padding : 10px;
 }
+
+h4 {
+	text-align: center;
+	margin-top: 50px;
+}
+
+#choose-file {
+	padding: 25px;
+	margin-top: 10px;
+	margin-left: 22px;
+	text-align: center;
+}
+
+#share {
+	text-align: center;
+	margin-left: -248px;
+	margin-bottom: 60px;
+}
+
+body {
+    background-color: #FFEC9C;
+}
