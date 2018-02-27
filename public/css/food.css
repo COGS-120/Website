@@ -84,5 +84,19 @@ h5 {
 }
 
 body {
-    background-color: #EEFFFF;
+    background-color: #FCFCE3;
+}
+
+#stepsbox {
+  margin-top: 30px;
+}
+#stepsbox p {
+  border-bottom: solid;
+  border-width: thin;
+  padding-bottom: 5px;
+  border-color: #575656;
+}
+
+.col-6 p {
+  padding-bottom: 10px;
 }
