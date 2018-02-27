@@ -1,10 +1,7 @@
-#title {
-    padding: 10px;
-}
 
 .inner-name {
     padding-left: 10px;
-    padding-top:8px;
+    padding-top:10px;
     color: black;
 }
 
@@ -18,7 +15,6 @@
     justify-content: center;
     flex-direction: column;
 }
-
 .container {
     padding : 0px;
     width: 100%;
@@ -31,7 +27,7 @@
 
 .food-img {
     width: 100%;
-    max-width: 100%;
+    max-width: 670px;
     height: auto;
     max-height: 25vh;
     object-fit: cover;
@@ -39,4 +35,8 @@
 
 .food-link{
     text-decoration: none !important;
+}
+
+.container {
+    background-color: white;
 }

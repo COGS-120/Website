@@ -8,12 +8,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
   <link href="/css/food.css" rel="stylesheet">
+  <link href="/css/ez-styles.css" rel="stylesheet">
   <link href="/css/animate.min.css" rel="stylesheet">
 </head>
 
 <body onload="setPageType('Food', '{{name}}');">
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="dummyBar">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="dummyBar">
     <a class="navbar-brand" href="/">EZ Cooking</a>
   </nav>
   <div id="topNavBar"></div>
@@ -34,7 +35,7 @@
     <p id="eta">{{time}}</p>
     <p id="favorites-message"></p>
 
-    <div class="row" id="button-row">
+    <div class="row px-2 px-md-0" id="button-row">
       <div class="col-6 text-left">
         <button class="button">
           <a class="text-no-hyperlink" href="/category/{{category}}">Back To Dishes</a>
@@ -51,7 +52,7 @@
     <div id ="stepsbox">
 
     {{#each steplist}}
-    <p id="steps">{{summary}}</p>
+    <p class="px-2 px-md-0">{{summary}}</p>
     {{/each}}
 
     </div>

@@ -1,0 +1,22 @@
+#title {
+    padding: 10px;
+    padding-top: 13px;
+}
+
+#title-no-lr-padding {
+    padding: 10px;
+    padding-top: 13px;
+    padding-left : 0px;
+    padding-right : 0px;
+}
+
+.container {
+    padding : 0px;
+    width: 100%;
+    max-width: 700px;
+    overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
+}

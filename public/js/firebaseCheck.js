@@ -91,14 +91,18 @@ FirebaseWorker.prototype.onAuthStateChanged = function (user) {
         // freely.
         var isAnonymous = user.isAnonymous;
         var uid = user.uid;
+        var photoUrl = user.photoURL;
         currentUser = firebase.auth().currentUser;
 
         this.userName = document.getElementById('profileName');
+        this.profileCircle = document.getElementById('profileCircle');
         if (currentUser.isAnonymous) {
             this.userName.innerText = "User - Anonymous User";
+            this.profileCircle.style.display = "none";
         }
         else {
-            this.userName.innerText = "User - " + currentUser.displayName;
+            this.userName.innerText = currentUser.displayName;
+            this.profileCircle.src = user.photoURL;
         }
         this.buttonLogout = document.getElementById('buttonLogout');
         this.buttonLogout.addEventListener('click', this.signOut.bind(this));
@@ -227,11 +231,13 @@ function enumerateFavorites() {
                     counter += 1;
 
                     var imageString;
+                    var timeString;
                     // Find the image data
                     $.each(foodJsonData, function (key, category) {
                         $.each(category, function (key, foodval) {
                             if (foodval.name === value) {
                                 imageString = foodval.image;
+                                timeString = foodval.time;
                             }
                         });
                     });
@@ -240,14 +246,19 @@ function enumerateFavorites() {
                     var stringToAdd = "";
 
                     // string building pattern
-                    stringToAdd += '<div class="col-4 food-column">';
-                    stringToAdd += '<a href="../food/' + value + '" id="' + value + '">';
-                    stringToAdd += '<div class="card text-white border-0 food-card-other">';
+                    stringToAdd += '<div class="col-8">';
+                    stringToAdd += '<a href="../food/' + value + '">';
                     stringToAdd += '<img class="food-card-img" src="../images/' + imageString + '" alt="Card image">';
-                    stringToAdd += '<div class="card-img-overlay text-center align-middle outer-name">';
-                    stringToAdd += '<h3 class="inner-name">';
+                    stringToAdd += '</a>';
+                    stringToAdd += '</div>';
+                    stringToAdd += '<div class="col-4 col-info">';
+                    stringToAdd += '<a class="food-link" href="../food/' + value + '">';
+                    stringToAdd += '<h5 class="inner-name">';
                     stringToAdd += value;
-                    stringToAdd += '</h3></div></div></a></div>';
+                    stringToAdd += '</h5>';
+                    stringToAdd += '<p>' + timeString + '</p>';
+                    stringToAdd += '</a>';
+                    stringToAdd += '</div>';
                     document.getElementById('food-row').innerHTML += stringToAdd;
                 }
 
