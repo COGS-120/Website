@@ -20,35 +20,6 @@
         "hashtag": "#frenchtoast",
          "cat": "Breakfast"
     },
-    "Oatmeal":{
-        "name": "Oatmeal",
-        "image": "breakfast/oatmeal.jpg",
-        "id": "Oatmeal",
-        "hashtag": "#oatmeal",
-         "cat": "Breakfast"
-    },
-    "Pancakes": {
-        "name": "Pancakes",
-        "image": "breakfast/pancakes.jpg",
-        "id": "Pancakes",
-        "hashtag": "#pancakes",
-         "cat": "Breakfast"
-    },
-    "Poached Eggs":{
-        "name": "Poached Eggs",
-        "image": "breakfast/poached eggs.jpg",
-        "id": "Poached Eggs",
-        "hashtag": "#poachedeggs",
-         "cat": "Breakfast"
-    },
-    "Waffles":{
-        "name": "Waffles",
-        "image": "breakfast/waffles.jpg",
-        "id": "Waffles",
-        "hashtag": "#waffles",
-         "cat": "Breakfast"
-    },
-
     "Sandwich":{
         "name": "Sandwich",
         "image": "lunch/sandwich.jpg",
@@ -136,7 +107,6 @@
         "hashtag": "#Sandwich",
          "cat": "Vegetarian"
     },
-
     "Pork Chops":{
         "name": "Pork Chops",
         "image": "glutenfree/caramelappleporkchops.png",
