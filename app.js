@@ -58,6 +58,7 @@ app.get('/share/:name', share.view);
 app.get('/ingTool/:name', ingTool.view);
 app.get('/privacy', privacy.view);
 app.get('/terms', terms.view);
+app.get('/viewAlt', index.viewAlt);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

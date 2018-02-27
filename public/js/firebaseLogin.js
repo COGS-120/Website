@@ -127,17 +127,6 @@ FirebaseLoginWorker.prototype.onAuthStateChanged = function (user) {
 
         // Redirect to home page
         window.location.href = "/";
-
-        /*
-        // Hide sign-in button.
-        this.signInButton.setAttribute('hidden', 'true');
-
-        // We load currently existing chant messages.
-        this.loadMessages();
-
-        // We save the Firebase Messaging Device token and enable notifications.
-        this.saveMessagingDeviceToken();
-        */
     }
 
     else { // User is signed out

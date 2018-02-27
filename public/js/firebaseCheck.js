@@ -34,8 +34,12 @@
 
 var currentUser;
 var database;
+var storage;
+var storageRef;
 var pageType;
 var pageVar1;
+
+var pictureToShare;
 
 /** 
  * Configuration variables
@@ -62,6 +66,8 @@ function FirebaseWorker() {
     this.initFirebase();
     console.log("Initialized Firebase Worker");
     database = firebase.database();
+    storage = firebase.storage();
+    storageRef = firebase.storage().ref();
 }
 
 /**
@@ -87,32 +93,44 @@ FirebaseWorker.prototype.signOut = function () {
 FirebaseWorker.prototype.onAuthStateChanged = function (user) {
     if (user) { // User is signed in!
         console.log("User has been logged in.");
-        // After everything has been properly initialized, we can access information
-        // freely.
-        var isAnonymous = user.isAnonymous;
-        var uid = user.uid;
-        var photoUrl = user.photoURL;
-        currentUser = firebase.auth().currentUser;
+        var localThis = this;
 
-        this.userName = document.getElementById('profileName');
-        this.profileCircle = document.getElementById('profileCircle');
-        if (currentUser.isAnonymous) {
-            this.userName.innerText = "User - Anonymous User";
-            this.profileCircle.style.display = "none";
-        }
-        else {
-            this.userName.innerText = currentUser.displayName;
-            this.profileCircle.src = user.photoURL;
-        }
-        this.buttonLogout = document.getElementById('buttonLogout');
-        this.buttonLogout.addEventListener('click', this.signOut.bind(this));
+        // Every page will have the navbar. Every page must load this before
+        // making other changes.
+        $("#topNavBar").load('/html/navbar.html', function () {
+            $('#dummyBar').remove();
 
-        // Record last activity
-        var currentDate = new Date();
-        writeUserData("last-activity", currentDate.getTime());
+            // After everything has been properly initialized, we can access information
+            // freely.
+            var isAnonymous = user.isAnonymous;
+            var uid = user.uid;
+            var photoUrl = user.photoURL;
+            currentUser = firebase.auth().currentUser;
+
+            var userName = document.getElementById('profileName');
+            var profileCircle = document.getElementById('profileCircle');
+
+            // Behavior changes depending on anonymity of user
+            if (currentUser.isAnonymous) {
+                userName.innerText = "Anonymous User";
+                profileCircle.src = "/images/anonymous.png";
+            }
+            else {
+                userName.innerText = currentUser.displayName;
+                profileCircle.src = user.photoURL;
+            }
+            var buttonLogout = document.getElementById('buttonLogout');
+            buttonLogout.addEventListener('click', localThis.signOut.bind(localThis));
+
+            // Record last activity
+            var currentDate = new Date();
+            writeUserData("last-activity", currentDate.getTime());
+        });
+
     }
 
     else { // User is signed out!
+        console.log("User has been signed out.");
         window.location.href = "/login";
     }
 };
@@ -157,128 +175,158 @@ function writeUserData(key, val) {
 
 /**
  * Checks if the given food name is the favorite
+ * 
+ * PREDONDITION: pageType == "Food" 
+ * PRECONDITION: currentUser is defined
  * @param {string} foodName 
  */
 function checkIfFavorite(foodName, toggle) {
-    if (currentUser) {
-        addKeyIfNonexistent("favorites");
+    addKeyIfNonexistent("favorites");
 
-        // Get data from database
-        var favorites = database.ref(userPath() + "favorites").once("value", function (snapshot) {
-            var favoriteList = snapshot.val();
-            var isAFavorite = false;
-            var containingKey;
+    // Get data from database
+    var favorites = database.ref(userPath() + "favorites").once("value", function (snapshot) {
+        var favoriteList = snapshot.val();
+        var isAFavorite = false;
+        var containingKey;
 
-            $.each(favoriteList, function (key, value) {
-                if (value === foodName) {
-                    isAFavorite = true;
-                    containingKey = key;
-                }
-            });
+        $.each(favoriteList, function (key, value) {
+            if (value === foodName) {
+                isAFavorite = true;
+                containingKey = key;
+            }
+        });
 
-            // Change value if we want to toggle. Also change star
-            if (toggle === true) {
-                if (isAFavorite === true) {
-                    // Remove from database
-                    database.ref(userPath() + "favorites").child(containingKey).remove();
-                    $('#favorites-star').attr("src", "../images/favorites/star_unchecked.svg");
-                    $('#favorites-message').html("Removed from favorites");
-                }
-                else {
-                    // Add to database
-                    database.ref(userPath() + "favorites").push(foodName);
-                    $('#favorites-star').attr("src", "../images/favorites/star_checked.svg");
-                    $('#favorites-message').html("Added to favorites");
-                }
+        // Change value if we want to toggle. Also change star
+        if (toggle === true) {
+            if (isAFavorite === true) {
+                // Remove from database
+                database.ref(userPath() + "favorites").child(containingKey).remove();
+                $('#favorites-star').attr("src", "../images/favorites/star_unchecked.svg");
+                $('#favorites-message').html("Removed from favorites");
             }
             else {
-                // change image based on favorites setting
-                if (isAFavorite === true) {
-                    $('#favorites-star').attr("src", "../images/favorites/star_checked.svg");
-                }
-                else {
-                    $('#favorites-star').attr("src", "../images/favorites/star_unchecked.svg");
-                }
+                // Add to database
+                database.ref(userPath() + "favorites").push(foodName);
+                $('#favorites-star').attr("src", "../images/favorites/star_checked.svg");
+                $('#favorites-message').html("Added to favorites");
             }
+        }
+        else {
+            // change image based on favorites setting
+            if (isAFavorite === true) {
+                $('#favorites-star').attr("src", "../images/favorites/star_checked.svg");
+            }
+            else {
+                $('#favorites-star').attr("src", "../images/favorites/star_unchecked.svg");
+            }
+        }
 
-        });
-    }
+    });
 }
 
 /** 
  * Enumerates all the favorites in the favorites page
  * 
  * PREDONDITION: pageType == "Favorites" 
+ * PRECONDITION: currentUser is defined
  */
 function enumerateFavorites() {
-    if (currentUser) {
-        addKeyIfNonexistent("favorites");
+    addKeyIfNonexistent("favorites");
 
-        // Get data from JSON
-        var foodJsonData;
-        $.getJSON("../json/food.json", function (result) {
-            foodJsonData = result;
-        });
+    // Get data from JSON
+    var foodJsonData;
+    $.getJSON("../json/food.json", function (result) {
+        foodJsonData = result;
+    });
 
-        // Get data from database
-        var favorites = database.ref(userPath() + "favorites").once("value", function (snapshot) {
-            var favoriteList = snapshot.val();
+    // Get data from database
+    var favorites = database.ref(userPath() + "favorites").once("value", function (snapshot) {
+        var favoriteList = snapshot.val();
 
-            var counter = 0; // Counter needed here because firebase has no counter
-            $.each(favoriteList, function (key, value) {
+        var counter = 0; // Counter needed here because firebase has no counter
+        $.each(favoriteList, function (key, value) {
 
-                if (value != 'none') {
-                    counter += 1;
+            if (value != 'none') {
+                counter += 1;
 
-                    var imageString;
-                    var timeString;
-                    // Find the image data
-                    $.each(foodJsonData, function (key, category) {
-                        $.each(category, function (key, foodval) {
-                            if (foodval.name === value) {
-                                imageString = foodval.image;
-                                timeString = foodval.time;
-                            }
-                        });
+                var imageString;
+                var timeString;
+                // Find the image data
+                $.each(foodJsonData, function (key, category) {
+                    $.each(category, function (key, foodval) {
+                        if (foodval.name === value) {
+                            imageString = foodval.image;
+                            timeString = foodval.time;
+                        }
                     });
+                });
 
-                    // for each favorite, add in the relevant div
-                    var stringToAdd = "";
+                // for each favorite, add in the relevant div
+                var stringToAdd = "";
 
-                    // string building pattern
-                    stringToAdd += '<div class="col-8">';
-                    stringToAdd += '<a href="../food/' + value + '">';
-                    stringToAdd += '<img class="food-card-img" src="../images/' + imageString + '" alt="Card image">';
-                    stringToAdd += '</a>';
-                    stringToAdd += '</div>';
-                    stringToAdd += '<div class="col-4 col-info">';
-                    stringToAdd += '<a class="food-link" href="../food/' + value + '">';
-                    stringToAdd += '<h5 class="inner-name">';
-                    stringToAdd += value;
-                    stringToAdd += '</h5>';
-                    stringToAdd += '<p>' + timeString + '</p>';
-                    stringToAdd += '</a>';
-                    stringToAdd += '</div>';
-                    document.getElementById('food-row').innerHTML += stringToAdd;
-                }
-
-            });
-            
-            // Case where counter is 0. Show the 'no favorites' essage
-            if (counter === 0)  {
-                document.getElementById("no-favorites-message").style.display = "block";
+                // string building pattern
+                stringToAdd += '<div class="col-8">';
+                stringToAdd += '<a href="../food/' + value + '">';
+                stringToAdd += '<img class="food-card-img" src="../images/' + imageString + '" alt="Card image">';
+                stringToAdd += '</a>';
+                stringToAdd += '</div>';
+                stringToAdd += '<div class="col-4 col-info">';
+                stringToAdd += '<a class="food-link" href="../food/' + value + '">';
+                stringToAdd += '<h5 class="inner-name">';
+                stringToAdd += value;
+                stringToAdd += '</h5>';
+                stringToAdd += '<p>' + timeString + '</p>';
+                stringToAdd += '</a>';
+                stringToAdd += '</div>';
+                document.getElementById('food-row').innerHTML += stringToAdd;
             }
-            else {
-                document.getElementById("no-favorites-message").style.display = "none";
-            }
+
         });
+
+        // Case where counter is 0. Show the 'no favorites' essage
+        if (counter === 0) {
+            document.getElementById("no-favorites-message").style.display = "block";
+        }
+        else {
+            document.getElementById("no-favorites-message").style.display = "none";
+        }
+    });
+}
+
+/** 
+ * Code for share function.
+ * Storage is on Firebase.
+ */
+function share(foodType) {
+    console.log("Called");
+
+    addKeyIfNonexistent("foodPics/" + foodType);
+
+    var placeRef = storageRef.child("foodPics/" + foodType + "/" + currentUser.displayName);
+
+    if (pictureToShare != null) {
+        placeRef.put(pictureToShare).then(function (snapshot) {
+            console.log("Successfuly put file in.");
+            $('#share-status').text("File has been shared.");
+            $('#share-status').show();
+        });
+    }
+    else {
+        $('#share-status').text("You haven't added a file to share yet!");
+        $('#share-status').show();
     }
 }
 
+/** 
+ * Returns the user path in the database. 
+ */
 function userPath() {
     return "users/" + currentUser.uid + "/";
 }
 
+$("#imgInp").change(function () {
+    pictureToShare = this.files[0];
+});
 
 function addKeyIfNonexistent(key) {
     var usersRef = database.ref(userPath());
@@ -294,6 +342,15 @@ function setBlankValue(key) {
     database.ref(userPath() + key).set({ "iii": "none" });
 }
 
+function addStorageIfNonexistent(key) {
+    storageRef.child(key).getDownloadUrl().then(function (foundURL) {
+        console.log("found: " + foundURL);
+    },
+        function (error) {
+            console.log("not found. creating.");
+        });
+}
+
 /**
  * Sets the page type.
  * Depending on the page type, this script will activate different behaviors
@@ -305,11 +362,25 @@ function setPageType(type, var1) {
     pageType = type;
     pageVar1 = var1;
 
-    if (pageType == "Food") { // double equals is intentional here, don't ===
-        checkIfFavorite(pageVar1, false);
+    // Any functions here must be called when the current user has been
+    // initialized and logged in.
+    if (currentUser) {
+        if (pageType == "Food") { // double equals is intentional here, don't ===
+            checkIfFavorite(pageVar1, false);
+        }
+
+        else if (pageType == "Favorites") {
+            enumerateFavorites();
+        }
+
+        else if (pageType == "Share") {
+            //share(pageVar1);
+        }
     }
 
-    if (pageType == "Favorites") {
-        enumerateFavorites();
+    // If no user has been logged in, delay and try again.
+    else {
+        setTimeout(function () { setPageType(type, var1) }, 100);
     }
+
 }

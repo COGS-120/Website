@@ -11,35 +11,33 @@
   <link href="/css/ez-styles.css" rel="stylesheet">
 </head>
 
-<body>
-
+<body onload="setPageType('Share', '{{name}}');">
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="dummyBar">
     <a class="navbar-brand" href="/">EZ Cooking</a>
   </nav>
   <div id="topNavBar"></div>
 
-  <div class="container">
+  <div class="container px-2 px-md-0">
 
     <div class="row">
 
       <div class="col">
 
-        <h3>Share Your Creation </h3>
+        <h3 id="title-no-lr-padding">Share Your Creation </h3>
 
         <h4 class="center">Snap a picture of your meal!</h4>
 
-        <input type="file" accept="image/*" id="fie-input">
+        <form id="form1" runat="server">
+          <input type='file' id="imgInp"/>
+          <img class="img-fluid" id="blah" src="#" alt="your image" />
+        </form>
 
-        <!-- <button type="button" onclick="take_picture()">Take a picture</button> -->
-
-        <!-- <img src="" id="image-preview" class="img-fluid" alt="image preview"> -->
+        <!-- <video src="" id="image-preview" class="img-fluid" alt="image preview"> -->
 
         <br>
         <div id="share">
-          <button type="button" onclick="share()">Share</button>
-
-          <br>
+        <button type="button" onclick="share('{{name}}')">Share</button>
 
           <p id="share-status" style="display:none">Image shared</p>
         </div>
@@ -52,7 +50,6 @@
   </div>
 
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="/js/navbar.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
@@ -62,6 +59,17 @@
   <script src="/js/firebaseCheck.js"></script>
 
   <script src="/js/share.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114830772-1');
+</script>
+
 </body>
 
 </html>

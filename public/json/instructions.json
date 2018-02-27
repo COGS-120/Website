@@ -1,6 +1,388 @@
  [ {
+  "name" : "Bacon",
+    "time" : "ETA: 15 minutes",
+    "tools": [
+            {"tool-name": "Frying pan"},
+            {"tool-name": "Tongs"},
+            {"tool-name": "Paper towels on a plate"},
+            {"tool-name": "Glass or metal container for the drippings"}
+    ],
+    "ingredients": [
+            {"ingredient-name": "Bacon"}
+    ],
+        "steplist": [
+        {
+            "summary": "Step 1. Lay out bacon on a pan",
+            "step": "Step 1. Before turning on the heat, lay out bacon strips on a cold pan.",
+            "id": "step 1"
+        },
+        {   "summary": "Step 2. Cooking the bacon",
+            "step": "Step 2. Cook the bacon on low heat. When it starts to buckle and curl, use the tongs to turn each strip to cook on the other side.",
+            "id": "step 2"
+        },
+        {   "summary": "Step 3. Pouring off the grease",
+            "step": "Step 3. Turn off the heat and pour off the grease into a glass or metal container",
+            "id": "step 3"
+        },
+        {   "summary": "Step 4. Cook until bacon is done",
+            "step": "Step 4. Cook until the bacon is done, it should be evenly brown",
+            "id": "step 4"
+        },
+        {   "summary": "Step 5. Drain the bacon",
+            "step": "Step 5. Let the cooked bacon drain. Using the tongs, remove pieces from the pan and onto the paper towels to drain",
+            "id": "step 5",
+            "end": "yes"
+        }
+    ]
+},
+
+{
+  "name" : "Eggs",
+    "time" : "ETA: 5 minutes",
+    "tools": [
+            {"tool-name": "Large skillet"},
+            {"tool-name": "Spatula"}
+    ],
+    "ingredients": [
+            {"ingredient-name": "4 eggs"},
+            {"ingredient-name": "1/4 cup milk"},
+            {"ingredient-name": "Salt and pepper"},
+            {"ingredient-name": "2 teaspoon butter"}
+            
+    ],
+        "steplist": [
+        {   "summary": "Step 1. Beating the eggs",
+            "step": "Step 1. Beat eggs, milk, salt and pepper in medium bowl until blended.",
+            "id": "step 1"
+        },
+        {   "summary": "Step 2. Heating the skillet",
+            "step": "Step 2. Heat butter in a skillet over medium heat until hot",
+            "id": "step 2"
+        },
+        {   "summary": "Step 3. Pouring in egg mixture",
+            "step": "Step 3. Pour in egg mixture, as they begin to set, pull the eggs across the pan with a spatula forming large soft curds",
+            "id": "step 3"
+        },
+        {   "summary": "Step 4. Drain the bacon",
+            "step": "Step 4. Continue to pull, lift, and fold the eggs until no liquid egg remains. Remove from heat and serve",
+            "id": "step 4",
+            "end": "yes"
+        }
+    ]
+},
+
+{
+  "name" : "French Toast",
+    "time" : "ETA: 5 minutes",
+    "tools": [
+            {"tool-name": "Skillet"}
+    ],
+    "ingredients": [
+            {"ingredient-name": "1 egg"},
+            {"ingredient-name": "1 teaspoon pure vanilla extract"},
+            {"ingredient-name": "1/2 teaspoon cinnamon, ground"},
+            {"ingredient-name": "1/4 cup milk"},
+            {"ingredient-name": "4 slices bread"}
+            
+    ],
+        "steplist": [
+        {   "summary": "Step 1. Beating the eggs",
+            "step": "Step 1. Beat egg, vanilla and cinnamon in shallow dish. Stir in milk.",
+            "id": "step 1"
+        },
+        {   "summary": "Step 2. Heating the skillet",
+            "step": "Step 2. Dip bread in egg mixture, turning to coat both sides evenly.",
+            "id": "step 2"
+        },
+        {   "summary": "Step 3. Pouring in egg mixture",
+            "step": "Step 3. Cook bread slices on lightly greased nonstick griddle or skillet on medium heat until browned on both sides.",
+            "id": "step 3",
+            "end": "yes"
+        }
+    ]
+},
+
+{
+  "name" : "Frittata",
+    "time" : "ETA: 15 minutes",
+    "tools": [
+            {"tool-name": "Large skillet"},
+            {"tool-name": "Spatula"}
+    ],
+    "ingredients": [
+            {"ingredient-name": "4 eggs"},
+            {"ingredient-name": "1/4 cup liquid, milk, tomato juice, broth"},
+            {"ingredient-name": "1/4 teaspoon dried thyme leaves"},
+            {"ingredient-name": "Salt and pepper"},
+            {"ingredient-name": "1 cup filling"},
+            {"ingredient-name": "2 teaspoon butter"}
+            
+    ],
+        "steplist": [
+        {   "summary": "Step 1. Beating the eggs",
+            "step": "Step 1. Beat eggs, liquid, herb and salt and pepper in medium bowl until blended. ADD filling; mix well.",
+            "id": "step 1"
+        },
+        {   "summary": "Step 2. Heating the skillet and cooking the eggs",
+            "step": "Step 2. Heat butter in skillet on medium heat and pour in egg mixture to cook over low to medium heat for 8 to 10 minutes",
+            "id": "step 2"
+        },
+        {   "summary": "Step 3. Pouring in egg mixture",
+            "step": "Step 3. Remove from heat. Cover and let the eggs stand for 5 to 10 minutes",
+            "id": "step 3",
+            "end": "yes"
+        }
+    ]
+},
+
+{
+  "name" : "Green Falafel",
+    "time" : "ETA: 12 hours, 40 minutes",
+    "tools": [
+            {"tool-name": "Meat grinder"},
+            {"tool-name": "Large pot"}
+    ],
+    "ingredients": [
+            {"ingredient-name": "2 cups dried chickpeas"},
+            {"ingredient-name": "1 clove garlic, coarsely chopped"},
+            {"ingredient-name": "1 small onion, coarsely chopped"},
+            {"ingredient-name": "1 cup fresh flat-leaf parsley leaves, coarsely chopped"},
+            {"ingredient-name": "1/4 cup fresh cilantro leaves, coarsely chopped"},
+            {"ingredient-name": "1 1/2 tablespoons kosher salt"},
+            {"ingredient-name": "1 1/2 teaspoons freshly ground black pepper"},
+            {"ingredient-name": "1 teaspoon ground coriander"},
+            {"ingredient-name": "1 teaspoon ground cumin"},
+            {"ingredient-name": "2 fresh mint leaves, chopped"},
+            {"ingredient-name": "Vegetable oil, for deep-frying"}
+            
+    ],
+        "steplist": [
+        {   "summary": "Step 1. Beating the eggs",
+            "step": "Step 1. Put the chickpeas in a large bowl and cover with water to refrigerate overngight",
+            "id": "step 1"
+        },
+        {   "summary": "Step 2. Heating the skillet and cooking the eggs",
+            "step": "Step 2. Drain the chickpease and toss in a large bowl with garlic and onions. Run the mixture through blade of a meat grinder",
+            "id": "step 2"
+        },
+        {   "summary": "Step 3. Pouring in egg mixture",
+            "step": "Step 3. Toss chickpea mixture with other vegetables and run through meat grinder again",
+            "id": "step 3"
+        },
+        {   "summary": "Step 4. Heating the oil",
+            "step": "Step 4. Heat 4 inches of oil to 350 degrees fahrenheit in a large pot over medium heat",
+            "id": "step 4"
+        },
+        {   "summary": "Step 5. Shaping the falafel into balls",
+            "step": "Step 5. Shape falafel mixture into balls using tablespoon and fry until browned",
+            "id": "step 5"
+        },
+            {   "summary": "Step 6. Draining on a paper towel",
+            "step": "Step 6. Drain on a paper towel and serve with pita, cucumber, tomato, parsley, tahini",
+            "id": "step 6",
+            "end": "yes"
+        }
+    ]
+},
+
+{
+  "name" : "Lentil",
+    "time" : "ETA: 45 minutes",
+    "tools": [
+            {"tool-name": "Large soup pot"}
+    ],
+    "ingredients": [
+            {"ingredient-name": "1 chopped onion"},
+            {"ingredient-name": "1/4 cup olive oil"},
+            {"ingredient-name": "2 diced carrots"},
+            {"ingredient-name": "2 stalks celery chopped"},
+            {"ingredient-name": "2 cloves garlic mince"},
+            {"ingredient-name": "1 teaspoon dried oregano"},
+            {"ingredient-name": "1 bay leaf"},
+            {"ingredient-name": "1 teaspoon dried basil"},
+            {"ingredient-name": "1 (14.5 ounce) can crushed tomatoes"},
+            {"ingredient-name": "2 cups dry lentils"},
+            {"ingredient-name": "8 cups water "},
+            {"ingredient-name": "1/2 cup spinach"},
+            {"ingredient-name": "2 tablespoons vinegar"},
+            {"ingredient-name": "Salt and pepper"}
+            
+    ],
+        "steplist": [
+        {   "summary": "Step 1. Heating oil in soup pot and stirring in vegetables",
+            "step": "Step 1. In soup pot, heat oil over medium heat. Add onions, carrots, celery. Cook until onion is tender. Stir in garlic, bay leaf, oregan, basil, and cook for 2 minutes",
+            "id": "step 1"
+        },
+        {   "summary": "Step 2. Stir in the lentils",
+            "step": "Step 2. Stir in lentils and add water and tomatoes. Bring to a boil",
+            "id": "step 2"
+        },
+        {   "summary": "Step 3. Simmer for 1 hour",
+            "step": "Step 3. Reduce heat and simmer for 1 hour. When ready to serve, stir in spinach and stir in vinegar. Season to taste with salt and pepper",
+            "id": "step 3",
+            "end": "yes"
+        }
+    ]
+},
+
+{
+  "name" : "Pork Chops",
+    "time" : "ETA: 25 minutes",
+    "tools": [
+            {"tool-name": "Large skillet"}
+    ],
+    "ingredients": [
+            {"ingredient-name": "1 teaspoon seasoned salt"},
+            {"ingredient-name": "1 teaspoon ground black pepper"},
+            {"ingredient-name": "8 pork breakfast chops"},
+            {"ingredient-name": "1 cup all-purpose flour"},
+            {"ingredient-name": "Cayenne pepper"},
+            {"ingredient-name": "1/2 cup canola oil"},
+            {"ingredient-name": "1 tablespoon butter"},
+            {"ingredient-name": "Smashed potatoes"}
+    ],
+        "steplist": [
+        {   "summary": "Step 1. Add salt and pepper",
+            "step": "Step 1. Salt and pepper both sides of the pork chops",
+            "id": "step 1"
+        },
+        {   "summary": "Step 2. Combining flour and ingredients",
+            "step": "Step 2. Combine the flour and some cayenne, salt and black pepper. Dredge each side of the pork chops in the flour mixture, and then set aside on a plate.",
+            "id": "step 2"
+        },
+        {   "summary": "Step 3. Heating the oil and butter",
+            "step": "Step 3. Heat the canola oil over medium to medium-high heat. Add the butter. When the butter is melted and the butter/oil mixture is hot, cook 3 pork chops at a time, 2 to 3 minutes on the first side.",
+            "id": "step 3"
+        },
+        {   "summary": "Step 4. Flipping and cooking the pork chops",
+            "step": "Step 4. Flip and cook until the chops are golden brown on the other side, 1 to 2 minutes",
+            "id": "step 4"
+        },
+        {   "summary": "Step 5. Remove to a plate and repeate with other pork chops",
+            "step": "Step 5. Remove to a plate and repeat with the remaining pork chops.",
+            "id": "step 5"
+        },
+            {   "summary": "Step 6. Serve with smashed potatoes",
+            "step": "Step 6. Serve with the smashed potatoes",
+            "id": "step 6",
+            "end": "yes"
+        }
+    ]
+},
+
+{
+  "name" : "Grilled Sea Bass",
+    "time" : "ETA: 18 minutes",
+    "tools": [
+            {"tool-name": "Grill or barbecue grill"}
+    ],
+    "ingredients": [
+            {"ingredient-name": "2 teaspoons paprika"},
+            {"ingredient-name": "1 teaspoon garlic salt"},
+            {"ingredient-name": "1 teaspoon dried thyme leaves, crushed"},
+            {"ingredient-name": "1/2 teaspoon black pepper"},
+            {"ingredient-name": "1/4 teaspoon ground red pepper"},
+            {"ingredient-name": "3 tablespoons butter"},
+            {"ingredient-name": "4 skinless sea bass"},
+            {"ingredient-name": "Lemon halves"},
+            {"ingredient-name": "Fresh dill sprig"}
+    ],
+        "steplist": [
+        {   "summary": "Step 1. Preheating the grill",
+            "step": "Step 1. Preheat barbecue grill.",
+            "id": "step 1"
+        },
+        {   "summary": "Step 2. Combining the seasonings",
+            "step": "Step 2. Combine all seasonings in small bowl and mix well.",
+            "id": "step 2"
+        },
+        {   "summary": "Step 3. Melting the butter in saucepan",
+            "step": "Step 3. Melt butter in small saucepan over medium heat and pour into pie plate.",
+            "id": "step 3"
+        },
+        {   "summary": "Step 4. Dipping sea bass into melted butter",
+            "step": "Step 4. Dip sea bass into melted butter, evenly coating both sides.",
+            "id": "step 4"
+        },
+        {   "summary": "Step 5. Sprinkle sea bass with seasoning mixture",
+            "step": "Step 5. Sprinkle both sides of sea bass with seasoning mixture.",
+            "id": "step 5"
+        },
+        {   "summary": "Step 6. Cooking on the grill",
+            "step": "Step 6. Place on grill and cook covered for approximately 6 to 8 minutes or until it is blackened and flakes easily.",
+            "id": "step 6"
+        },
+        {   "summary": "Step 7. Turning it halfway through grilling time",
+            "step": "Step 7. Turn halfway through grilling time.",
+            "id": "step 7"
+        },
+        {   "summary": "Step 8. Serve with lemon and dill sprigs",
+            "step": "Step 8. Serve with lemon and garnish with dill sprigs.",
+            "id": "step 8",
+            "end": "yes"
+        }
+    ]
+},
+
+{
+  "name" : "Salmon Cakes",
+    "time" : "ETA: 24 minutes",
+    "tools": [
+            {"tool-name": "Skillet"},
+            {"tool-name": "large pan"}
+    ],
+    "ingredients": [
+            {"ingredient-name": "2/3 cup panko"},
+            {"ingredient-name": "1 tablespoon fresh parsley"},
+            {"ingredient-name": "2 tablespoons green onions"},
+            {"ingredient-name": "2 tablespoons canola mayonnaise"},
+            {"ingredient-name": "1 teaspoon lemon juice"},
+            {"ingredient-name": "1 teaspoon dijon mustard"},
+            {"ingredient-name": "1/2 teaspoon Worcestershire sauce"},
+            {"ingredient-name": "1/8 teaspoon kosher salt"},
+            {"ingredient-name": "1/8 teaspoon ground red pepper"},
+            {"ingredient-name": "1 large egg"},
+            {"ingredient-name": "8 ounces cooked, flaked salmon"},
+            {"ingredient-name": "1 tablespoon olive oil"},
+            {"ingredient-name": "1 lemon"}
+            
+    ],
+        "steplist": [
+        {   "summary": "Step 1. Combining ingrdients in a large bowl",
+            "step": "Step 1. Combine 1/3 cup panko and the 10 ingredients up to egg in a large bowl.",
+            "id": "step 1"
+        },
+        {   "summary": "Step 2. Adding salmon with panko",
+            "step": "Step 2. Add salmon and stir and place 1/3 cup panko in a shallow dish.",
+            "id": "step 2"
+        },
+        {   "summary": "Step 3. Shaping salmon mixture into balls and patties",
+            "step": "Step 3. Using wet hands, shape salmon mixture into 4 equal balls. Coat balls in panko and flatten balls to 4 inch patties",
+            "id": "step 3"
+        },
+        {   "summary": "Step 4. Heating the skillet",
+            "step": "Step 4. Heat a large nonstick skillet over medium to high heat",
+            "id": "step 4"
+        },
+        {   "summary": "Step 5. Add oil to the pan",
+            "step": "Step 5. Add oil to the pan and swirl to coat.",
+            "id": "step 5"
+        },
+            {   "summary": "Step 6. Cooking the patties",
+            "step": "Step 6. Add patties and cook 3 minutes on each side.",
+            "id": "step 6"
+        },
+        {   "summary": "Step 7. Serving with lemon wedges",
+            "step": "Step 7. Serve with lemon wedges",
+            "id": "step 7",
+            "end": "yes"
+        }
+    ]
+},
+
+{
     "name" : "Risotto",
-    "time" : "Time to complete: 40 minutes",
+    "time" : "ETA: 40 minutes",
     "tools": [
         {"tool-name": "Medium sauce pan"},
         {"tool-name": "Large sauce pan"},
@@ -54,7 +436,7 @@
 
 {
   "name" : "Beef",
-  "time" : "Time to complete: 1 hour",
+  "time" : "ETA: 1 hour",
   "tools": [
     {"tool-name": "Small baking dish"},
     {"tool-name": "Skillet"},
@@ -111,7 +493,7 @@
 
 {
   "name" : "Vegetable Stew",
-  "time" : "Time to complete: 1 hour, 15 minutes",
+  "time" : "ETA: 1 hour, 15 minutes",
   "tools": [
     {"tool-name": "Large saucepan"},
     {"tool-name": "Small bowl"}
@@ -187,7 +569,7 @@
 
 {
   "name" : "Cheesecake",
-  "time" : "Time to complete: 6 hours, 25 minutes",
+  "time" : "ETA: 6 hours, 25 minutes",
   "tools": [
     {"tool-name": "9 inch springform pan"},
     {"tool-name": "Large bowl"},
@@ -236,7 +618,7 @@
 
 {
     "name" : "Cherry Cream Cheese",
-    "time" : "Time to complete: 15 minutes",
+    "time" : "ETA: 15 minutes",
     "tools": [
         {"tool-name": "8 dessert dishes"},
         {"tool-name": "2 mall bowls"}
@@ -280,7 +662,7 @@
 
 {
   "name" : "Nutella Taco",
-  "time" : "Time to complete: 11 minutes",
+  "time" : "ETA: 11 minutes",
   "tools": [
     {"tool-name": "Large dish"},
     {"tool-name": "Large skillet"},
@@ -350,7 +732,7 @@
 
 {
   "name" : "Sandwich",
-  "time" : "Time to complete: 7 minute",
+  "time" : "ETA: 7 minute",
   "tools": [
     {"tool-name": "Butter knife"}
 ],
@@ -391,10 +773,10 @@
 
 {
   "name" : "Spaghetti",
-  "time" : "Time to complete: 30 minutes",
+  "time" : "ETA: 30 minutes",
   "tools": [
     {"tool-name": "Medium sauce pan"},
-    {"tool-name": "MEdium pot"}
+    {"tool-name": "Medium pot"}
 ],
   "ingredients": [
     {"ingredient-name": "1 small onion (chopped)"},
@@ -421,11 +803,11 @@
         "step": "Step 3. Add the tomato sauce, salt, pepper and garlic powder.",
         "id": "step 3"
     },
-    {   "summary": "Step 4. Cooking the noddles",
+    {   "summary": "Step 4. Cooking the noodles",
         "step": "Step 4. Cook the noodles as directed on the label.",
         "id": "step 4"
     },
-    {   "summary": "Step 5. Mixing the sauce and noddles",
+    {   "summary": "Step 5. Mixing the sauce and noodles",
         "step": "Step 5. Mix the sauce and noodles.",
         "id": "step 5",
         "end": "yes"
@@ -433,10 +815,9 @@
 ]
 },
 
-
 {
   "name" : "Tacos",
-  "time" : "Time to complete: 30 minutes",
+  "time" : "ETA: 30 minutes",
   "tools": [
     {"tool-name": "10 inch skillet"}
 ],
@@ -450,19 +831,19 @@
 ],
   "steplist": [
     {
-        "summary": "Step 1. Melting butter and sautee vegetables",
+        "summary": "Step 1. Cooking the beef",
         "step": "Step 1. Cook beef in 10-inch skillet over medium heat 8 to 10 minutes, stirring occasionally until brown.",
         "id": "step 1"
     },
-    {   "summary": "Step 2. Cook the hamgurber meat",
+    {   "summary": "Step 2. Boiling salsa with the beef",
         "step": "Step 2. Stir salsa into beef. Heat to boiling, stirring constantly; reduce heat to medium-low.",
         "id": "step 2"
     },
-    {   "summary": "Step 3. Adding condiments together",
+    {   "summary": "Step 3. Cook and stir for 5 minutes",
         "step": "Step 3. Cook 5 minutes, stirring occasionally. Pour beef mixture into large serving bowl.",
         "id": "step 3"
     },
-    {   "summary": "Step 4. Cooking the noddles",
+    {   "summary": "Step 4. Heating taco shells and serve with meat",
         "step": "Step 4. Heat taco shells as directed on package. Serve taco shells with beef mixture, lettuce, tomato and cheese.",
         "id": "step 4",
         "end": "yes"
