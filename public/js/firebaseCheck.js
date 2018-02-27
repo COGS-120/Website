@@ -234,62 +234,59 @@ function enumerateFavorites() {
     addKeyIfNonexistent("favorites");
 
     // Get data from JSON
-    var foodJsonData;
     $.getJSON("../json/food.json", function (result) {
-        foodJsonData = result;
-    });
+        // Get data from database
+        var favorites = database.ref(userPath() + "favorites").once("value", function (snapshot) {
+            var favoriteList = snapshot.val();
 
-    // Get data from database
-    var favorites = database.ref(userPath() + "favorites").once("value", function (snapshot) {
-        var favoriteList = snapshot.val();
+            var counter = 0; // Counter needed here because firebase has no counter
+            $.each(favoriteList, function (key, value) {
 
-        var counter = 0; // Counter needed here because firebase has no counter
-        $.each(favoriteList, function (key, value) {
+                if (value != 'none') {
+                    counter += 1;
 
-            if (value != 'none') {
-                counter += 1;
-
-                var imageString;
-                var timeString;
-                // Find the image data
-                $.each(foodJsonData, function (key, category) {
-                    $.each(category, function (key, foodval) {
-                        if (foodval.name === value) {
-                            imageString = foodval.image;
-                            timeString = foodval.time;
-                        }
+                    var imageString;
+                    var timeString;
+                    // Find the image data
+                    $.each(result, function (key, category) {
+                        $.each(category, function (key, foodval) {
+                            if (foodval.name === value) {
+                                imageString = foodval.image;
+                                timeString = foodval.time;
+                            }
+                        });
                     });
-                });
 
-                // for each favorite, add in the relevant div
-                var stringToAdd = "";
+                    // for each favorite, add in the relevant div
+                    var stringToAdd = "";
 
-                // string building pattern
-                stringToAdd += '<div class="col-8">';
-                stringToAdd += '<a href="../food/' + value + '">';
-                stringToAdd += '<img class="food-card-img" src="../images/' + imageString + '" alt="Card image">';
-                stringToAdd += '</a>';
-                stringToAdd += '</div>';
-                stringToAdd += '<div class="col-4 col-info">';
-                stringToAdd += '<a class="food-link" href="../food/' + value + '">';
-                stringToAdd += '<h5 class="inner-name">';
-                stringToAdd += value;
-                stringToAdd += '</h5>';
-                stringToAdd += '<p>' + timeString + '</p>';
-                stringToAdd += '</a>';
-                stringToAdd += '</div>';
-                document.getElementById('food-row').innerHTML += stringToAdd;
+                    // string building pattern
+                    stringToAdd += '<div class="col-8">';
+                    stringToAdd += '<a href="../food/' + value + '">';
+                    stringToAdd += '<img class="food-card-img" src="../images/' + imageString + '" alt="Card image">';
+                    stringToAdd += '</a>';
+                    stringToAdd += '</div>';
+                    stringToAdd += '<div class="col-4 col-info">';
+                    stringToAdd += '<a class="food-link" href="../food/' + value + '">';
+                    stringToAdd += '<h5 class="inner-name">';
+                    stringToAdd += value;
+                    stringToAdd += '</h5>';
+                    stringToAdd += '<p>' + timeString + '</p>';
+                    stringToAdd += '</a>';
+                    stringToAdd += '</div>';
+                    document.getElementById('food-row').innerHTML += stringToAdd;
+                }
+
+            });
+
+            // Case where counter is 0. Show the 'no favorites' essage
+            if (counter === 0) {
+                document.getElementById("no-favorites-message").style.display = "block";
             }
-
+            else {
+                document.getElementById("no-favorites-message").style.display = "none";
+            }
         });
-
-        // Case where counter is 0. Show the 'no favorites' essage
-        if (counter === 0) {
-            document.getElementById("no-favorites-message").style.display = "block";
-        }
-        else {
-            document.getElementById("no-favorites-message").style.display = "none";
-        }
     });
 }
 
