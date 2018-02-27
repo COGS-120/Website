@@ -29,7 +29,11 @@
     <h3 id="title">Learn to cook!</h3>
 
     <div class="row">
+      {{#if viewAlt}}
 
+
+
+      {{else}}
       {{#each categories}}
       <div class="col-12">
 
@@ -44,6 +48,7 @@
       </div>
 
       {{/each}}
+      {{/if}}
     </div>
 
 
