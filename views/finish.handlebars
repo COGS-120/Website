@@ -7,38 +7,41 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-  <link href="/css/category.css" rel="stylesheet">
-  <link href="/css/finishPage.css" rel="stylesheet">
   <link href="/css/ez-styles.css" rel="stylesheet">
 </head>
 
 <body>
-
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="dummyBar">
     <a class="navbar-brand" href="/">EZ Cooking</a>
   </nav>
   <div id="topNavBar"></div>
 
-
   <div class="container px-3 px-md-0">
 
     <h3 id="title-no-lr-padding">Congratulations!</h3>
 
-
     <div class="row">
-
       <div class="col">
         <p>You have finished cooking {{name}}!</p>
-        <div id="options_section">
-          <p>
-            <a href="/../share/{{name}}" class="button">Share</a>
-          </p>
-          <p>
-            <a href="/" class="button">Back To Home</a>
-          </p>
-        </div>
       </div>
+
+    </div>
+
+    <div class="row px-2 px-md-0" id="button-row">
+
+      <div class="col-4 text-left">
+        <a href="/../share/{{name}}" class="button text-no-hyperlink">Share</a>
+      </div>
+
+      <div class="col-4 text-center">
+        <a href="/../instructions/{{name}}" class="button text-no-hyperlink">Back</a>
+      </div>
+
+      <div class="col-4 text-right">
+        <a href="/" class="button text-no-hyperlink">Back To Home</a>
+      </div>
+
     </div>
 
   </div>

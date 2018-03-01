@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
   <link href="/css/food.css" rel="stylesheet">
-  <link href="/css/ez-styles.css" rel="stylesheet">
   <link href="/css/animate.min.css" rel="stylesheet">
+  <link href="/css/ez-styles.css" rel="stylesheet">
 
 </head>
 
@@ -39,30 +39,24 @@
     <div class="row px-2 px-md-0" id="button-row">
 
       <div class="col-4 text-left">
-        <button class="button">
-          <a class="text-no-hyperlink" href="/category/{{category}}">Back</a>
-        </button>
+        <p><a href="/category/{{category}}" class="button text-no-hyperlink">Back</a></p>
       </div>
 
-     <div class="col-4 text-center">
-        <button class="button">
-          <a class="text-no-hyperlink" href="/food/{{name}}/gallery">Gallery</a>
-        </button>
+      <div class="col-4 text-center">
+          <p><a href="/food/{{name}}/gallery" class="button text-no-hyperlink">Gallery</a></p>
       </div>
 
       <div class="col-4 text-right">
-        <button class="button">
-          <a class="text-no-hyperlink" href="/ingTool/{{name}}">Start</a>
-        </button>
+          <p><a href="/ingTool/{{name}}" class="button text-no-hyperlink">Start</a></p>
       </div>
 
     </div>
 
-    <div id ="stepsbox">
+    <div id="stepsbox">
 
-    {{#each steplist}}
-    <p class="px-2 px-md-0">{{summary}}</p>
-    {{/each}}
+      {{#each steplist}}
+      <p class="px-2 px-md-0">{{summary}}</p>
+      {{/each}}
 
     </div>
 
@@ -77,14 +71,14 @@
   <script src="/js/firebaseCheck.js"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-114830772-1');
-</script>
+    gtag('config', 'UA-114830772-1');
+  </script>
 
 
 </body>
