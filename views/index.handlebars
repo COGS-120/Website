@@ -31,7 +31,22 @@
     <div class="row">
       {{#if viewAlt}}
 
+      <!-- A/B Testing Homepage
 
+      <div class="row">
+        {{#each categories}}
+        <div class="col-6 col-pad">
+            <a class="food-link" href="category/{{name}}" id="{{id}}">
+              <img class="food-img" src="images/{{image}}">
+                <div class="centered">
+                  <div id= "whitebox">
+                    <h6 class="inner-name">{{name}}</h6>
+                  </div>
+                </div>
+            </a>
+        </div>
+        {{/each}}
+      </div>  -->
 
       {{else}}
       {{#each categories}}

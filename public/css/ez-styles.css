@@ -39,3 +39,27 @@ body {
     margin: 0px;
   }
   
+.col-pad {
+    padding: 5px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#whitebox {
+    width: 110%;
+    background-color: white;
+    border-style: solid;
+    border-width: thin;
+    border-color: white;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 20px
+}
+h6 {
+    font-size: 20px;
+}
