@@ -7,7 +7,6 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-  <link href="/css/share.css" rel="stylesheet">
   <link href="/css/ez-styles.css" rel="stylesheet">
 </head>
 
@@ -30,6 +29,7 @@
 
         <form id="form1" runat="server">
           <input type='file' id="imgInp"/>
+          <br>
           <img class="img-fluid" id="blah" src="#" alt="your image" />
         </form>
 
@@ -37,13 +37,15 @@
 
         <br>
         <div id="share">
-        <button type="button" onclick="share('{{name}}')">Share</button>
+          <button class="button" type="button" onclick="share('{{name}}')">Share</button>
 
           <p id="share-status" style="display:none">Image shared</p>
         </div>
-        
+
         <br>
-        <button><a href="/">Back To Home</a></button>
+        <p>
+          <a href="/" class="button">Back To Home</a>
+        </p>
       </div>
     </div>
 
@@ -61,14 +63,14 @@
   <script src="/js/share.js"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-114830772-1');
-</script>
+    gtag('config', 'UA-114830772-1');
+  </script>
 
 </body>
 

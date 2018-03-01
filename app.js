@@ -52,7 +52,7 @@ app.get('/favorites', favorites.view);
 app.get('/category/:name', category.view);
 app.get('/finish/:name', finish.view);
 app.get('/food/:name', food.view);
-app.get('/food/gallery/:gallery', foodGallery.view);
+app.get('/food/:name/gallery', foodGallery.view);
 app.get('/instructions/:name', instructions.view);
 app.get('/share/:name', share.view);
 app.get('/ingTool/:name', ingTool.view);

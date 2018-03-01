@@ -21,22 +21,15 @@
   <div id="topNavBar"></div>
 
 
-  <div class="container">
+  <div class="container px-3 px-md-0">
+
+    <h3 id="title-no-lr-padding">Congratulations!</h3>
 
 
     <div class="row">
 
       <div class="col">
-
-        <h3>
-          <strong>Finish</strong>
-        </h3>
-
-
-        <div id="finishbox">
-        <p id="f_text">Congratulations! <br>You have finished cooking {{name}}!</p>
-        </div>
-
+        <p>You have finished cooking {{name}}!</p>
         <div id="options_section">
           <p>
             <a href="/../share/{{name}}" class="button">Share</a>
@@ -60,14 +53,14 @@
   <script src="/js/firebaseCheck.js"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-114830772-1');
-</script>
+    gtag('config', 'UA-114830772-1');
+  </script>
 
 </body>
 

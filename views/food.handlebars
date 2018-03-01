@@ -36,17 +36,25 @@
     <p id="favorites-message"></p>
 
     <div class="row px-2 px-md-0" id="button-row">
-      <div class="col-6 text-left">
+
+      <div class="col-4 text-left">
         <button class="button">
-          <a class="text-no-hyperlink" href="/category/{{category}}">Back To Dishes</a>
+          <a class="text-no-hyperlink" href="/category/{{category}}">Back</a>
         </button>
       </div>
 
-      <div class="col-6 text-right">
+     <div class="col-4 text-center">
         <button class="button">
-          <a class="text-no-hyperlink" href="/ingTool/{{name}}">Start Cooking!</a>
+          <a class="text-no-hyperlink" href="/food/{{name}}/gallery">Gallery</a>
         </button>
       </div>
+
+      <div class="col-4 text-right">
+        <button class="button">
+          <a class="text-no-hyperlink" href="/ingTool/{{name}}">Start</a>
+        </button>
+      </div>
+
     </div>
 
     <div id ="stepsbox">

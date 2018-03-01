@@ -181,7 +181,7 @@ function writeUserData(key, val) {
  * @param {string} foodName 
  */
 function checkIfFavorite(foodName, toggle) {
-    addKeyIfNonexistent("favorites");
+    addUserKeyIfNonexistent("favorites");
 
     // Get data from database
     var favorites = database.ref(userPath() + "favorites").once("value", function (snapshot) {
@@ -231,7 +231,7 @@ function checkIfFavorite(foodName, toggle) {
  * PRECONDITION: currentUser is defined
  */
 function enumerateFavorites() {
-    addKeyIfNonexistent("favorites");
+    addUserKeyIfNonexistent("favorites");
 
     // Get data from JSON
     $.getJSON("../json/food.json", function (result) {
@@ -290,6 +290,47 @@ function enumerateFavorites() {
     });
 }
 
+function enumerateFoodGallery(food) {
+    /* Get the storage location */
+    var storageLocation = storageRef.child("foodPics/" + food);
+
+    /* Get the reference from the database */
+    var databasePlaceRef = database.ref("food/" + food + "/pictures/").once('value').then(function (snapshot) {
+        if (snapshot.val() != null) {
+            $.each(snapshot.val(), function (key, value) {
+
+                // Create a URL reference for each photo that exists in the storage location.
+                storageLocation.child(value).getDownloadURL().then(function (url) {
+                    storageLocation.child(value).getMetadata().then(function (metadata) {
+                        // Create a div and add this as a picture
+                        // for each favorite, add in the relevant div
+                        var stringToAdd = "";
+
+                        // string building pattern
+                        stringToAdd += '<div class="col-sm-6">';
+                        stringToAdd += '<div class="card food-card">';
+                        stringToAdd += '<img class="img-fluid food-img card-img-top" src="' + url + '">';
+                        stringToAdd += '<div class="card-body">';
+                        stringToAdd += '<h5 class="card-title">' + metadata.customMetadata.name + '</h5>';
+                        stringToAdd += '<div>' + metadata.customMetadata.date + '</div>';
+                        stringToAdd += '</div>';
+                        stringToAdd += '</div>';
+                        stringToAdd += '</div>';
+                        document.getElementById('food-row').innerHTML += stringToAdd;
+                    });
+                });
+            });
+        }
+        else {
+            document.getElementById('food-row').innerHTML += 
+            "<div>No one has uploaded photos for " + food + " yet.</div>";
+        }
+    });
+
+    // Get download location
+
+}
+
 /** 
  * Code for share function.
  * Storage is on Firebase.
@@ -297,16 +338,33 @@ function enumerateFavorites() {
 function share(foodType) {
     console.log("Called");
 
-    addKeyIfNonexistent("foodPics/" + foodType);
+    /* Create items */
+    var itemName = currentUser.displayName + " " + Date.now();
 
-    var placeRef = storageRef.child("foodPics/" + foodType + "/" + currentUser.displayName);
+    var storagePlaceRef = storageRef.child(
+        "foodPics/" + foodType + "/" + itemName);
+    var databasePlaceRef = database.ref("food/" + foodType + "/pictures/");
+
+    // Add metadata for this object
+    var d = new Date();
+    var newMetadata = {
+        customMetadata: {
+            name: currentUser.displayName,
+            date: d.getFullYear() + "/" + d.getMonth() + "/" + d.getDate()
+        }
+    }
 
     if (pictureToShare != null) {
-        placeRef.put(pictureToShare).then(function (snapshot) {
+        storagePlaceRef.put(pictureToShare).then(function (snapshot) {
             console.log("Successfuly put file in.");
             $('#share-status').text("File has been shared.");
             $('#share-status').show();
+            storagePlaceRef.updateMetadata(newMetadata).then(function (metadata) {
+                console.log("Updated Metadata");
+            });
         });
+
+        databasePlaceRef.push(itemName);
     }
     else {
         $('#share-status').text("You haven't added a file to share yet!");
@@ -325,7 +383,7 @@ $("#imgInp").change(function () {
     pictureToShare = this.files[0];
 });
 
-function addKeyIfNonexistent(key) {
+function addUserKeyIfNonexistent(key) {
     var usersRef = database.ref(userPath());
     usersRef.child(key).once('value', function (snapshot) {
         var exists = (snapshot.val() !== null);
@@ -337,15 +395,6 @@ function addKeyIfNonexistent(key) {
 
 function setBlankValue(key) {
     database.ref(userPath() + key).set({ "iii": "none" });
-}
-
-function addStorageIfNonexistent(key) {
-    storageRef.child(key).getDownloadUrl().then(function (foundURL) {
-        console.log("found: " + foundURL);
-    },
-        function (error) {
-            console.log("not found. creating.");
-        });
 }
 
 /**
@@ -372,6 +421,10 @@ function setPageType(type, var1) {
 
         else if (pageType == "Share") {
             //share(pageVar1);
+        }
+
+        else if (pageType == "Food Gallery") {
+            enumerateFoodGallery(pageVar1);
         }
     }
 
