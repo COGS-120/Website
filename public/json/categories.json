@@ -27,13 +27,13 @@
         {
             "name": "Vegetarian",
             "image": "vegetarian.jpg",
-            "caption": "Some text goes here",
+            "caption": "Delicious and healthy at the same time.",
             "id": "Vegetarian"
         },
         {
             "name": "Gluten Free",
             "image": "glutenfree.jpg",
-            "caption": "Some text goes here",
+            "caption": "Unique and great for your health.",
             "id": "Gluten Free"
         }
     ]

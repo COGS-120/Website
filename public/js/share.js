@@ -12,6 +12,9 @@ const supported = 'mediaDevices' in navigator;
 $(document).ready(open);
 
 function open() {
+   initializePage();
+
+
     if (hasGetUserMedia()) {
 
     } else {
@@ -22,6 +25,16 @@ function open() {
 function hasGetUserMedia() {
     return !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
         navigator.mozGetUserMedia || navigator.msGetUserMedia);
+}
+
+function initializePage() {
+    $('.button').click(clicker(event));
+}
+
+function clicker(event) {
+    event.preventDefault();
+    
+    gtag('event', 'click');
 }
 
 

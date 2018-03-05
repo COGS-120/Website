@@ -23,4 +23,7 @@ exports.view = function(req, res) {
 		"category" : foodDataSpecific,
 		"categoryImage" : categoryDataSpecific.image
 	});
+
 };
+
+
