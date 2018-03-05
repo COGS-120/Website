@@ -1,8 +1,17 @@
 
-.food-img {
+.food-card {
     width: 100%;
     max-width: 100%;
-    height: 20vh;
-    max-height: 20vh;
     object-fit: cover;
+    padding-bottom: 30px;
+}
+
+.food-img {
+    padding-bottom: 4px;
+    width: 100%;
+}
+
+.food-desc {
+    padding-top: 4px;
+    padding-bottom: 4px;
 }

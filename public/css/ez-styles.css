@@ -22,7 +22,7 @@ html {
 }
 
 body {
-    background-color: #FCFCE3;
+    /*background-color: #FCFCE3;*/
 }
 
 .button {
@@ -32,15 +32,14 @@ body {
     color: black;
     text-align: center;
     font-size: 18px;
-    padding: 12px;
-    max-width: 160px;
+    padding: 8px 12px;
     transition: all 0.5s;
     cursor: pointer;
     margin: 0px;
 }
 
 .button:hover {
-    background-color: #008CBA;
+    background-color: rgb(86, 87, 73);
     color: white;
 }
 

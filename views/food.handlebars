@@ -29,7 +29,7 @@
         <h5>{{name}}</h5>
       </div>
       <div class="col-2">
-        <img id="favorites-star" src="../images/favorites/star_unchecked.svg" onclick="checkIfFavorite('{{name}}', true)">
+        <img class=" px-2 px-md-0" id="favorites-star" src="../images/favorites/star_unchecked.svg" onclick="checkIfFavorite('{{name}}', true)">
       </div>
     </div>
 
@@ -39,15 +39,21 @@
     <div class="row px-2 px-md-0" id="button-row">
 
       <div class="col-4 text-left">
-        <p><a href="/category/{{category}}" class="button text-no-hyperlink">Back</a></p>
+        <p>
+          <a href="/category/{{category}}" class="button text-no-hyperlink">Back</a>
+        </p>
       </div>
 
       <div class="col-4 text-center">
-          <p><a href="/food/{{name}}/gallery" class="button text-no-hyperlink">Gallery</a></p>
+        <p>
+          <a href="/food/{{name}}/gallery" class="button text-no-hyperlink">Gallery</a>
+        </p>
       </div>
 
       <div class="col-4 text-right">
-          <p><a href="/ingTool/{{name}}" class="button text-no-hyperlink">Start</a></p>
+        <p>
+          <a href="/ingTool/{{name}}" class="button text-no-hyperlink">Start</a>
+        </p>
       </div>
 
     </div>

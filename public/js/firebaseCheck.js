@@ -304,30 +304,33 @@ function enumerateFoodGallery(food) {
                     storageLocation.child(value).getMetadata().then(function (metadata) {
                         // Create a div and add this as a picture
                         // for each favorite, add in the relevant div
-                        var stringToAdd = "";
+                        var strAdd = "";
+                        var name = metadata.customMetadata.name;
+                        var date = metadata.customMetadata.date;
+                        var description = metadata.customMetadata.description;
 
                         // string building pattern
-                        stringToAdd += '<div class="col-sm-6">';
-                        stringToAdd += '<div class="card food-card">';
-                        stringToAdd += '<img class="img-fluid food-img card-img-top" src="' + url + '">';
-                        stringToAdd += '<div class="card-body">';
-                        stringToAdd += '<h5 class="card-title">' + metadata.customMetadata.name + '</h5>';
-                        stringToAdd += '<div>' + metadata.customMetadata.date + '</div>';
-                        stringToAdd += '</div>';
-                        stringToAdd += '</div>';
-                        stringToAdd += '</div>';
-                        document.getElementById('food-row').innerHTML += stringToAdd;
+                        strAdd += '<div class="col-8 auto">';
+                        strAdd += '<h5 class="text-left px-2 px-md-0">' + name + '</h5>';
+                        strAdd += '</div>';
+                        strAdd += '<div class="col-4 auto">';
+                        strAdd += '<p class="text-right px-2 px-md-0">' + date + '</p>';
+                        strAdd += '</div>';
+                        strAdd += '<div class="col-12 food-card">';
+                        strAdd += '<img class="img-fluid food-img" src="' + url + '">';
+                        strAdd += '<div class="px-2 px-md-0 food-desc">Description</div>';
+                        strAdd += '<hr>';
+                        strAdd += '</div>';
+                        document.getElementById('food-row').innerHTML += strAdd;
                     });
                 });
             });
         }
         else {
-            document.getElementById('food-row').innerHTML += 
+            document.getElementById('food-no-content').innerHTML += 
             "<div>No one has uploaded photos for " + food + " yet.</div>";
         }
     });
-
-    // Get download location
 
 }
 
@@ -354,6 +357,7 @@ function share(foodType) {
         }
     }
 
+    // If a picture has been enumerated, then allow user to share.
     if (pictureToShare != null) {
         storagePlaceRef.put(pictureToShare).then(function (snapshot) {
             console.log("Successfuly put file in.");
@@ -379,6 +383,9 @@ function userPath() {
     return "users/" + currentUser.uid + "/";
 }
 
+/**
+ * Adds a listener to check for a different file that is to be shared.
+ */
 $("#imgInp").change(function () {
     pictureToShare = this.files[0];
 });

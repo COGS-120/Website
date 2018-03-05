@@ -18,9 +18,9 @@
   </nav>
   <div id="topNavBar"></div>
 
-  <div class="container px-3 px-md-0">
+  <div class="container">
 
-    <h3 id="title-no-lr-padding">Gallery - {{name}}</h3>
+    <h3 id="title">Gallery - {{name}}</h3>
 
     <div class="row px-2 px-md-0" id="button-row">
       <div class="col-6 text-left">
@@ -30,9 +30,25 @@
       </div>
     </div>
 
-    <div class="row no-gutters" id="food-row">
+    <div class="row" id="food-row">
+
+      <!--
+      strAdd += '<div class="col-8 auto">';
+      strAdd += '<h5 class="text-left px-2 px-md-0">' + name + '</h5>';
+      strAdd += '</div>';
+      strAdd += '<div class="col-4 auto">';
+      strAdd += '<p class="text-right px-2 px-md-0">' + date + '</p>';
+      strAdd += '</div>';
+      strAdd += '<div class="col-12 food-card">';
+      strAdd += '<img class="img-fluid food-img" src="' + url + '">';
+      strAdd += '<div class="px-2 px-md-0 food-desc">Description</div>';
+      strAdd += '<hr>';
+      strAdd += '</div>';
+      -->
 
     </div>
+
+    <div class="px-2 px-md-0" id="food-no-content"></div>
 
   </div>
 
