@@ -34,10 +34,7 @@
 
 var currentUser;
 var database;
-var storage;
 var storageRef;
-var pageType;
-var pageVar1;
 
 var pictureToShare;
 
@@ -65,9 +62,6 @@ function FirebaseWorker() {
     this.checkSetup();
     this.initFirebase();
     console.log("Initialized Firebase Worker");
-    database = firebase.database();
-    storage = firebase.storage();
-    storageRef = firebase.storage().ref();
 }
 
 /**
@@ -75,8 +69,8 @@ function FirebaseWorker() {
  */
 FirebaseWorker.prototype.initFirebase = function () {
     this.auth = firebase.auth();
-    this.database = firebase.database();
-    this.storage = firebase.storage();
+    database = firebase.database();
+    storageRef = firebase.storage().ref();
     this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));
 };
 
@@ -184,7 +178,7 @@ function checkIfFavorite(foodName, toggle) {
     addUserKeyIfNonexistent("favorites");
 
     // Get data from database
-    var favorites = database.ref(userPath() + "favorites").once("value", function (snapshot) {
+    database.ref(userPath() + "favorites").once("value", function (snapshot) {
         var favoriteList = snapshot.val();
         var isAFavorite = false;
         var containingKey;
@@ -236,7 +230,7 @@ function enumerateFavorites() {
     // Get data from JSON
     $.getJSON("../json/food.json", function (result) {
         // Get data from database
-        var favorites = database.ref(userPath() + "favorites").once("value", function (snapshot) {
+        database.ref(userPath() + "favorites").once("value", function (snapshot) {
             var favoriteList = snapshot.val();
 
             var counter = 0; // Counter needed here because firebase has no counter
@@ -295,7 +289,7 @@ function enumerateFoodGallery(food) {
     var storageLocation = storageRef.child("foodPics/" + food);
 
     /* Get the reference from the database */
-    var databasePlaceRef = database.ref("food/" + food + "/pictures/").once('value').then(function (snapshot) {
+    database.ref("food/" + food + "/pictures/").once('value').then(function (snapshot) {
         if (snapshot.val() != null) {
             $.each(snapshot.val(), function (key, value) {
 
@@ -391,8 +385,7 @@ $("#imgInp").change(function () {
 });
 
 function addUserKeyIfNonexistent(key) {
-    var usersRef = database.ref(userPath());
-    usersRef.child(key).once('value', function (snapshot) {
+    database.ref(userPath()).child(key).once('value', function (snapshot) {
         var exists = (snapshot.val() !== null);
         if (exists === false) {
             setBlankValue(key);
@@ -412,26 +405,24 @@ function setBlankValue(key) {
  * @param {*} var1 
  */
 function setPageType(type, var1) {
-    pageType = type;
-    pageVar1 = var1;
 
     // Any functions here must be called when the current user has been
     // initialized and logged in.
     if (currentUser) {
-        if (pageType == "Food") { // double equals is intentional here, don't ===
-            checkIfFavorite(pageVar1, false);
+        if (type == "Food") { // double equals is intentional here, don't ===
+            checkIfFavorite(var1, false);
         }
 
-        else if (pageType == "Favorites") {
+        else if (type == "Favorites") {
             enumerateFavorites();
         }
 
-        else if (pageType == "Share") {
+        else if (type == "Share") {
             //share(pageVar1);
         }
 
-        else if (pageType == "Food Gallery") {
-            enumerateFoodGallery(pageVar1);
+        else if (type == "Food Gallery") {
+            enumerateFoodGallery(var1);
         }
     }
 

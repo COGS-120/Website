@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
   <link href="/css/ez-styles.css" rel="stylesheet">
+  <link href="/css/share.css" rel="stylesheet">
+
 </head>
 
 <body onload="setPageType('Share', '{{name}}');">
@@ -17,37 +19,44 @@
   </nav>
   <div id="topNavBar"></div>
 
-  <div class="container px-2 px-md-0">
+  <div class="container">
 
     <div class="row">
 
-      <div class="col">
-
-        <h3 id="title-no-lr-padding">Share Your Creation </h3>
-
-        <h4 class="center">Snap a picture of your meal!</h4>
-
-        <form id="form1" runat="server">
-          <input type='file' id="imgInp"/>
-          <br>
-          <img class="img-fluid" id="blah" src="#" alt="your image" />
-        </form>
-
-        <!-- <video src="" id="image-preview" class="img-fluid" alt="image preview"> -->
-
-        <br>
-        <div id="share">
-          <button class="button" type="button" onclick="share('{{name}}')">Share</button>
-
-          <p id="share-status" style="display:none">Image shared</p>
+      <div class="col-12">
+        <div class="px-2 px-md-0">
+          <h3 id="title-no-lr-padding">Share Your Creation </h3>
+          <p class="center">Snap a picture of your meal!
+            <p>
+              <form id="form1" runat="server">
+                <input type='file' id="imgInp" />
+              </form>
         </div>
+      </div>
 
-        <br>
-        <p>
-          <a href="/" class="button">Back To Home</a>
+      <div class="col-12">
+        <img class="img-fluid" id="image-preview" src="/images/placeholder.png" alt="your image" />
+      </div>
+
+      <div class="col-6 text-left">
+        <p class="px-2 px-md-0">
+          <a class="button" id="share" onclick="share('{{name}}')">Share</a>
         </p>
       </div>
+
+      <div class="col-6 text-right">
+        <p class="px-2 px-md-0">
+          <a class="button" href="/">Back To Home</a>
+        </p>
+      </div>
+
+      <div class="col-12">
+        <p class="px-2 px-md-0" id="share-status" style="display:none">Image shared</p>
+      </div>
+
     </div>
+
+  </div>
 
   </div>
 
