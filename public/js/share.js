@@ -28,13 +28,15 @@ function hasGetUserMedia() {
 }
 
 function initializePage() {
-    $('.button').click(clicker(event));
+    $('.home-button').click(clicker(event));
 }
 
 function clicker(event) {
     event.preventDefault();
     
-    gtag('event', 'click');
+    gtag('event', 'click', {
+        'event_category' : 'backToHomeClicked'
+    });
 }
 
 
