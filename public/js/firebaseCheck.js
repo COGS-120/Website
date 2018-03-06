@@ -344,12 +344,20 @@ function share(foodType) {
 
     // Add metadata for this object
     var d = new Date();
+    var newDescription = document.getElementById("myTextarea").value;
+    if (newDescription == "") {
+        newDescription = "No description provided.";
+    }
+
     var newMetadata = {
         customMetadata: {
             name: currentUser.displayName,
-            date: d.getFullYear() + "/" + d.getMonth() + "/" + d.getDate()
+            date: d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate(),
+            description: newDescription
         }
     }
+
+    console.log(document.getElementById("myTextarea").value);
 
     // If a picture has been enumerated, then allow user to share.
     if (pictureToShare != null) {
