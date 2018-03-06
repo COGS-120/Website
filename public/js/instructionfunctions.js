@@ -23,7 +23,7 @@ var annyangTimeout = null;
 var use_tts = true;
 var use_sr = true;
 var checkbox_tts = document.getElementById('activate-text-to-speech');
-checkbox_tts.addEventListener('change', function() {
+checkbox_tts.addEventListener('change', function () {
 	use_tts = this.checked;
 	if (this.checked) {
 		speak(stepInformation);
@@ -33,7 +33,7 @@ checkbox_tts.addEventListener('change', function() {
 	}
 });
 var checkbox_sr = document.getElementById('activate-speech-recognition');
-checkbox_sr.addEventListener('change', function() {
+checkbox_sr.addEventListener('change', function () {
 	use_sr = this.checked;
 	if (this.checked) {
 		restartAnnyang();
@@ -142,7 +142,7 @@ function speak(stuffToSay) {
 
 			// Set voice parameters
 			utterThis.pitch = 1;
-			utterThis.rate = 1;
+			utterThis.rate = 0.8;
 
 			// Finally, say the phrase
 			synth.speak(utterThis);
@@ -181,51 +181,42 @@ function open() {
 
 	$.getJSON("../json/instructions.json", function (result) {
 		speficRecipeData = result;
-		console.log("result length " + result.length);
 		indexOfDish = 0;
 
-			for (var i = 0; i < result.length; i++)
-			{
-				console.log(result[i].name);
-				if (result[i].name == dishName)
-				{
-					indexOfDish = i;
-					console.log("found");
-				}
+		for (var i = 0; i < result.length; i++) {
+			if (result[i].name == dishName) {
+				indexOfDish = i;
 			}
-
-			console.log("index: " + indexOfDish);	
-
+		}
 
 		recipeName = result[indexOfDish].name;
 		populateVoiceList();
-		display();
+		display("beginning");
 	});
 
 	// Speech to text
 	if (annyang) {
-		// Let's define our first command. First the text we expect, 
-		// and then the function it should call
+
+		// Commands
+		// The first word of the uterrance will determine the function.
+		// We wildcard anything after so that commands can continue
 		var commands = {
-			'next': function () {
+			'next *blep': function () {
 				nextIndex();
 			},
-			'next step': function () {
-				nextIndex();
-			},
-			'back': function () {
+			'back *blep': function () {
 				previousIndex();
 			},
-			'pause': function () {
+			'pause *blep': function () {
 				stop();
 			},
-			'stop': function () {
+			'stop *blep': function () {
 				stop();
 			},
-			'repeat': function () {
+			'repeat *blep': function () {
 				speak(stepInformation);
 			},
-			'restart': function () {
+			'restart *blep': function () {
 				speak(stepInformation);
 			}
 
@@ -264,13 +255,12 @@ function open() {
 			tts_feedback.innerText = 'Listening...';
 		});
 
-		annyang.addCallback('end', function() {
+		annyang.addCallback('end', function () {
 			console.log("annyang ended, restarting...");
 			restartAnnyang(); // workaround call
 		})
 
-		// Start listening. You can call this here, or attach this call to an 
-		// event, button, etc.
+		// Start listening.
 		restartAnnyang();
 	}
 	else {
@@ -300,12 +290,17 @@ function restartAnnyang() {
 }
 
 function nextIndex() {
-	if (index > 0 && speficRecipeData[indexOfDish].steplist[index].hasOwnProperty("end")) {
-		window.location.href = "/../finish/" + recipeName;
+	if (index > 0 && speficRecipeData[indexOfDish].steplist[index - 1].hasOwnProperty("end")) {
+		window.location.href = "/../share/" + recipeName;
+	}
+	else if (index > 0 && speficRecipeData[indexOfDish].steplist[index].hasOwnProperty("end")) {
+		index++;
+		display("end");
 	}
 	else {
+		// Make sure names are not end-names
 		index++;
-		display();
+		display("step");
 	}
 }
 
@@ -314,7 +309,12 @@ function previousIndex() {
 	if (index < -1) {
 		window.location.href = "/../ingTool/" + recipeName;
 	}
-	display();
+	else if (index == -1) {
+		display("beginning")
+	}
+	else {
+		display("step");
+	}
 }
 
 
@@ -325,26 +325,30 @@ function extractRecipe(tempName) {
 
 	console.log("Extract Recipe " + tempName);
 	// dishName is a string of the food a user wants to cook
-
 }
 
+function display(type) {
 
-
-
-
-function display() {
+	console.log(type + " " + index);
 
 	// Make sure to show the options for 
-	if (index <= -1) {
+	if (type === "beginning") {
 		extra_features_options.style.display = "block";
-		title.innerText = "Synthesizer and voice command options";
 		stepInformation = title.innerText;
+		title.innerText = "Synthesizer and voice command options";
 	}
-	else {
+	else if (type === "step"){
 		extra_features_options.style.display = "none";
 		stepInformation = speficRecipeData[indexOfDish].steplist[index].step;
 		title.innerText = stepInformation;
-	
+	}
+	else if (type === "end") {
+		extra_features_options.style.display = "none";
+		stepInformation = "Congratulations! You have finished cooking " + dishName + ". Continue to share your creation!";
+		title.innerText = stepInformation;
+	}
+	else {
+		console.log("Invalid type: " + type);
 	}
 
 	// Speak on next one, if user wants
