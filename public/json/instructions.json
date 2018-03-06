@@ -12,25 +12,25 @@
     ],
         "steplist": [
         {
-            "summary": "Step 1. Lay out bacon on a pan",
-            "step": "Step 1. Before turning on the heat, lay out bacon strips on a cold pan.",
-            "id": "step 1"
+            "summary": "1. Lay out bacon on a pan",
+            "step": "1. Before turning on the heat, lay out bacon strips on a cold pan.",
+            "id": "1"
         },
-        {   "summary": "Step 2. Cooking the bacon",
-            "step": "Step 2. Cook the bacon on low heat. When it starts to buckle and curl, use the tongs to turn each strip to cook on the other side.",
-            "id": "step 2"
+        {   "summary": "2. Cooking the bacon",
+            "step": "2. Cook the bacon on low heat. When it starts to buckle and curl, use the tongs to turn each strip to cook on the other side.",
+            "id": "2"
         },
-        {   "summary": "Step 3. Pouring off the grease",
-            "step": "Step 3. Turn off the heat and pour off the grease into a glass or metal container",
-            "id": "step 3"
+        {   "summary": "3. Pouring off the grease",
+            "step": "3. Turn off the heat and pour off the grease into a glass or metal container",
+            "id": "3"
         },
-        {   "summary": "Step 4. Cook until bacon is done",
-            "step": "Step 4. Cook until the bacon is done, it should be evenly brown",
-            "id": "step 4"
+        {   "summary": "4. Cook until bacon is done",
+            "step": "4. Cook until the bacon is done, it should be evenly brown",
+            "id": "4"
         },
-        {   "summary": "Step 5. Drain the bacon",
-            "step": "Step 5. Let the cooked bacon drain. Using the tongs, remove pieces from the pan and onto the paper towels to drain",
-            "id": "step 5",
+        {   "summary": "5. Drain the bacon",
+            "step": "5. Let the cooked bacon drain. Using the tongs, remove pieces from the pan and onto the paper towels to drain",
+            "id": "5",
             "end": "yes"
         }
     ]
@@ -51,21 +51,21 @@
             
     ],
         "steplist": [
-        {   "summary": "Step 1. Beating the eggs",
-            "step": "Step 1. Beat 4 eggs, 1/4 cup milk, salt and pepper in medium bowl until blended.",
-            "id": "step 1"
+        {   "summary": "1. Beating the eggs",
+            "step": "1. Beat 4 eggs, 1/4 cup milk, salt and pepper in medium bowl until blended.",
+            "id": "1"
         },
-        {   "summary": "Step 2. Heating the skillet",
-            "step": "Step 2. Heat 2 teaspoon butter in a skillet over medium heat until hot",
-            "id": "step 2"
+        {   "summary": "2. Heating the skillet",
+            "step": "2. Heat 2 teaspoon butter in a skillet over medium heat until hot",
+            "id": "2"
         },
-        {   "summary": "Step 3. Pouring in egg mixture",
-            "step": "Step 3. Pour in egg mixture, as they begin to set, pull the eggs across the pan with a spatula forming large soft curds",
-            "id": "step 3"
+        {   "summary": "3. Pouring in egg mixture",
+            "step": "3. Pour in egg mixture, as they begin to set, pull the eggs across the pan with a spatula forming large soft curds",
+            "id": "3"
         },
-        {   "summary": "Step 4. Drain the bacon",
-            "step": "Step 4. Continue to pull, lift, and fold the eggs until no liquid egg remains. Remove from heat and serve",
-            "id": "step 4",
+        {   "summary": "4. Drain the bacon",
+            "step": "4. Continue to pull, lift, and fold the eggs until no liquid egg remains. Remove from heat and serve",
+            "id": "4",
             "end": "yes"
         }
     ]
@@ -86,17 +86,17 @@
             
     ],
         "steplist": [
-        {   "summary": "Step 1. Beating the eggs",
-            "step": "Step 1. Beat 1 egg, 1 teaspoon vanilla and 1/2 teaspoon cinnamon in shallow dish. Stir in 1/4 cup milk.",
-            "id": "step 1"
+        {   "summary": "1. Beating the eggs",
+            "step": "1. Beat 1 egg, 1 teaspoon vanilla and 1/2 teaspoon cinnamon in shallow dish. Stir in 1/4 cup milk.",
+            "id": "1"
         },
-        {   "summary": "Step 2. Heating the skillet",
-            "step": "Step 2. Dip bread in egg mixture, turning to coat both sides evenly.",
-            "id": "step 2"
+        {   "summary": "2. Heating the skillet",
+            "step": "2. Dip bread in egg mixture, turning to coat both sides evenly.",
+            "id": "2"
         },
-        {   "summary": "Step 3. Pouring in egg mixture",
-            "step": "Step 3. Cook bread slices on lightly greased nonstick griddle or skillet on medium heat until browned on both sides.",
-            "id": "step 3",
+        {   "summary": "3. Pouring in egg mixture",
+            "step": "3. Cook bread slices on lightly greased nonstick griddle or skillet on medium heat until browned on both sides.",
+            "id": "3",
             "end": "yes"
         }
     ]
@@ -119,17 +119,17 @@
             
     ],
         "steplist": [
-        {   "summary": "Step 1. Beating the eggs",
-            "step": "Step 1. Beat 4 eggs, 1/4 liquid, herb and salt and pepper in medium bowl until blended. Add 1 cup filling; mix well.",
-            "id": "step 1"
+        {   "summary": "1. Beating the eggs",
+            "step": "1. Beat 4 eggs, 1/4 liquid, herb and salt and pepper in medium bowl until blended. Add 1 cup filling; mix well.",
+            "id": "1"
         },
-        {   "summary": "Step 2. Heating the skillet and cooking the eggs",
-            "step": "Step 2. Heat 2 teaspoon butter in skillet on medium heat and pour in egg mixture to cook over low to medium heat for 8 to 10 minutes",
-            "id": "step 2"
+        {   "summary": "2. Heating the skillet and cooking the eggs",
+            "step": "2. Heat 2 teaspoon butter in skillet on medium heat and pour in egg mixture to cook over low to medium heat for 8 to 10 minutes",
+            "id": "2"
         },
-        {   "summary": "Step 3. Pouring in egg mixture",
-            "step": "Step 3. Remove from heat. Cover and let the eggs stand for 5 to 10 minutes",
-            "id": "step 3",
+        {   "summary": "3. Pouring in egg mixture",
+            "step": "3. Remove from heat. Cover and let the eggs stand for 5 to 10 minutes",
+            "id": "3",
             "end": "yes"
         }
     ]
@@ -157,29 +157,29 @@
             
     ],
         "steplist": [
-        {   "summary": "Step 1. Putting chickpeas with water in refrigerator",
-            "step": "Step 1. Put the chickpeas in a large bowl and cover with water to refrigerate overngight",
-            "id": "step 1"
+        {   "summary": "1. Putting chickpeas with water in refrigerator",
+            "step": "1. Put the chickpeas in a large bowl and cover with water to refrigerate overngight",
+            "id": "1"
         },
-        {   "summary": "Step 2. Draining the chickpease and mixing it with ingredients",
-            "step": "Step 2. Drain the chickpeas and toss in a large bowl with 1 clove garlic and 1 onion. Run the mixture through blade of a meat grinder",
-            "id": "step 2"
+        {   "summary": "2. Draining the chickpease and mixing it with ingredients",
+            "step": "2. Drain the chickpeas and toss in a large bowl with 1 clove garlic and 1 onion. Run the mixture through blade of a meat grinder",
+            "id": "2"
         },
-        {   "summary": "Step 3. Pouring in egg mixture",
-            "step": "Step 3. Toss chickpea mixture with other vegetables and run through meat grinder again",
-            "id": "step 3"
+        {   "summary": "3. Pouring in egg mixture",
+            "step": "3. Toss chickpea mixture with other vegetables and run through meat grinder again",
+            "id": "3"
         },
-        {   "summary": "Step 4. Heating the oil",
-            "step": "Step 4. Heat 4 inches of oil to 350 degrees fahrenheit in a large pot over medium heat",
-            "id": "step 4"
+        {   "summary": "4. Heating the oil",
+            "step": "4. Heat 4 inches of oil to 350 degrees fahrenheit in a large pot over medium heat",
+            "id": "4"
         },
-        {   "summary": "Step 5. Shaping the falafel into balls",
-            "step": "Step 5. Shape falafel mixture into balls using tablespoon and fry until browned",
-            "id": "step 5"
+        {   "summary": "5. Shaping the falafel into balls",
+            "step": "5. Shape falafel mixture into balls using tablespoon and fry until browned",
+            "id": "5"
         },
-            {   "summary": "Step 6. Draining on a paper towel",
-            "step": "Step 6. Drain on a paper towel and serve with pita, cucumber, tomato, parsley, tahini",
-            "id": "step 6",
+            {   "summary": "6. Draining on a paper towel",
+            "step": "6. Drain on a paper towel and serve with pita, cucumber, tomato, parsley, tahini",
+            "id": "6",
             "end": "yes"
         }
     ]
@@ -209,17 +209,17 @@
             
     ],
         "steplist": [
-        {   "summary": "Step 1. Heating oil in soup pot and stirring in vegetables",
-            "step": "Step 1. In soup pot, heat oil over medium heat. Add all the onions, carrots, celery. Cook until onion is tender. Stir in all the garlic, bay leaf, oregan, basil, and cook for 2 minutes",
-            "id": "step 1"
+        {   "summary": "1. Heating oil in soup pot and stirring in vegetables",
+            "step": "1. In soup pot, heat oil over medium heat. Add all the onions, carrots, celery. Cook until onion is tender. Stir in all the garlic, bay leaf, oregan, basil, and cook for 2 minutes",
+            "id": "1"
         },
-        {   "summary": "Step 2. Stir in the lentils",
-            "step": "Step 2. Stir in 2 cups lentils and add water and 1 can of tomatoes. Bring to a boil",
-            "id": "step 2"
+        {   "summary": "2. Stir in the lentils",
+            "step": "2. Stir in 2 cups lentils and add water and 1 can of tomatoes. Bring to a boil",
+            "id": "2"
         },
-        {   "summary": "Step 3. Simmer for 1 hour",
-            "step": "Step 3. Reduce heat and simmer for 1 hour. When ready to serve, stir in all the spinach and stir in vinegar. Season to taste with salt and pepper",
-            "id": "step 3",
+        {   "summary": "3. Simmer for 1 hour",
+            "step": "3. Reduce heat and simmer for 1 hour. When ready to serve, stir in all the spinach and stir in vinegar. Season to taste with salt and pepper",
+            "id": "3",
             "end": "yes"
         }
     ]
@@ -242,29 +242,29 @@
             {"ingredient-name": "2 cups mashed potatoes"}
     ],
         "steplist": [
-        {   "summary": "Step 1. Add salt and pepper",
-            "step": "Step 1. Salt and pepper both sides of the pork chops",
-            "id": "step 1"
+        {   "summary": "1. Add salt and pepper",
+            "step": "1. Salt and pepper both sides of the pork chops",
+            "id": "1"
         },
-        {   "summary": "Step 2. Combining flour and ingredients",
-            "step": "Step 2. Combine all the flour and some cayenne, salt and black pepper. Dredge each side of the pork chops in the flour mixture, and then set aside on a plate.",
-            "id": "step 2"
+        {   "summary": "2. Combining flour and ingredients",
+            "step": "2. Combine all the flour and some cayenne, salt and black pepper. Dredge each side of the pork chops in the flour mixture, and then set aside on a plate.",
+            "id": "2"
         },
-        {   "summary": "Step 3. Heating the oil and butter",
-            "step": "Step 3. Heat the canola oil over medium to medium-high heat. Add 1 tablespoon butter. When the butter is melted and the butter/oil mixture is hot, cook 3 pork chops at a time, 2 to 3 minutes on the first side.",
-            "id": "step 3"
+        {   "summary": "3. Heating the oil and butter",
+            "step": "3. Heat the canola oil over medium to medium-high heat. Add 1 tablespoon butter. When the butter is melted and the butter/oil mixture is hot, cook 3 pork chops at a time, 2 to 3 minutes on the first side.",
+            "id": "3"
         },
-        {   "summary": "Step 4. Flipping and cooking the pork chops",
-            "step": "Step 4. Flip and cook until the chops are golden brown on the other side, 1 to 2 minutes",
-            "id": "step 4"
+        {   "summary": "4. Flipping and cooking the pork chops",
+            "step": "4. Flip and cook until the chops are golden brown on the other side, 1 to 2 minutes",
+            "id": "4"
         },
-        {   "summary": "Step 5. Remove to a plate and repeate with other pork chops",
-            "step": "Step 5. Remove to a plate and repeat with the remaining pork chops.",
-            "id": "step 5"
+        {   "summary": "5. Remove to a plate and repeate with other pork chops",
+            "step": "5. Remove to a plate and repeat with the remaining pork chops.",
+            "id": "5"
         },
-            {   "summary": "Step 6. Serve with smashed potatoes",
-            "step": "Step 6. Serve with the 2 cups smashed potatoes",
-            "id": "step 6",
+            {   "summary": "6. Serve with smashed potatoes",
+            "step": "6. Serve with the 2 cups smashed potatoes",
+            "id": "6",
             "end": "yes"
         }
     ]
@@ -288,37 +288,37 @@
             {"ingredient-name": "Fresh dill sprig"}
     ],
         "steplist": [
-        {   "summary": "Step 1. Preheating the grill",
-            "step": "Step 1. Preheat barbecue grill.",
-            "id": "step 1"
+        {   "summary": "1. Preheating the grill",
+            "step": "1. Preheat barbecue grill.",
+            "id": "1"
         },
-        {   "summary": "Step 2. Combining the seasonings",
-            "step": "Step 2. Combine all seasonings in small bowl and mix well.",
-            "id": "step 2"
+        {   "summary": "2. Combining the seasonings",
+            "step": "2. Combine all seasonings in small bowl and mix well.",
+            "id": "2"
         },
-        {   "summary": "Step 3. Melting the butter in saucepan",
-            "step": "Step 3. Melt 3 tablespoons butter in small saucepan over medium heat and pour into pie plate.",
-            "id": "step 3"
+        {   "summary": "3. Melting the butter in saucepan",
+            "step": "3. Melt 3 tablespoons butter in small saucepan over medium heat and pour into pie plate.",
+            "id": "3"
         },
-        {   "summary": "Step 4. Dipping sea bass into melted butter",
-            "step": "Step 4. Dip sea bass into melted butter, evenly coating both sides.",
-            "id": "step 4"
+        {   "summary": "4. Dipping sea bass into melted butter",
+            "step": "4. Dip sea bass into melted butter, evenly coating both sides.",
+            "id": "4"
         },
-        {   "summary": "Step 5. Sprinkle sea bass with seasoning mixture",
-            "step": "Step 5. Sprinkle both sides of sea bass with seasoning mixture.",
-            "id": "step 5"
+        {   "summary": "5. Sprinkle sea bass with seasoning mixture",
+            "step": "5. Sprinkle both sides of sea bass with seasoning mixture.",
+            "id": "5"
         },
-        {   "summary": "Step 6. Cooking on the grill",
-            "step": "Step 6. Place on grill and cook covered for approximately 6 to 8 minutes or until it is blackened and flakes easily.",
-            "id": "step 6"
+        {   "summary": "6. Cooking on the grill",
+            "step": "6. Place on grill and cook covered for approximately 6 to 8 minutes or until it is blackened and flakes easily.",
+            "id": "6"
         },
-        {   "summary": "Step 7. Turning it halfway through grilling time",
-            "step": "Step 7. Turn halfway through grilling time.",
-            "id": "step 7"
+        {   "summary": "7. Turning it halfway through grilling time",
+            "step": "7. Turn halfway through grilling time.",
+            "id": "7"
         },
-        {   "summary": "Step 8. Serve with lemon and dill sprigs",
-            "step": "Step 8. Serve with your desired amount of lemon and garnish with dill sprigs.",
-            "id": "step 8",
+        {   "summary": "8. Serve with lemon and dill sprigs",
+            "step": "8. Serve with your desired amount of lemon and garnish with dill sprigs.",
+            "id": "8",
             "end": "yes"
         }
     ]
@@ -348,33 +348,33 @@
             
     ],
         "steplist": [
-        {   "summary": "Step 1. Combining ingrdients in a large bowl",
-            "step": "Step 1. Combine 1/3 cup panko and the 10 ingredients up to egg listed on the tools and ingredients page earlier, in a large bowl.",
-            "id": "step 1"
+        {   "summary": "1. Combining ingrdients in a large bowl",
+            "step": "1. Combine 1/3 cup panko and the 10 ingredients up to egg listed on the tools and ingredients page earlier, in a large bowl.",
+            "id": "1"
         },
-        {   "summary": "Step 2. Adding salmon with panko",
-            "step": "Step 2. Add the 8 ounce salmon and stir and place 1/3 cup panko in a shallow dish.",
-            "id": "step 2"
+        {   "summary": "2. Adding salmon with panko",
+            "step": "2. Add the 8 ounce salmon and stir and place 1/3 cup panko in a shallow dish.",
+            "id": "2"
         },
-        {   "summary": "Step 3. Shaping salmon mixture into balls and patties",
-            "step": "Step 3. Using wet hands, shape salmon mixture into 4 equal balls. Coat balls in panko and flatten balls to 4 inch patties",
-            "id": "step 3"
+        {   "summary": "3. Shaping salmon mixture into balls and patties",
+            "step": "3. Using wet hands, shape salmon mixture into 4 equal balls. Coat balls in panko and flatten balls to 4 inch patties",
+            "id": "3"
         },
-        {   "summary": "Step 4. Heating the skillet",
-            "step": "Step 4. Heat a large nonstick skillet over medium to high heat",
-            "id": "step 4"
+        {   "summary": "4. Heating the skillet",
+            "step": "4. Heat a large nonstick skillet over medium to high heat",
+            "id": "4"
         },
-        {   "summary": "Step 5. Add oil to the pan",
-            "step": "Step 5. Add 1 tablespoon oil to the pan and swirl to coat.",
-            "id": "step 5"
+        {   "summary": "5. Add oil to the pan",
+            "step": "5. Add 1 tablespoon oil to the pan and swirl to coat.",
+            "id": "5"
         },
-            {   "summary": "Step 6. Cooking the patties",
-            "step": "Step 6. Add patties and cook 3 minutes on each side.",
-            "id": "step 6"
+            {   "summary": "6. Cooking the patties",
+            "step": "6. Add patties and cook 3 minutes on each side.",
+            "id": "6"
         },
-        {   "summary": "Step 7. Serving with lemon wedges",
-            "step": "Step 7. Use 1 lemon to serve with lemon wedges",
-            "id": "step 7",
+        {   "summary": "7. Serving with lemon wedges",
+            "step": "7. Use 1 lemon to serve with lemon wedges",
+            "id": "7",
             "end": "yes"
         }
     ]
@@ -403,33 +403,33 @@
     ],
     "steplist": [
         {
-            "summary": "Step 1. Heating the stock",
-            "step": "Step 1. Heat 4 cups chicken stock to a simmer in a medium saucepan, then lower the heat so the stock stays hot.",
-            "id": "step 1"
+            "summary": "1. Heating the stock",
+            "step": "1. Heat 4 cups chicken stock to a simmer in a medium saucepan, then lower the heat so the stock stays hot.",
+            "id": "1"
         },
-        {   "summary": "Step 2. Heating oil and adding chopped ingredients",
-            "step": "Step 2. In a large saucepan, heat 1 tablespoon oil and 1 tablespoon of the butter over medium heat. When the butter has melted, add the 1 medium chopped shallot or onion. Sauté for 2 to 3 minutes.",
-            "id": "step 2"
+        {   "summary": "2. Heating oil and adding chopped ingredients",
+            "step": "2. In a large saucepan, heat 1 tablespoon oil and 1 tablespoon of the butter over medium heat. When the butter has melted, add the 1 medium chopped shallot or onion. Sauté for 2 to 3 minutes.",
+            "id": "2"
         },
-        {   "summary": "Step 3. Adding rice and wine to the pot",
-            "step": "Step 3. Add 1 1/2 cup arborio rice to the pot and stir it with a wooden spoon. Sauté for one minute and add 1/2 cup vermouth until it's fully absorbed.",
-            "id": "step 3"
+        {   "summary": "3. Adding rice and wine to the pot",
+            "step": "3. Add 1 1/2 cup arborio rice to the pot and stir it with a wooden spoon. Sauté for one minute and add 1/2 cup vermouth until it's fully absorbed.",
+            "id": "3"
         },
-        {   "summary": "Step 4. Adding chicken stock to the rice and stir",
-            "step": "Step 4. Add a ladle of hot chicken stock to the rice and stir until the liquid is fully absorbed. When the rice is almost dry, add another ladle of stock and repeat the process.",
-            "id": "step 4"
+        {   "summary": "4. Adding chicken stock to the rice and stir",
+            "step": "4. Add a ladle of hot chicken stock to the rice and stir until the liquid is fully absorbed. When the rice is almost dry, add another ladle of stock and repeat the process.",
+            "id": "4"
         },
-        {   "summary": "Step 5. Ading chicken stock at time intervals",
-            "step": "Step 5. Continue adding stock, a ladle at a time, for 20 to 30 minutes.",
-            "id": "step 5"
+        {   "summary": "5. Ading chicken stock at time intervals",
+            "step": "5. Continue adding stock, a ladle at a time, for 20 to 30 minutes.",
+            "id": "5"
         },
-        {   "summary": "Step 6. Add hot water if chicken stock runs out",
-            "step": "Step 6. If you run out of stock and the risotto still isn't done, you can finish the cooking using hot water, adding a ladle at a time.",
-            "id": "step 6"
+        {   "summary": "6. Add hot water if chicken stock runs out",
+            "step": "6. If you run out of stock and the risotto still isn't done, you can finish the cooking using hot water, adding a ladle at a time.",
+            "id": "6"
         },
-        {   "summary": "Step 7. Adding in condiments",
-            "step": "Step 7. Stir in the remaining 2 tablespoons butter, the Parmesan cheese, and the parsley, and season with with Kosher salt.",
-            "id": "step 7",
+        {   "summary": "7. Adding in condiments",
+            "step": "7. Stir in the remaining 2 tablespoons butter, the Parmesan cheese, and the parsley, and season with with Kosher salt.",
+            "id": "7",
             "end": "yes"
         }
     ]
@@ -460,33 +460,33 @@
 ],
   "steplist": [
     {
-        "summary": "Step 1. Preheating the oven",
-        "step": "Step 1. Preheat the oven to 425 degrees Fahrenheit.",
-        "id": "step 1"
+        "summary": "1. Preheating the oven",
+        "step": "1. Preheat the oven to 425 degrees Fahrenheit.",
+        "id": "1"
     },
-    {   "summary": "Step 2. Baking the beef",
-        "step": "Step 2. Place 2 1/2 pound beef in a small baking dish, and spread 2 tablespoons softened butter. Bake for 10 to 15 minutes. Remove from pan, and let it cool completely.",
-        "id": "step 2"
+    {   "summary": "2. Baking the beef",
+        "step": "2. Place 2 1/2 pound beef in a small baking dish, and spread 2 tablespoons softened butter. Bake for 10 to 15 minutes. Remove from pan, and let it cool completely.",
+        "id": "2"
     },
-    {   "summary": "Step 3. Saute onion and mushrooms",
-        "step": "Step 3. Melt 2 tablespoons butter in skillet over medium heat. Saute all the onion and mushrooms for 5 minutes. Remove from heat and let it cool.",
-        "id": "step 3"
+    {   "summary": "3. Saute onion and mushrooms",
+        "step": "3. Melt 2 tablespoons butter in skillet over medium heat. Saute all the onion and mushrooms for 5 minutes. Remove from heat and let it cool.",
+        "id": "3"
     },
-    {   "summary": "Step 4. Seasoning the beef",
-        "step": "Step 4. Mix pate and 2 tablespoons softened butter, salt, pepper. Spread pate over beef with onion and mushroom mixture.",
-        "id": "step 4"
+    {   "summary": "4. Seasoning the beef",
+        "step": "4. Mix pate and 2 tablespoons softened butter, salt, pepper. Spread pate over beef with onion and mushroom mixture.",
+        "id": "4"
     },
-    {   "summary": "Step 5. Placing beef in pastry dough",
-        "step": "Step 5. Roll out pastry dough and put beef in the center. Fold up and seal all edges. Place beef in a 9 by 13 inch baking dish, and brush with egg yolk.",
-        "id": "step 5"
+    {   "summary": "5. Placing beef in pastry dough",
+        "step": "5. Roll out pastry dough and put beef in the center. Fold up and seal all edges. Place beef in a 9 by 13 inch baking dish, and brush with egg yolk.",
+        "id": "5"
     },
-    {   "summary": "Step 6. Baking the beef and dough",
-        "step": "Step 6. Bake at 450 degrees Fahrenheit for 10 minutes, then heat to 425 degrees Fahrenheit for 10 to 15 minutes. Set it aside then keep warm.",
-        "id": "step 6"
+    {   "summary": "6. Baking the beef and dough",
+        "step": "6. Bake at 450 degrees Fahrenheit for 10 minutes, then heat to 425 degrees Fahrenheit for 10 to 15 minutes. Set it aside then keep warm.",
+        "id": "6"
     },
-    {   "summary": "Step 7. Mixing the sauce",
-        "step": "Step 7. Stir in beef stock, red wine, and the leftover beef juices over high heat in a small saucepan. Boil for 10 to 15 minutes and serve with the beef.",
-        "id": "step 7",
+    {   "summary": "7. Mixing the sauce",
+        "step": "7. Stir in beef stock, red wine, and the leftover beef juices over high heat in a small saucepan. Boil for 10 to 15 minutes and serve with the beef.",
+        "id": "7",
         "end": "yes"
     }
 ]
@@ -520,49 +520,49 @@
 ],
   "steplist": [
     {
-        "summary": "Step 1. Heating oil in a saucepan",
-        "step": "Step 1. Heat 1 tablespoon vegetable oil in a large, saucepan over medium heat.",
-        "id": "step 1"
+        "summary": "1. Heating oil in a saucepan",
+        "step": "1. Heat 1 tablespoon vegetable oil in a large, saucepan over medium heat.",
+        "id": "1"
     },
-    {   "summary": "Step 2. Adding vegetables",
-        "step": "Step 2. Add all the onions, garlic, carrots, celery, and mushrooms.",
-        "id": "step 2"
+    {   "summary": "2. Adding vegetables",
+        "step": "2. Add all the onions, garlic, carrots, celery, and mushrooms.",
+        "id": "2"
     },
-    {   "summary": "Step 3. Cooking while stirring",
-        "step": "Step 3. Cook 10 minutes, stirring frequently.",
-        "id": "step 3"
+    {   "summary": "3. Cooking while stirring",
+        "step": "3. Cook 10 minutes, stirring frequently.",
+        "id": "3"
     },
-    {   "summary": "Step 4. Adding water",
-        "step": "Step 4. Add small amounts of water, if necessary, to prevent sticking.",
-        "id": "step 4"
+    {   "summary": "4. Adding water",
+        "step": "4. Add small amounts of water, if necessary, to prevent sticking.",
+        "id": "4"
     },
-    {   "summary": "Step 5. Adding the remaining ingredients",
-        "step": "Step 5. Add remaining ingredients, except flour, 1/4 cup water, and wine.",
-        "id": "step 5"
+    {   "summary": "5. Adding the remaining ingredients",
+        "step": "5. Add remaining ingredients, except flour, 1/4 cup water, and wine.",
+        "id": "5"
     },
-    {   "summary": "Step 6. Simmering vegetables",
-        "step": "Step 6. Cover, reduce heat to low, and simmer 30 minutes, or until vegetables are tender.",
-        "id": "step 6"
+    {   "summary": "6. Simmering vegetables",
+        "step": "6. Cover, reduce heat to low, and simmer 30 minutes, or until vegetables are tender.",
+        "id": "6"
     },
-    {   "summary": "Step 7. Continue stirring",
-        "step": "Step 7. Stir occasionally while cooking.",
-        "id": "step 7"
+    {   "summary": "7. Continue stirring",
+        "step": "7. Stir occasionally while cooking.",
+        "id": "7"
     },
-    {   "summary": "Step 8. Stirring flour and water in a bowl",
-        "step": "Step 8. In a small bowl, gradually stir flour into 1/4 cup water until smooth.",
-        "id": "step 8"
+    {   "summary": "8. Stirring flour and water in a bowl",
+        "step": "8. In a small bowl, gradually stir flour into 1/4 cup water until smooth.",
+        "id": "8"
     },
-    {   "summary": "Step 9. Adding mix and wine to stew",
-        "step": "Step 9. Add to stew, along with wine.",
-        "id": "step 9"
+    {   "summary": "9. Adding mix and wine to stew",
+        "step": "9. Add to stew, along with wine.",
+        "id": "9"
     },
-    {   "summary": "Step 10. Cooking while stirring",
-        "step": "Step 10. Cook, stirring for 5 more minutes.",
-        "id": "step 10"
+    {   "summary": "10. Cooking while stirring",
+        "step": "10. Cook, stirring for 5 more minutes.",
+        "id": "10"
     },
-    {   "summary": "Step 11. Remove bay leaf and serve",
-        "step": "Step 11. Remove and discard bay leaf before serving.",
-        "id": "step 11",
+    {   "summary": "11. Remove bay leaf and serve",
+        "step": "11. Remove and discard bay leaf before serving.",
+        "id": "11",
         "end": "yes"
     }
 ]
@@ -589,29 +589,29 @@
 ],
   "steplist": [
     {
-        "summary": "Step 1. Heating the oven",
-        "step": "Step 1. Heat oven to 350 degrees Fahrenheit",
-        "id": "step 1"
+        "summary": "1. Heating the oven",
+        "step": "1. Heat oven to 350 degrees Fahrenheit",
+        "id": "1"
     },
-    {   "summary": "Step 2. Mixing ingredients into pan",
-        "step": "Step 2. Mix 1 3/4 cups graham crumbs, 1/3 cup butter and 1/4 cup sugar; press onto bottom of 9-inch springform pan.",
-        "id": "step 2"
+    {   "summary": "2. Mixing ingredients into pan",
+        "step": "2. Mix 1 3/4 cups graham crumbs, 1/3 cup butter and 1/4 cup sugar; press onto bottom of 9-inch springform pan.",
+        "id": "2"
     },
-    {   "summary": "Step 3. Making the cream cheese mixture",
-        "step": "Step 3. Beat all the cream cheese and remaining sugar in large bowl with mixer until blended. Add 1 cup sour cream and 2 tablespoons vanilla.",
-        "id": "step 3"
+    {   "summary": "3. Making the cream cheese mixture",
+        "step": "3. Beat all the cream cheese and remaining sugar in large bowl with mixer until blended. Add 1 cup sour cream and 2 tablespoons vanilla.",
+        "id": "3"
     },
-    {   "summary": "Step 4. Addings eggs",
-        "step": "Step 4. Add eggs, 1 at a time, beating on low speed after each addition just until blended. Pour over crust.",
-        "id": "step 4"
+    {   "summary": "4. Addings eggs",
+        "step": "4. Add eggs, 1 at a time, beating on low speed after each addition just until blended. Pour over crust.",
+        "id": "4"
     },
-    {   "summary": "Step 5. Baking and refrigerating the cheesecake",
-        "step": "Step 5. Bake 1 hour to 1 hour 10 minute or until center is almost set. Run knife around rim of pan to loosen cake; cool before removing rim. Refrigerate cheesecake 4 hours.",
-        "id": "step 5"
+    {   "summary": "5. Baking and refrigerating the cheesecake",
+        "step": "5. Bake 1 hour to 1 hour 10 minute or until center is almost set. Run knife around rim of pan to loosen cake; cool before removing rim. Refrigerate cheesecake 4 hours.",
+        "id": "5"
     },
-    {   "summary": "Step 6. Adding pie filling to the top",
-        "step": "Step 6. Top with pie filling before serving.",
-        "id": "step 6",
+    {   "summary": "6. Adding pie filling to the top",
+        "step": "6. Top with pie filling before serving.",
+        "id": "6",
         "end": "yes"
     }
 ]
@@ -636,25 +636,25 @@
     ],
     "steplist": [
         {
-            "summary": "Step 1. Mixing ingredients in a small bowl",
-            "step": "Step 1. In a small bowl, combine 3/4 cup cracker crumbs, 2 tablespoons sugar and 2 tablespoons butter.",
-            "id": "step 1"
+            "summary": "1. Mixing ingredients in a small bowl",
+            "step": "1. In a small bowl, combine 3/4 cup cracker crumbs, 2 tablespoons sugar and 2 tablespoons butter.",
+            "id": "1"
         },
-        {   "summary": "Step 2. Dividing mixture into 8 dessert dishes",
-            "step": "Step 2. Divide among 8 dessert dishes, about 4 teaspoonfuls each.",
-            "id": "step 2"
+        {   "summary": "2. Dividing mixture into 8 dessert dishes",
+            "step": "2. Divide among 8 dessert dishes, about 4 teaspoonfuls each.",
+            "id": "2"
         },
-        {   "summary": "Step 3. Making the cream cheese mixture",
-            "step": "Step 3. In a small bowl, beat all the cream cheese until smooth. Gradually, add the 1 can milk until blended.",
-            "id": "step 3"
+        {   "summary": "3. Making the cream cheese mixture",
+            "step": "3. In a small bowl, beat all the cream cheese until smooth. Gradually, add the 1 can milk until blended.",
+            "id": "3"
         },
-        {   "summary": "Step 4. Adding in lemon juice and vanilla",
-            "step": "Step 4. Beat in 1/3 cup lemon juice and 1 tablespoon vanilla and spoon 1/4 cup into each dish.",
-            "id": "step 4"
+        {   "summary": "4. Adding in lemon juice and vanilla",
+            "step": "4. Beat in 1/3 cup lemon juice and 1 tablespoon vanilla and spoon 1/4 cup into each dish.",
+            "id": "4"
         },
-        {   "summary": "Step 5. Topping with pie filling",
-            "step": "Step 5. Top wih pie filling, about 1/4 cup in each.",
-            "id": "step 5",
+        {   "summary": "5. Topping with pie filling",
+            "step": "5. Top wih pie filling, about 1/4 cup in each.",
+            "id": "5",
             "end": "yes"
         }
     ]
@@ -686,45 +686,45 @@
 ],
   "steplist": [
     {
-        "summary": "Step 1. Mixing ingredients in a large dish",
-        "step": "Step 1. In a large dish mix together 1/2 granulated sugar and 1 tablespoon cinnamon. Set to the side.",
-        "id": "step 1"
+        "summary": "1. Mixing ingredients in a large dish",
+        "step": "1. In a large dish mix together 1/2 granulated sugar and 1 tablespoon cinnamon. Set to the side.",
+        "id": "1"
     },
-    {   "summary": "Step 2. Heating canola oil",
-        "step": "Step 2. In a large skillet heat 1 cup canola oil until bubbly and hot.",
-        "id": "step 2"
+    {   "summary": "2. Heating canola oil",
+        "step": "2. In a large skillet heat 1 cup canola oil until bubbly and hot.",
+        "id": "2"
     },
-    {   "summary": "Step 3. Cooking the tortilla",
-        "step": "Step 3. Place one tortilla in the skillet cook for 10 seconds then using tongs flip over, and  begin to fold in half.",
-        "id": "step 3"
+    {   "summary": "3. Cooking the tortilla",
+        "step": "3. Place one tortilla in the skillet cook for 10 seconds then using tongs flip over, and  begin to fold in half.",
+        "id": "3"
     },
-    {   "summary": "Step 4. Flipping the tortilla",
-        "step": "Step 4. Continue to hold one side of the tortilla with tongs. Then flip to ensure the other side cooks evenly. Remove from the skillet",
-        "id": "step 4"
+    {   "summary": "4. Flipping the tortilla",
+        "step": "4. Continue to hold one side of the tortilla with tongs. Then flip to ensure the other side cooks evenly. Remove from the skillet",
+        "id": "4"
     },
-    {   "summary": "Step 5. Dip tortilla in cinnamon",
-        "step": "Step 5. Dip both sides in the cinnamon sugar and sprinkle cinnamon sugar in the inside of the taco shell.",
-        "id": "step 5"
+    {   "summary": "5. Dip tortilla in cinnamon",
+        "step": "5. Dip both sides in the cinnamon sugar and sprinkle cinnamon sugar in the inside of the taco shell.",
+        "id": "5"
     },
-    {   "summary": "Step 6. Cutting strawberries",
-        "step": "Step 6. Once the taco shells are cooked, chop 1 cup fresh strawberries and rinse half cup raspberries. Place them off to the side.",
-        "id": "step 6"
+    {   "summary": "6. Cutting strawberries",
+        "step": "6. Once the taco shells are cooked, chop 1 cup fresh strawberries and rinse half cup raspberries. Place them off to the side.",
+        "id": "6"
     },
-    {   "summary": "Step 7. Mixing cream and powdered sugar in stand mixer",
-        "step": "Step 7. Add 1 cup heavy cream and 1/4 cup powdered sugar to a stand mixer with a whisk attachment and whip for about 1 minute.",
-        "id": "step 7"
+    {   "summary": "7. Mixing cream and powdered sugar in stand mixer",
+        "step": "7. Add 1 cup heavy cream and 1/4 cup powdered sugar to a stand mixer with a whisk attachment and whip for about 1 minute.",
+        "id": "7"
     },
-    {   "summary": "Step 8. Placing mixture in a piping bag",
-        "step": "Step 8. Place in a piping bag or a ziplock baggy and cut a corner tip off to pipe.",
-        "id": "step 8"
+    {   "summary": "8. Placing mixture in a piping bag",
+        "step": "8. Place in a piping bag or a ziplock baggy and cut a corner tip off to pipe.",
+        "id": "8"
     },
-    {   "summary": "Step 9. Adding nutella into a ziplock baggy",
-        "step": "Step 9. Add Nutella into a ziplock baggy and cut one side of the corner with scissors.",
-        "id": "step 9"
+    {   "summary": "9. Adding nutella into a ziplock baggy",
+        "step": "9. Add Nutella into a ziplock baggy and cut one side of the corner with scissors.",
+        "id": "9"
     },
-    {   "summary": "Step 10. Piping nutella into taco",
-        "step": "Step 10. Pipe the nutella evenly and add in fruit. Lastly, add whipped cream on top.",
-        "id": "step 10",
+    {   "summary": "10. Piping nutella into taco",
+        "step": "10. Pipe the nutella evenly and add in fruit. Lastly, add whipped cream on top.",
+        "id": "10",
         "end": "yes"
     }
 
@@ -748,25 +748,25 @@
 ],
   "steplist": [
     {
-        "summary": "Step 1. Toasting the bread",
-        "step": "Step 1. Toast the bread slices.",
-        "id": "step 1"
+        "summary": "1. Toasting the bread",
+        "step": "1. Toast the bread slices.",
+        "id": "1"
     },
-    {   "summary": "Step 2. Spreading mayonnaise on top",
-        "step": "Step 2. Spread a thin layer of 1/4 cup mayonnaise on each slice.",
-        "id": "step 2"
+    {   "summary": "2. Spreading mayonnaise on top",
+        "step": "2. Spread a thin layer of 1/4 cup mayonnaise on each slice.",
+        "id": "2"
     },
-    {   "summary": "Step 3. Adding the meat and vegetables",
-        "step": "Step 3. Layer bottom slice with the letuce, tomato, turkey, bacon, cheese",
-        "id": "step 3"
+    {   "summary": "3. Adding the meat and vegetables",
+        "step": "3. Layer bottom slice with the letuce, tomato, turkey, bacon, cheese",
+        "id": "3"
     },
-    {   "summary": "Step 4. Adding second slice of bread on top",
-        "step": "Step 4. Put the second slice of bread on top.",
-        "id": "step 4"
+    {   "summary": "4. Adding second slice of bread on top",
+        "step": "4. Put the second slice of bread on top.",
+        "id": "4"
     },
-    {   "summary": "Step 5. Microwave to melt the cheese",
-        "step": "Step 5. Heat in microwave for 30 seconds to 1 minute, or until cheese is melted.",
-        "id": "step 5",
+    {   "summary": "5. Microwave to melt the cheese",
+        "step": "5. Heat in microwave for 30 seconds to 1 minute, or until cheese is melted.",
+        "id": "5",
         "end": "yes"
     }
 ]
@@ -792,25 +792,25 @@
 ],
   "steplist": [
     {
-        "summary": "Step 1. Melting butter and sautee vegetables",
-        "step": "Step 1. On medium heat melt 3 tablespoons butter and sautee 1 onion and the chopped bell peppers.",
-        "id": "step 1"
+        "summary": "1. Melting butter and sautee vegetables",
+        "step": "1. On medium heat melt 3 tablespoons butter and sautee 1 onion and the chopped bell peppers.",
+        "id": "1"
     },
-    {   "summary": "Step 2. Cook the hamgurber meat",
-        "step": "Step 2. Add the hamburger meat and cook until meat is well done.",
-        "id": "step 2"
+    {   "summary": "2. Cook the hamgurber meat",
+        "step": "2. Add the hamburger meat and cook until meat is well done.",
+        "id": "2"
     },
-    {   "summary": "Step 3. Adding condiments together",
-        "step": "Step 3. Add 2 cans tomato sauce, 1 teaspoon salt and pepper and 2 tablespoons garlic powder.",
-        "id": "step 3"
+    {   "summary": "3. Adding condiments together",
+        "step": "3. Add 2 cans tomato sauce, 1 teaspoon salt and pepper and 2 tablespoons garlic powder.",
+        "id": "3"
     },
-    {   "summary": "Step 4. Cooking the noodles",
-        "step": "Step 4. Cook the noodles as directed on the label.",
-        "id": "step 4"
+    {   "summary": "4. Cooking the noodles",
+        "step": "4. Cook the noodles as directed on the label.",
+        "id": "4"
     },
-    {   "summary": "Step 5. Mixing the sauce and noodles",
-        "step": "Step 5. Mix the sauce and noodles.",
-        "id": "step 5",
+    {   "summary": "5. Mixing the sauce and noodles",
+        "step": "5. Mix the sauce and noodles.",
+        "id": "5",
         "end": "yes"
     }
 ]
@@ -832,21 +832,21 @@
 ],
   "steplist": [
     {
-        "summary": "Step 1. Cooking the beef",
-        "step": "Step 1. Cook beef in 10-inch skillet over medium heat 8 to 10 minutes, stirring occasionally until brown.",
-        "id": "step 1"
+        "summary": "1. Cooking the beef",
+        "step": "1. Cook beef in 10-inch skillet over medium heat 8 to 10 minutes, stirring occasionally until brown.",
+        "id": "1"
     },
-    {   "summary": "Step 2. Boiling salsa with the beef",
-        "step": "Step 2. Stir your desired amount of salsa into beef. Heat to boiling, stirring constantly; reduce heat to medium-low.",
-        "id": "step 2"
+    {   "summary": "2. Boiling salsa with the beef",
+        "step": "2. Stir your desired amount of salsa into beef. Heat to boiling, stirring constantly; reduce heat to medium-low.",
+        "id": "2"
     },
-    {   "summary": "Step 3. Cook and stir for 5 minutes",
-        "step": "Step 3. Cook 5 minutes, stirring occasionally. Pour beef mixture into large serving bowl.",
-        "id": "step 3"
+    {   "summary": "3. Cook and stir for 5 minutes",
+        "step": "3. Cook 5 minutes, stirring occasionally. Pour beef mixture into large serving bowl.",
+        "id": "3"
     },
-    {   "summary": "Step 4. Heating taco shells and serve with meat",
-        "step": "Step 4. Heat taco shells as directed on package. Serve taco shells with beef mixture, lettuce, tomato and cheese.",
-        "id": "step 4",
+    {   "summary": "4. Heating taco shells and serve with meat",
+        "step": "4. Heat taco shells as directed on package. Serve taco shells with beef mixture, lettuce, tomato and cheese.",
+        "id": "4",
         "end": "yes"
     }
 ]

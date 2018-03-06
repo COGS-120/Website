@@ -58,11 +58,67 @@
 
     </div>
 
-    <div id="stepsbox">
+    <div id="ti_box" class="px-2 px-md-0">
+      <h3>
+        <strong class="tools">Tools</strong>
+      </h3>
 
+      <div id="tools">
+        <!-- Testing Columns -->
+        <div class="row row-adj ">
+          <!-- row 1 -->
+          {{#each tools}}
+          <div class="col-6">
+            <p>{{tool-name}}</p>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+        <!-- closing row 1 -->
+        <!-- closed Testing Columns -->
+
+
+      <div id="ingredients">
+        <h3>
+          <strong>Ingredients</strong>
+        </h3>
+        <!-- Ingredients -->
+        <div class="row row-adj">
+          {{#each ingredients}}
+          <div class="col-6">
+            <p>{{ingredient-name}}</p>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Steps -->
+    <div id="stepsbox" class="px-2 px-md-0"> 
+      <h3>
+        <strong>Steps</strong>
+      </h3>
       {{#each steplist}}
       <p class="px-2 px-md-0">{{summary}}</p>
       {{/each}}
+
+    </div>
+
+    <br>
+    
+    <div class="row px-2 px-md-0" id="button-row">
+
+      <div class="col-6 text-left">
+        <p>
+          <a href="/category/{{category}}" class="button text-no-hyperlink">Back</a>
+        </p>
+      </div>
+
+      <div class="col-6 text-right">
+        <p>
+          <a href="/ingTool/{{name}}" class="button text-no-hyperlink">Start</a>
+        </p>
+      </div>
 
     </div>
 
