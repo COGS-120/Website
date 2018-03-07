@@ -4,29 +4,38 @@
 
 <head>
   <!-- Google Analytics Content Experiment code -->
-<script>function utmx_section(){}function utmx(){}(function(){var
-k='170550168-0',d=document,l=d.location,c=d.cookie;
-if(l.search.indexOf('utm_expid='+k)>0)return;
-function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-</script><script>utmx('url','A/B');</script>
-<!-- End of Google Analytics Content Experiment code -->
+  <script>function utmx_section() { } function utmx() { } (function () {
+      var
+        k = '170550168-0', d = document, l = d.location, c = d.cookie;
+      if (l.search.indexOf('utm_expid=' + k) > 0) return;
+      function f(n) {
+        if (c) {
+          var i = c.indexOf(n + '='); if (i > -1) {
+            var j = c.
+              indexOf(';', i); return escape(c.substring(i + n.length + 1, j < 0 ? c.
+                length : j))
+          }
+        }
+      } var x = f('__utmx'), xx = f('__utmxx'), h = l.hash; d.write(
+        '<sc' + 'ript src="' + 'http' + (l.protocol == 'https:' ? 's://ssl' :
+          '://www') + '.google-analytics.com/ga_exp.js?' + 'utmxkey=' + k +
+        '&utmx=' + (x ? x : '') + '&utmxx=' + (xx ? xx : '') + '&utmxtime=' + new Date().
+          valueOf() + (h ? '&utmxhash=' + escape(h.substr(1)) : '') +
+        '" type="text/javascript" charset="utf-8"><\/sc' + 'ript>')
+    })();
+  </script>
+  <script>utmx('url', 'A/B');</script>
+  <!-- End of Google Analytics Content Experiment code -->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-114830772-1');
-</script>
+    gtag('config', 'UA-114830772-1');
+  </script>
 
 
   <title>EZ Cooking</title>
@@ -43,75 +52,73 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
   <![endif]-->
 
 
-<body>
+  <body>
 
 
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="dummyBar">
-    <a class="navbar-brand" href="/">EZ Cooking</a>
-  </nav>
-  <div id="topNavBar"></div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="dummyBar">
+      <a class="navbar-brand" href="/">EZ Cooking</a>
+    </nav>
+    <div id="topNavBar"></div>
 
-  <div class="container">
-    <h3 id="title">Learn to cook!</h3>
-
-    <div class="row">
-      {{#if viewAlt}}
-
-      <!-- A/B Testing Homepage -->
+    <div class="container">
+      <h3 id="title">Learn to cook!</h3>
 
       <div class="row">
-        {{#each categories}}
-        <div class="col-6 col-pad">
+        {{#if viewAlt}}
+
+        <!-- A/B Testing Homepage -->
+
+        <div class="row">
+          {{#each categories}}
+          <div class="col-6 col-pad">
             <a class="food-link" href="category/{{name}}" id="{{id}}">
               <img class="food-img" src="images/{{image}}">
-                <div class="centered">
-                  <div id= "whitebox">
-                    <h6 class="inner-name">{{name}}</h6>
-                  </div>
+              <div class="centered">
+                <div id="whitebox">
+                  <h6 class="inner-name">{{name}}</h6>
                 </div>
+              </div>
             </a>
-        </div>
-        {{/each}}
-      </div>  
-
-      {{else}}
-      {{#each categories}}
-      <div class="col-12">
-
-        <a class="food-link" href="category/{{name}}" id="{{id}}">
-          <div class="food-card">
-            <img class="food-img" src="images/{{image}}">
-            <h5 class="inner-name">{{name}}</h5>
-            <p class="inner-caption">{{caption}}</p>
           </div>
-        </a>
+          {{/each}}
+        </div>
 
+        {{else}} {{#each categories}}
+        <div class="col-12">
+
+          <a class="food-link" href="category/{{name}}" id="{{id}}">
+            <div class="food-card">
+              <img class="food-img" src="images/{{image}}">
+              <h5 class="inner-name">{{name}}</h5>
+              <p class="inner-caption">{{caption}}</p>
+            </div>
+          </a>
+
+        </div>
+
+        {{/each}} {{/if}}
       </div>
 
-      {{/each}}
-      {{/if}}
+
     </div>
 
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
-  </div>
-
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-
-  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
-  <script src="/js/firebaseCheck.js"></script>
-  <script src="/js/indexAnalytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    <script src="/js/firebaseCheck.js"></script>
+    <script src="/js/indexAnalytics.js"></script>
 
 
-</body>
+  </body>
 
-<footer>
-  <br>
-  <p>© 2018 EZ Cooking</p>
-</footer>
+  <footer>
+    <br>
+    <p>© 2018 EZ Cooking</p>
+  </footer>
 
 </html>
