@@ -432,8 +432,8 @@ function share(foodType) {
             userDatabasePlaceRef.push(itemName);
 
             // Make stuff move away
-            document.getElementsByClassName("shareRow").style.display = "none";
-            document.getElementsByClassName("rateRow").style.display = "flex";
+            document.getElementById("shareRow").style.display = "none";
+            document.getElementById("rateRow").style.display = "flex";
         });
 
     }

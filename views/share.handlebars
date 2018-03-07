@@ -2,7 +2,7 @@
 <html>
 
 <head>
- 
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
   <script>
@@ -34,19 +34,25 @@
 
   <div class="container">
 
-    <div class="row shareRow">
+    <div class="row" id="shareRow">
 
       <div class="col-12">
         <div class="px-2 px-md-0">
           <h3 id="title-no-lr-padding">Share Your Creation </h3>
-          <p class="center">Snap a picture of your meal!</p>
+          <p>Snap a picture of your meal, and present it to the world. Your picture will be in the gallery.</p>
+          <p>You can skip this if you want.</p>
+        </div>
 
+        <div>
           <form id="form1" runat="server">
 
-            <div class="form-group">
+            <div class="form-group px-2 px-md-0">
               <input type='file' class="form-control-file" id="imgInp" />
             </div>
-            <div class="form-group">
+
+            <img class="img-fluid" id="image-preview" src="/images/placeholder.png" alt="your image" />
+
+            <div class="form-group px-2 px-md-0">
               <label for="descriptionArea">Description</label>
               <textarea class="form-control" id="descriptionArea" rows="3"></textarea>
             </div>
@@ -55,18 +61,14 @@
         </div>
       </div>
 
-      <div class="col-12">
-        <img class="img-fluid" id="image-preview" src="/images/placeholder.png" alt="your image" />
-      </div>
-
       <div class="col-6 text-left">
-        <p>
+        <p class="px-2 px-md-0">
           <a class="button" id="share" onclick="share('{{name}}')">Share</a>
         </p>
       </div>
 
       <div class="col-6 text-right">
-        <p>
+        <p class="px-2 px-md-0">
           <a class="button" href="/">Back To Home</a>
         </p>
       </div>
@@ -77,19 +79,19 @@
 
     </div>
 
-    <div class="row rateRow px-2 px-md-0">
+    <div class="row px-2 px-md-0" id="rateRow">
       <div class="col-12">
-        <h5>Did you like your meal?</h5>
+        <h3 id="title-no-lr-padding">Did you like your meal?</h>
       </div>
 
       <div class="col-6 text-left">
-        <p class="">
+        <p>
           <a class="button" id="rateYes" onclick="rate('{{name}}', 'Yes')">Yes</a>
         </p>
       </div>
 
       <div class="col-6 text-right">
-        <p class="">
+        <p>
           <a class="button" id="rateNo" onclick="rate('{{name}}', 'No')">No</a>
         </p>
       </div>

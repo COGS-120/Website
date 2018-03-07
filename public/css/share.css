@@ -10,10 +10,10 @@
 	text-align: center;
 }
 
-.shareRow {
+#shareRow {
 	display: flex;
 }
 
-.rateRow {
+#rateRow {
 	display : none;
 }
