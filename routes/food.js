@@ -29,8 +29,11 @@ if (typeof dataWeWant !== 'undefined') {
 		"name" : name,
 		"steplist": dataWeWant.steplist,
 		"time": dataWeWant.time,
-		"category": foodDataSpecific.cat
+		"category": foodDataSpecific.cat,
+		"tools": dataWeWant.tools,
+		"ingredients": dataWeWant.ingredients
 	});
+
 }
 else {
 	res.render("food", {

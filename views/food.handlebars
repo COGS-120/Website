@@ -2,6 +2,31 @@
 <html>
 
 <head>
+  <!-- Google Analytics Content Experiment code -->
+<script>function utmx_section(){}function utmx(){}(function(){var
+k='170550168-0',d=document,l=d.location,c=d.cookie;
+if(l.search.indexOf('utm_expid='+k)>0)return;
+function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+</script><script>utmx('url','A/B');</script>
+<!-- End of Google Analytics Content Experiment code -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-114830772-1');
+  </script>
+
   <title>EZ Cooking - {{name}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Bootstrap -->
@@ -58,11 +83,67 @@
 
     </div>
 
-    <div id="stepsbox">
+    <div id="ti_box" class="px-2 px-md-0">
+      <h3>
+        <strong class="tools">Tools</strong>
+      </h3>
 
+      <div id="tools">
+        <!-- Testing Columns -->
+        <div class="row row-adj ">
+          <!-- row 1 -->
+          {{#each tools}}
+          <div class="col-6">
+            <p>{{tool-name}}</p>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+        <!-- closing row 1 -->
+        <!-- closed Testing Columns -->
+
+
+      <div id="ingredients">
+        <h3>
+          <strong>Ingredients</strong>
+        </h3>
+        <!-- Ingredients -->
+        <div class="row row-adj">
+          {{#each ingredients}}
+          <div class="col-6">
+            <p>{{ingredient-name}}</p>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Steps -->
+    <div id="stepsbox" class="px-2 px-md-0"> 
+      <h3>
+        <strong>Steps</strong>
+      </h3>
       {{#each steplist}}
       <p class="px-2 px-md-0">{{summary}}</p>
       {{/each}}
+
+    </div>
+
+    <br>
+    
+    <div class="row px-2 px-md-0" id="button-row">
+
+      <div class="col-6 text-left">
+        <p>
+          <a href="/category/{{category}}" class="button text-no-hyperlink">Back</a>
+        </p>
+      </div>
+
+      <div class="col-6 text-right">
+        <p>
+          <a href="/ingTool/{{name}}" class="button text-no-hyperlink">Start</a>
+        </p>
+      </div>
 
     </div>
 
@@ -76,15 +157,6 @@
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
   <script src="/js/firebaseCheck.js"></script>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-114830772-1');
-  </script>
 
 
 </body>
