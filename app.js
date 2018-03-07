@@ -16,6 +16,7 @@ var category = require('./routes/category');
 var food = require('./routes/food');
 var foodGallery = require('./routes/foodGallery');
 var instructions = require('./routes/instructions');
+var profile = require('./routes/profile');
 var share = require('./routes/share');
 var ingTool = require('./routes/ingTool');
 var privacy = require('./routes/privacy');
@@ -56,6 +57,7 @@ app.get('/share/:name', share.view);
 app.get('/ingTool/:name', ingTool.view);
 app.get('/privacy', privacy.view);
 app.get('/terms', terms.view);
+app.get('/profile', profile.view);
 app.get('/viewAlt', index.viewAlt);
 
 http.createServer(app).listen(app.get('port'), function(){

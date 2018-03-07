@@ -7,11 +7,13 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
+  <link href="/css/animate.min.css" rel="stylesheet">
   <link href="/css/ez-styles.css" rel="stylesheet">
-  <link href="/css/foodGallery.css" rel="stylesheet">
+  <link href="/css/profile.css" rel="stylesheet">
+
 </head>
 
-<body onload="setPageType('Food Gallery', '{{name}}');">
+<body onload="setPageType('Profile', '');">
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="dummyBar">
     <a class="navbar-brand" href="/">EZ Cooking</a>
@@ -20,35 +22,38 @@
 
   <div class="container">
 
-    <h3 id="title-no-lr-padding" class="px-2 px-md-0">Gallery - {{name}}</h3>
+    <div class="row">
 
-    <div class="row px-2 px-md-0" id="button-row">
-      <div class="col-6 text-left">
-        <button class="button">
-          <a class="text-no-hyperlink" href="/food/{{name}}">Back</a>
-        </button>
+      <div class="col-12 text-center">
+        <img class="img-fluid" id="profileImage" src="/images/anonymous.png">
+        <p id="profileUserName">Anonymous User</p>
+        <p id="profileEmail"></p>
+        <hr>
       </div>
+
+      <div class="col-6 text-center count-col">
+        <p class="strong" id="favorites-amount">0</p>
+        <a href="/favorites" class="text-no-hyperlink">Favorites</a>
+      </div>
+
+      <div class="col-6 text-center count-col">
+        <p class="strong" id="gallery-amount">0</p>
+        <p>Photos Shared</p>
+      </div>
+
+      <div class="col-12">
+        <hr>
+      </div>
+
+      <div class="col-12 text-center">
+        <h5>Gallery</h5>
+      </div>
+
     </div>
 
-    <div class="row" id="food-row">
-
-      <!--
-      strAdd += '<div class="col-8 auto">';
-      strAdd += '<h5 class="text-left px-2 px-md-0">' + name + '</h5>';
-      strAdd += '</div>';
-      strAdd += '<div class="col-4 auto">';
-      strAdd += '<p class="text-right px-2 px-md-0">' + date + '</p>';
-      strAdd += '</div>';
-      strAdd += '<div class="col-12 food-card">';
-      strAdd += '<img class="img-fluid food-img" src="' + url + '">';
-      strAdd += '<div class="px-2 px-md-0 food-desc">Description</div>';
-      strAdd += '<hr>';
-      strAdd += '</div>';
-      -->
+    <div class="row" id="food-pictures">
 
     </div>
-
-    <div class="px-2 px-md-0" id="food-no-content"></div>
 
   </div>
 
@@ -69,6 +74,7 @@
 
     gtag('config', 'UA-114830772-1');
   </script>
+
 
 </body>
 

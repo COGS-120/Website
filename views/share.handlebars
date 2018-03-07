@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
   <link href="/css/ez-styles.css" rel="stylesheet">
+  <link href="/css/animate.min.css" rel="stylesheet">
   <link href="/css/share.css" rel="stylesheet">
 
 </head>
@@ -21,10 +22,9 @@
 
   <div class="container">
 
-    <div class="row">
+    <div class="row shareRow">
 
       <div class="col-12">
-
         <div class="px-2 px-md-0">
           <h3 id="title-no-lr-padding">Share Your Creation </h3>
           <p class="center">Snap a picture of your meal!</p>
@@ -48,13 +48,13 @@
       </div>
 
       <div class="col-6 text-left">
-        <p class="px-2 px-md-0">
+        <p>
           <a class="button" id="share" onclick="share('{{name}}')">Share</a>
         </p>
       </div>
 
       <div class="col-6 text-right">
-        <p class="px-2 px-md-0">
+        <p>
           <a class="button" href="/">Back To Home</a>
         </p>
       </div>
@@ -65,7 +65,28 @@
 
     </div>
 
-  </div>
+    <div class="row rateRow px-2 px-md-0">
+      <div class="col-12">
+        <h5>Did you like your meal?</h5>
+      </div>
+
+      <div class="col-6 text-left">
+        <p class="">
+          <a class="button" id="rateYes" onclick="rate('{{name}}', 'Yes')">Yes</a>
+        </p>
+      </div>
+
+      <div class="col-6 text-right">
+        <p class="">
+          <a class="button" id="rateNo" onclick="rate('{{name}}', 'No')">No</a>
+        </p>
+      </div>
+
+      <div class="col-12">
+        <p class="" id="doneMessage"></p>
+      </div>
+
+    </div>
 
   </div>
 
