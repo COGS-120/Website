@@ -126,7 +126,7 @@ FirebaseLoginWorker.prototype.onAuthStateChanged = function (user) {
         var uid = user.uid;
 
         // Redirect to home page
-        window.location.href = "/";
+        window.location.href = "/home";
     }
 
     else { // User is signed out

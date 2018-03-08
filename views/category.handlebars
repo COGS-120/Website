@@ -3,15 +3,15 @@
 
 <head>
 
- <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-114830772-1');
-</script>
+    gtag('config', 'UA-114830772-1');
+  </script>
 
 
   <title>EZ Cooking - {{categoryName}}</title>
@@ -32,32 +32,44 @@
 <body>
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="dummyBar">
-    <a class="navbar-brand" href="/">EZ Cooking</a>
+    <a class="navbar-brand" href="/home">
+      <img class="navbar-logo"src="/images/logo-transparent.svg">
+    </a>
   </nav>
   <div id="topNavBar"></div>
 
-  <img class="animated fadeIn" id="top-image" src="../images/{{categoryImage}}">
 
   <div class="container">
 
-    <h3 id="title">{{categoryName}}</h3>
+    <div class="row topRow">
+      <div class="col-12">
+        <div class="food-back">
+          <img class="animated fadeIn" id="top-image" src="../images/{{categoryImage}}">
+          <h3 id="title-on-black">{{categoryName}}</h3>
+          <div class="fadeToBlack">
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="row">
 
       {{#each category }}
+
       <div class="col-8">
         <a class="food-link" href="../food/{{name}}">
           <img class="food-card-img" src="../images/{{image}}" alt="Card image">
         </a>
       </div>
-      <div class="col-4 col-info col-color">
+
+      <div class="col-4 col-info">
         <a class="food-link" href="../food/{{name}}">
-          <h5 class="inner-name">
-            {{name}}
-          </h5>
+          <h5> {{name}}</h5>
           <p>{{time}}</p>
+          <p class="Rating" id="{{food}}-rating">Rating</p>
         </a>
       </div>
+
       {{/each}}
 
     </div>
@@ -74,7 +86,7 @@
   <script src="/js/firebaseCheck.js"></script>
   <script src="/js/category.js"></script>
 
- 
+
 </body>
 
 </html>

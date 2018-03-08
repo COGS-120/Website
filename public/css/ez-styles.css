@@ -10,6 +10,15 @@
     padding-right: 0px;
 }
 
+#title-on-black {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-left: 10px;
+    color: white;
+    z-index: 3;
+}
+
 .container {
     padding: 0px;
     width: 100%;
@@ -72,20 +81,72 @@ h6 {
 .text-no-hyperlink {
     text-decoration: none !important;
     color: black;
-  }
-  
+}
+
 #button-row {
     padding-bottom: 10px;
 }
+
 #stepsbox p {
-border-bottom: thin solid #D3D3D3;
-padding-top: 7px;
-padding-bottom: 2px;
+    border-bottom: thin solid #D3D3D3;
+    padding-top: 7px;
+    padding-bottom: 2px;
 }
 
 #ti_box {
     margin-bottom: 20px;
 }
+
 #tools {
     margin-bottom: 20px;
+}
+
+.fadeToBlack {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 20vh;
+    max-width: 700px;
+    background: none;
+    background: -moz-linear-gradient(middle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%);
+    background: -webkit-gradient(linear, left middle, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(80%, rgba(0, 0, 0, 1)));
+    background: -webkit-linear-gradient(middle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%);
+    background: -o-linear-gradient(middle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%);
+    background: -ms-linear-gradient(middle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 80%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000', GradientType=0);
+}
+
+.food-back {
+    position: relative;
+    max-width: 700px;
+    padding-bottom: 10px;
+}
+
+
+/* Navabar */
+
+.navbar {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-brand {
+    padding-top: 2px;
+    padding-bottom: 0px;
+}
+
+.navbar-logo {
+    max-height: 2.1rem;
+}
+
+.navbar-profile {
+    border-radius: 50%;
+    width: auto;
+    max-height: 2rem;
+}
+
+#dummyBar {
+    height: 56px;
 }

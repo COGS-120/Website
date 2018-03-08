@@ -470,7 +470,7 @@ function rate(foodType, verdict) {
 }
 
 function home() {
-    window.location.href = "/";
+    window.location.href = "/home";
 }
 
 /** 

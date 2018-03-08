@@ -8,10 +8,11 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 // Routes
+var login = require("./routes/login");
+var home = require('./routes/home');
+
 var about = require("./routes/about");
 var favorites = require("./routes/favorites");
-var login = require("./routes/login");
-var index = require('./routes/index');
 var category = require('./routes/category');
 var food = require('./routes/food');
 var foodGallery = require('./routes/foodGallery');
@@ -45,8 +46,11 @@ if ('development' == app.get('env')) {
 }
 
 // Add routes here
-app.get('/', index.view);
+app.get('/', login.view);
+app.get('/home', home.view);
+app.get('/viewAlt', home.viewAlt);
 app.get('/login', login.view);
+
 app.get('/about', about.view);
 app.get('/favorites', favorites.view);
 app.get('/category/:name', category.view);
@@ -58,7 +62,6 @@ app.get('/ingTool/:name', ingTool.view);
 app.get('/privacy', privacy.view);
 app.get('/terms', terms.view);
 app.get('/profile', profile.view);
-app.get('/viewAlt', index.viewAlt);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
