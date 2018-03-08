@@ -29,7 +29,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body onload="setPageType('Category', '{{name}}');">
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="dummyBar">
     <a class="navbar-brand" href="/home">
@@ -58,15 +58,15 @@
 
       <div class="col-8">
         <a class="food-link" href="../food/{{name}}">
-          <img class="food-card-img" src="../images/{{image}}" alt="Card image">
+          <img class="food-card-img" src="../images/{{image}}" alt="image">
         </a>
       </div>
 
       <div class="col-4 col-info">
         <a class="food-link" href="../food/{{name}}">
           <h5> {{name}}</h5>
-          <p>{{time}}</p>
-          <p class="Rating" id="{{food}}-rating">Rating</p>
+          <p class="no-margin">{{time}}</p>
+          {{!-- <p class="Rating no-margin" id="{{food}}-rating">Rating</p> --}}
         </a>
       </div>
 

@@ -11,6 +11,6 @@
             <tspan x="0" y="45" fill="#FFFFFF">EZ</tspan>
             <tspan x="70.265625" y="45" fill="#FF880B">Cooking</tspan>
         </text>
-        <path d="M88,49 C110.222694,77 129.889361,77 147,49" id="Path-3" stroke="#FF880B" stroke-width="3"></path>
+        <path d="M100,49 C115.222694,77 129.889361,77 159,49" id="Path-3" stroke="#FF880B" stroke-width="3"></path>
     </g>
 </svg>
