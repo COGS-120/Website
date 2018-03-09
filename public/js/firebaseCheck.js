@@ -344,7 +344,7 @@ function enumerateProfile() {
 
     // Show amount of favorites
     database.ref(userPath() + "favorites").once("value", function (snapshot) {
-        document.getElementById("favorites-amount").innerHTML = snapshot.numChildren();
+        document.getElementById("favorites-amount").innerHTML = snapshot.numChildren() - 1;
     });
 
     // Enumerate food pictures
@@ -352,7 +352,7 @@ function enumerateProfile() {
         if (snapshot.val() != null) {
 
             // Set amount of photos
-            document.getElementById("gallery-amount").innerHTML = snapshot.numChildren() - 1;
+            document.getElementById("gallery-amount").innerHTML = snapshot.numChildren();
 
             // Loop through and add a picture
             $.each(snapshot.val(), function (key, value) {
