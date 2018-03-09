@@ -329,10 +329,18 @@ function enumerateFoodGallery(food) {
 }
 
 function enumerateProfile() {
-    console.log(currentUser.displayName);
-    document.getElementById("profileUserName").innerHTML = currentUser.displayName;
-    document.getElementById("profileEmail").innerHTML = currentUser.email;
-    document.getElementById("profileImage").src = currentUser.photoURL;
+
+    if (currentUser.isAnonymous) {
+        document.getElementById("profileUserName").innerHTML = "Anonymous User";
+        document.getElementById("profileEmail").innerHTML = "";
+        document.getElementById("profileImage").src = "../images/anonymous.png";
+    }
+    else {
+
+        document.getElementById("profileUserName").innerHTML = currentUser.displayName;
+        document.getElementById("profileEmail").innerHTML = currentUser.email;
+        document.getElementById("profileImage").src = currentUser.photoURL;
+    }
 
     // Show amount of favorites
     database.ref(userPath() + "favorites").once("value", function (snapshot) {
@@ -344,7 +352,7 @@ function enumerateProfile() {
         if (snapshot.val() != null) {
 
             // Set amount of photos
-            document.getElementById("gallery-amount").innerHTML = snapshot.numChildren();
+            document.getElementById("gallery-amount").innerHTML = snapshot.numChildren() - 1;
 
             // Loop through and add a picture
             $.each(snapshot.val(), function (key, value) {
@@ -382,7 +390,7 @@ function enumerateProfile() {
         }
         else {
             document.getElementById('food-no-content').innerHTML +=
-                "<div>No one has uploaded photos for " + food + " yet.</div>";
+                "<div>You haven't posted any photos yet.</div>";
         }
     });
 }
