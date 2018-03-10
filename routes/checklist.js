@@ -1,13 +1,13 @@
-exports.view = function(req, res) {
+exports.view = function (req, res) {
 	var name = req.params.name;
 	var recipeData = require("../public/json/instructions.json");
-	
+
 	var dataWeWant;
 	var index = 0;
 
 
 	for (index = 0; index < recipeData.length; index++) {
-		if (recipeData[index].name == name){
+		if (recipeData[index].name == name) {
 			dataWeWant = recipeData[index];
 			break;
 		}
@@ -19,9 +19,9 @@ exports.view = function(req, res) {
 	}
 
 
- 
-    	res.render("ingTool", {
-		"name" : name,
+
+	res.render("checklist", {
+		"name": name,
 		"tools": dataWeWant.tools,
 		"ingredients": dataWeWant.ingredients
 	});

@@ -28,7 +28,7 @@
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="dummyBar">
     <a class="navbar-brand" href="/home">
-      <img class="navbar-logo"src="/images/logo-transparent.svg">
+      <img class="navbar-logo" src="/images/logo-transparent.svg">
     </a>
   </nav>
   <div id="topNavBar"></div>
@@ -64,7 +64,7 @@
 
       <div class="col-4 text-right">
         <p>
-          <a href="/ingTool/{{name}}" class="button text-no-hyperlink">Start</a>
+          <a href="/checklist/{{name}}" class="button text-no-hyperlink">Start</a>
         </p>
       </div>
 
@@ -82,9 +82,7 @@
       </h3>
 
       <div id="tools">
-        <!-- Testing Columns -->
         <div class="row row-adj ">
-          <!-- row 1 -->
           {{#each tools}}
           <div class="col-6">
             <p>{{tool-name}}</p>
@@ -115,7 +113,7 @@
       <h3>Steps
       </h3>
       {{#each steplist}}
-      <p class="px-2 px-md-0">{{summary}}</p>
+      <p>{{summary}}</p>
       {{/each}}
 
     </div>
@@ -124,15 +122,21 @@
 
     <div class="row px-2 px-md-0" id="button-row">
 
-      <div class="col-6 text-left">
+      <div class="col-4 text-left">
         <p>
           <a href="/category/{{category}}" class="button text-no-hyperlink">Back</a>
         </p>
       </div>
 
-      <div class="col-6 text-right">
+      <div class="col-4 text-center">
         <p>
-          <a href="/ingTool/{{name}}" class="button text-no-hyperlink">Start</a>
+          <a href="/food/{{name}}/gallery" class="button text-no-hyperlink">Gallery</a>
+        </p>
+      </div>
+
+      <div class="col-4 text-right">
+        <p>
+          <a href="/checklist/{{name}}" class="button text-no-hyperlink">Start</a>
         </p>
       </div>
 

@@ -19,7 +19,7 @@ var foodGallery = require('./routes/foodGallery');
 var instructions = require('./routes/instructions');
 var profile = require('./routes/profile');
 var share = require('./routes/share');
-var ingTool = require('./routes/ingTool');
+var checklist = require('./routes/checklist');
 var privacy = require('./routes/privacy');
 var terms = require('./routes/terms');
 
@@ -58,7 +58,7 @@ app.get('/food/:name', food.view);
 app.get('/food/:name/gallery', foodGallery.view);
 app.get('/instructions/:name', instructions.view);
 app.get('/share/:name', share.view);
-app.get('/ingTool/:name', ingTool.view);
+app.get('/checklist/:name', checklist.view);
 app.get('/privacy', privacy.view);
 app.get('/terms', terms.view);
 app.get('/profile', profile.view);

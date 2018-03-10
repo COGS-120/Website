@@ -24,6 +24,7 @@
     width: 100%;
     max-width: 700px;
     overflow-x: hidden;
+    padding-top: 56px; /* For navbar flex */
 }
 
 html {
@@ -138,6 +139,10 @@ h6 {
 
 .navbar {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    z-index: 5;
+    position: fixed;
+    width: 100%;
+    min-height: 7vh;
 }
 
 .navbar-brand {
@@ -157,4 +162,7 @@ h6 {
 
 #dummyBar {
     height: 56px;
+    z-index: 5;
+    position: fixed;
+    min-height: 7vh;
 }
