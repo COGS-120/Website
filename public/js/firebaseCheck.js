@@ -86,7 +86,6 @@ FirebaseWorker.prototype.signOut = function () {
  */
 FirebaseWorker.prototype.onAuthStateChanged = function (user) {
     if (user) { // User is signed in!
-        console.log("User has been logged in.");
         var localThis = this;
 
         // Every page will have the navbar. Every page must load this before
@@ -96,7 +95,6 @@ FirebaseWorker.prototype.onAuthStateChanged = function (user) {
 
             // After everything has been properly initialized, we can access information
             // freely.
-            var isAnonymous = user.isAnonymous;
             var uid = user.uid;
             var photoUrl = user.photoURL;
             currentUser = firebase.auth().currentUser;
@@ -124,7 +122,6 @@ FirebaseWorker.prototype.onAuthStateChanged = function (user) {
     }
 
     else { // User is signed out!
-        console.log("User has been signed out.");
         window.location.href = "/login";
     }
 };
@@ -163,7 +160,6 @@ function startNetworking() {
  */
 function writeUserData(key, val) {
     database.ref(userPath() + key).set(val);
-
     console.log("Wrote " + val + " to database at " + userPath() + key);
 }
 
@@ -175,20 +171,21 @@ function writeUserData(key, val) {
  * @param {string} foodName 
  */
 function checkIfFavorite(foodName, toggle) {
-    addUserKeyIfNonexistent("favorites");
-
     // Get data from database
     database.ref(userPath() + "favorites").once("value", function (snapshot) {
         var favoriteList = snapshot.val();
         var isAFavorite = false;
         var containingKey;
 
-        $.each(favoriteList, function (key, value) {
-            if (value === foodName) {
-                isAFavorite = true;
-                containingKey = key;
-            }
-        });
+        // Search through the favorites list if it exists
+        if (snapshot.val() != null) {
+            $.each(favoriteList, function (key, value) {
+                if (value === foodName) {
+                    isAFavorite = true;
+                    containingKey = key;
+                }
+            });
+        }
 
         // Change value if we want to toggle. Also change star
         if (toggle === true) {
@@ -214,7 +211,6 @@ function checkIfFavorite(foodName, toggle) {
                 $('#favorites-star').attr("src", "../images/favorites/star_unchecked.svg");
             }
         }
-
     });
 }
 
@@ -225,20 +221,14 @@ function checkIfFavorite(foodName, toggle) {
  * PRECONDITION: currentUser is defined
  */
 function enumerateFavorites() {
-    addUserKeyIfNonexistent("favorites");
-
     // Get data from JSON
     $.getJSON("../json/food.json", function (result) {
         // Get data from database
         database.ref(userPath() + "favorites").once("value", function (snapshot) {
-            var favoriteList = snapshot.val();
+            if (snapshot.val() != null) {
+                var favoriteList = snapshot.val();
 
-            var counter = 0; // Counter needed here because firebase has no counter
-            $.each(favoriteList, function (key, value) {
-
-                if (value != 'none') {
-                    counter += 1;
-
+                $.each(favoriteList, function (key, value) {
                     var imageString;
                     var timeString;
                     // Find the image data
@@ -269,16 +259,13 @@ function enumerateFavorites() {
                     stringToAdd += '</a>';
                     stringToAdd += '</div>';
                     document.getElementById('food-row').innerHTML += stringToAdd;
-                }
 
-            });
-
-            // Case where counter is 0. Show the 'no favorites' essage
-            if (counter === 0) {
-                document.getElementById("no-favorites-message").style.display = "block";
+                });
             }
+
+            // If there are no favorites, show the no favorites message.
             else {
-                document.getElementById("no-favorites-message").style.display = "none";
+                document.getElementById("no-favorites-message").style.display = "block";
             }
         });
     });
@@ -344,7 +331,7 @@ function enumerateProfile() {
 
     // Show amount of favorites
     database.ref(userPath() + "favorites").once("value", function (snapshot) {
-        document.getElementById("favorites-amount").innerHTML = snapshot.numChildren() - 1;
+        document.getElementById("favorites-amount").innerHTML = snapshot.numChildren();
     });
 
     // Enumerate food pictures
@@ -494,19 +481,6 @@ function userPath() {
 $("#imgInp").change(function () {
     pictureToShare = this.files[0];
 });
-
-function addUserKeyIfNonexistent(key) {
-    database.ref(userPath()).child(key).once('value', function (snapshot) {
-        var exists = (snapshot.val() !== null);
-        if (exists === false) {
-            setBlankValue(key);
-        }
-    });
-}
-
-function setBlankValue(key) {
-    database.ref(userPath() + key).set({ "iii": "none" });
-}
 
 /**
  * Sets the page type.
