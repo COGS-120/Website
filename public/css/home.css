@@ -1,17 +1,15 @@
 
 .inner-name {
-    padding-left: 10px;
-    padding-top:10px;
+    padding-top: 10px;
     color: black;
 }
 
 .inner-caption {
-    padding-left: 10px;
     color: black;
 }
 
 .food-card {
-    padding-bottom: 20px;
+    padding-bottom: 25px;
 }
 
 .food-img {

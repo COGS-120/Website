@@ -2,32 +2,31 @@
 <html>
 
 <head>
-  
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-114830772-1');
-</script>
-  <title>EZ Cooking - {{name}} Tools and Ingredients</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-114830772-1');
+  </script>
+  <title>EZ Cooking - {{name}} Checklist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-  <link href="/css/food.css" rel="stylesheet">
   <link href="/css/ez-styles.css" rel="stylesheet">
+  <link href="/css/checklist.css" rel="stylesheet">
 
 </head>
 
 <body onload="extractTool('{{name}}');">
 
-
   <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="dummyBar">
     <a class="navbar-brand" href="/home">
-      <img class="navbar-logo"src="/images/logo-transparent.svg">
+      <img class="navbar-logo" src="/images/logo-transparent.svg">
     </a>
   </nav>
   <div id="topNavBar"></div>
@@ -35,48 +34,49 @@
 
   <div class="container px-2 px-md-0">
 
-    
-    <h3>
-      <strong class="tools">Tools</strong>
-    </h3>
+    <h3 id="title-no-lr-padding">Checklist</h3>
 
-    <!-- Testing Columns -->
-    <div class="row row-adj ">
-      <!-- row 1 -->
-      {{#each tools}}
-      <div class="col-6">
-        <p>{{tool-name}}</p>
-      </div>
-      {{/each}}
-    </div>
-    <!-- closing row 1 -->
-    <!-- closed Testing Columns -->
-
-    <h3>
-      <strong>Ingredients</strong>
-    </h3>
-    <!-- Ingredients -->
-    <div class="row row-adj">
-      {{#each ingredients}}
-      <div class="col-6">
-        <p>{{ingredient-name}}</p>
-      </div>
-      {{/each}}
-    </div>
-    <!-- end of ingredients -->
-
-    <h3 id="itemsNeeded">
-    </h3>
+    <h5>Tools</h5>
 
     <div class="row">
-      <div class="col">
+      {{#each tools}}
+      <div class="col-12 checklist-col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="check{{tool-name}}">
+          <label class="form-check-label" for="check{{tool-name}}">
+            {{tool-name}}
+          </label>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+    <h5>Ingredients</h5>
+
+    <div class="row">
+      {{#each ingredients}}
+      <div class="col-12 checklist-col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="check{{ingredient-name}}">
+          <label class="form-check-label" for="check{{ingredient-name}}">
+            {{ingredient-name}}
+          </label>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col text-left">
         <button class="button">
-        <a class="text-no-hyperlink" href="/food/{{name}}">Back To Dish</a>
+          <a class="text-no-hyperlink" href="/food/{{name}}">Back To Dish</a>
         </button>
       </div>
-      <div class="col right">
+      <div class="col text-right">
         <button class="button">
-        <a class="text-no-hyperlink" href="/instructions/{{name}}">Next</a>
+          <a class="text-no-hyperlink" href="/instructions/{{name}}">Next</a>
         </button>
       </div>
     </div>

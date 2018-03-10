@@ -18,6 +18,18 @@
     margin-right: auto;
 }
 
+#backArrow {
+    position: absolute;
+    max-height: 3.25rem;
+    max-width: 3.25rem;
+    top: 0;
+    padding: 5px;
+    z-index: 3;
+    left: 0%;
+    background: rgba(255, 255, 255, 0.50);
+    border-radius: 0% 20% 20% 20%;
+}
+
 .food-link{
     text-decoration: none !important;
     color: black;

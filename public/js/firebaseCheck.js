@@ -315,8 +315,12 @@ function enumerateFoodGallery(food) {
 
 }
 
+/** 
+ * Enumerates the profile page 
+ */
 function enumerateProfile() {
 
+    // Anonymous users get different 
     if (currentUser.isAnonymous) {
         document.getElementById("profileUserName").innerHTML = "Anonymous User";
         document.getElementById("profileEmail").innerHTML = "";
