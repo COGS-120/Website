@@ -8,16 +8,18 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 // Routes
+var login = require("./routes/login");
+var home = require('./routes/home');
+
 var about = require("./routes/about");
 var favorites = require("./routes/favorites");
-var login = require("./routes/login");
-var index = require('./routes/index');
 var category = require('./routes/category');
 var food = require('./routes/food');
 var foodGallery = require('./routes/foodGallery');
 var instructions = require('./routes/instructions');
+var profile = require('./routes/profile');
 var share = require('./routes/share');
-var ingTool = require('./routes/ingTool');
+var checklist = require('./routes/checklist');
 var privacy = require('./routes/privacy');
 var terms = require('./routes/terms');
 
@@ -44,8 +46,11 @@ if ('development' == app.get('env')) {
 }
 
 // Add routes here
-app.get('/', index.view);
+app.get('/', login.view);
+app.get('/home', home.view);
+app.get('/viewAlt', home.viewAlt);
 app.get('/login', login.view);
+
 app.get('/about', about.view);
 app.get('/favorites', favorites.view);
 app.get('/category/:name', category.view);
@@ -53,10 +58,10 @@ app.get('/food/:name', food.view);
 app.get('/food/:name/gallery', foodGallery.view);
 app.get('/instructions/:name', instructions.view);
 app.get('/share/:name', share.view);
-app.get('/ingTool/:name', ingTool.view);
+app.get('/checklist/:name', checklist.view);
 app.get('/privacy', privacy.view);
 app.get('/terms', terms.view);
-app.get('/viewAlt', index.viewAlt);
+app.get('/profile', profile.view);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -86,7 +86,6 @@ FirebaseWorker.prototype.signOut = function () {
  */
 FirebaseWorker.prototype.onAuthStateChanged = function (user) {
     if (user) { // User is signed in!
-        console.log("User has been logged in.");
         var localThis = this;
 
         // Every page will have the navbar. Every page must load this before
@@ -96,7 +95,6 @@ FirebaseWorker.prototype.onAuthStateChanged = function (user) {
 
             // After everything has been properly initialized, we can access information
             // freely.
-            var isAnonymous = user.isAnonymous;
             var uid = user.uid;
             var photoUrl = user.photoURL;
             currentUser = firebase.auth().currentUser;
@@ -124,7 +122,6 @@ FirebaseWorker.prototype.onAuthStateChanged = function (user) {
     }
 
     else { // User is signed out!
-        console.log("User has been signed out.");
         window.location.href = "/login";
     }
 };
@@ -163,7 +160,6 @@ function startNetworking() {
  */
 function writeUserData(key, val) {
     database.ref(userPath() + key).set(val);
-
     console.log("Wrote " + val + " to database at " + userPath() + key);
 }
 
@@ -175,20 +171,21 @@ function writeUserData(key, val) {
  * @param {string} foodName 
  */
 function checkIfFavorite(foodName, toggle) {
-    addUserKeyIfNonexistent("favorites");
-
     // Get data from database
     database.ref(userPath() + "favorites").once("value", function (snapshot) {
         var favoriteList = snapshot.val();
         var isAFavorite = false;
         var containingKey;
 
-        $.each(favoriteList, function (key, value) {
-            if (value === foodName) {
-                isAFavorite = true;
-                containingKey = key;
-            }
-        });
+        // Search through the favorites list if it exists
+        if (snapshot.val() != null) {
+            $.each(favoriteList, function (key, value) {
+                if (value === foodName) {
+                    isAFavorite = true;
+                    containingKey = key;
+                }
+            });
+        }
 
         // Change value if we want to toggle. Also change star
         if (toggle === true) {
@@ -214,7 +211,6 @@ function checkIfFavorite(foodName, toggle) {
                 $('#favorites-star').attr("src", "../images/favorites/star_unchecked.svg");
             }
         }
-
     });
 }
 
@@ -225,20 +221,14 @@ function checkIfFavorite(foodName, toggle) {
  * PRECONDITION: currentUser is defined
  */
 function enumerateFavorites() {
-    addUserKeyIfNonexistent("favorites");
-
     // Get data from JSON
     $.getJSON("../json/food.json", function (result) {
         // Get data from database
         database.ref(userPath() + "favorites").once("value", function (snapshot) {
-            var favoriteList = snapshot.val();
+            if (snapshot.val() != null) {
+                var favoriteList = snapshot.val();
 
-            var counter = 0; // Counter needed here because firebase has no counter
-            $.each(favoriteList, function (key, value) {
-
-                if (value != 'none') {
-                    counter += 1;
-
+                $.each(favoriteList, function (key, value) {
                     var imageString;
                     var timeString;
                     // Find the image data
@@ -269,16 +259,13 @@ function enumerateFavorites() {
                     stringToAdd += '</a>';
                     stringToAdd += '</div>';
                     document.getElementById('food-row').innerHTML += stringToAdd;
-                }
 
-            });
-
-            // Case where counter is 0. Show the 'no favorites' essage
-            if (counter === 0) {
-                document.getElementById("no-favorites-message").style.display = "block";
+                });
             }
+
+            // If there are no favorites, show the no favorites message.
             else {
-                document.getElementById("no-favorites-message").style.display = "none";
+                document.getElementById("no-favorites-message").style.display = "block";
             }
         });
     });
@@ -312,7 +299,7 @@ function enumerateFoodGallery(food) {
                         strAdd += '</div>';
                         strAdd += '<div class="col-12 food-card">';
                         strAdd += '<img class="img-fluid food-img" src="' + url + '">';
-                        strAdd += '<div class="px-2 px-md-0 food-desc">Description</div>';
+                        strAdd += '<div class="px-2 px-md-0 food-desc">' + description + '</div>';
                         strAdd += '<hr>';
                         strAdd += '</div>';
                         document.getElementById('food-row').innerHTML += strAdd;
@@ -321,11 +308,82 @@ function enumerateFoodGallery(food) {
             });
         }
         else {
-            document.getElementById('food-no-content').innerHTML += 
-            "<div>No one has uploaded photos for " + food + " yet.</div>";
+            document.getElementById('food-no-content').innerHTML +=
+                "<div>No one has uploaded photos for " + food + " yet.</div>";
         }
     });
 
+}
+
+/** 
+ * Enumerates the profile page 
+ */
+function enumerateProfile() {
+
+    // Anonymous users get different 
+    if (currentUser.isAnonymous) {
+        document.getElementById("profileUserName").innerHTML = "Anonymous User";
+        document.getElementById("profileEmail").innerHTML = "";
+        document.getElementById("profileImage").src = "../images/anonymous.png";
+    }
+    else {
+
+        document.getElementById("profileUserName").innerHTML = currentUser.displayName;
+        document.getElementById("profileEmail").innerHTML = currentUser.email;
+        document.getElementById("profileImage").src = currentUser.photoURL;
+    }
+
+    // Show amount of favorites
+    database.ref(userPath() + "favorites").once("value", function (snapshot) {
+        document.getElementById("favorites-amount").innerHTML = snapshot.numChildren();
+    });
+
+    // Enumerate food pictures
+    database.ref(userPath()).child("pictures/").once('value').then(function (snapshot) {
+        if (snapshot.val() != null) {
+
+            // Set amount of photos
+            document.getElementById("gallery-amount").innerHTML = snapshot.numChildren();
+
+            // Loop through and add a picture
+            $.each(snapshot.val(), function (key, value) {
+
+                var location = value.substring(0, value.indexOf("<>"));
+
+                var storageLocation = storageRef.child("foodPics/" + location);
+
+                // Create a URL reference for each photo that exists in the storage location.
+                storageLocation.child(value).getDownloadURL().then(function (url) {
+                    storageLocation.child(value).getMetadata().then(function (metadata) {
+                        // Create a div and add this as a picture
+                        // for each favorite, add in the relevant div
+                        var strAdd = "";
+                        var name = metadata.customMetadata.name;
+                        var date = metadata.customMetadata.date;
+                        var description = metadata.customMetadata.description;
+
+                        // string building pattern
+                        strAdd += '<div class="col-8 auto">';
+                        strAdd += '<h5 class="text-left px-2 px-md-0"></h5>';
+                        strAdd += '</div>';
+                        strAdd += '<div class="col-4 auto">';
+                        strAdd += '<p class="text-right px-2 px-md-0">' + date + '</p>';
+                        strAdd += '</div>';
+                        strAdd += '<div class="col-12 food-card">';
+                        strAdd += '<img class="img-fluid food-img" src="' + url + '">';
+                        strAdd += '<div class="px-2 px-md-0 food-desc">' + description + '</div>';
+                        strAdd += '<hr>';
+                        strAdd += '</div>';
+                        document.getElementById('food-pictures').innerHTML += strAdd;
+                    });
+                });
+            });
+        }
+        else {
+            document.getElementById('food-no-content').innerHTML +=
+                "<div>You haven't posted any photos yet.</div>";
+        }
+    });
 }
 
 /** 
@@ -336,15 +394,16 @@ function share(foodType) {
     console.log("Called");
 
     /* Create items */
-    var itemName = currentUser.displayName + " " + Date.now();
+    var itemName = foodType + "<> " + Date.now();
 
     var storagePlaceRef = storageRef.child(
         "foodPics/" + foodType + "/" + itemName);
     var databasePlaceRef = database.ref("food/" + foodType + "/pictures/");
+    var userDatabasePlaceRef = database.ref(userPath()).child("pictures/");
 
     // Add metadata for this object
     var d = new Date();
-    var newDescription = document.getElementById("myTextarea").value;
+    var newDescription = document.getElementById("descriptionArea").value;
     if (newDescription == "") {
         newDescription = "No description provided.";
     }
@@ -353,11 +412,10 @@ function share(foodType) {
         customMetadata: {
             name: currentUser.displayName,
             date: d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate(),
-            description: newDescription
+            description: newDescription,
+            food: foodType
         }
     }
-
-    console.log(document.getElementById("myTextarea").value);
 
     // If a picture has been enumerated, then allow user to share.
     if (pictureToShare != null) {
@@ -368,14 +426,50 @@ function share(foodType) {
             storagePlaceRef.updateMetadata(newMetadata).then(function (metadata) {
                 console.log("Updated Metadata");
             });
+
+            databasePlaceRef.push(itemName);
+            userDatabasePlaceRef.push(itemName);
+
+            // Make stuff move away
+            document.getElementById("shareRow").style.display = "none";
+            document.getElementById("rateRow").style.display = "flex";
         });
 
-        databasePlaceRef.push(itemName);
     }
     else {
         $('#share-status').text("You haven't added a file to share yet!");
         $('#share-status').show();
     }
+}
+
+function rate(foodType, verdict) {
+    console.log(foodType + " " + verdict);
+
+    // Add rating to user ratings
+    var userPlaceRef = database.ref(userPath()).child("ratings/");
+    userPlaceRef.child(foodType).set(verdict);
+
+    // Add to food ratings
+    var foodPlaceRef = database.ref("food/" + foodType + "/ratings/");
+    foodPlaceRef.child(verdict).once('value', function (snapshot) {
+        if (snapshot == null) {
+            foodPlaceRef.child(verdict).set(1);
+        }
+        else {
+            foodPlaceRef.child(verdict).set(snapshot.val() + 1);
+        }
+
+        // After both of these (still not guaranteed, be done)
+        document.getElementById("doneMessage").innerText = "Thanks for rating!";
+
+        // Send home after a delay
+        setTimeout(function () { home() }, 1000);
+    });
+
+}
+
+function home() {
+    window.location.href = "/home";
 }
 
 /** 
@@ -391,19 +485,6 @@ function userPath() {
 $("#imgInp").change(function () {
     pictureToShare = this.files[0];
 });
-
-function addUserKeyIfNonexistent(key) {
-    database.ref(userPath()).child(key).once('value', function (snapshot) {
-        var exists = (snapshot.val() !== null);
-        if (exists === false) {
-            setBlankValue(key);
-        }
-    });
-}
-
-function setBlankValue(key) {
-    database.ref(userPath() + key).set({ "iii": "none" });
-}
 
 /**
  * Sets the page type.
@@ -431,6 +512,10 @@ function setPageType(type, var1) {
 
         else if (type == "Food Gallery") {
             enumerateFoodGallery(var1);
+        }
+
+        else if (type == "Profile") {
+            enumerateProfile();
         }
     }
 

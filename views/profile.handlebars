@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>EZ Cooking - {{name}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link href="/css/animate.min.css" rel="stylesheet">
+  <link href="/css/ez-styles.css" rel="stylesheet">
+  <link href="/css/profile.css" rel="stylesheet">
+
+</head>
+
+<body onload="setPageType('Profile', '');">
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="dummyBar">
+    <a class="navbar-brand" href="/home">
+      <img class="navbar-logo" src="/images/logo-transparent.svg">
+    </a>
+  </nav>
+  <div id="topNavBar"></div>
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-12 text-center">
+        <img class="img-fluid" id="profileImage" src="/images/anonymous.png">
+        <p id="profileUserName">Anonymous User</p>
+        <p id="profileEmail"></p>
+        <hr>
+      </div>
+
+      <div class="col-6 text-center count-col">
+        <p class="strong" id="favorites-amount">0</p>
+        <a href="/favorites" class="text-no-hyperlink">Favorites</a>
+      </div>
+
+      <div class="col-6 text-center count-col">
+        <p class="strong" id="gallery-amount">0</p>
+        <p>Photos Shared</p>
+      </div>
+
+      <div class="col-12">
+        <hr>
+      </div>
+
+      <div class="col-12 text-center">
+        <h5>Gallery</h5>
+      </div>
+
+    </div>
+
+    <div class="row" id="food-pictures">
+      <!-- Filled in with food pictures from FirebaseCheck.js -->
+      <div class="col-12">
+        <p class="px-2 px-md-0" id="food-no-content"></p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+  <script src="/js/firebaseCheck.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-114830772-1');
+  </script>
+
+
+</body>
+
+</html>

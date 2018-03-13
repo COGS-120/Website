@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-114830772-1');
+  </script>
+  <title>EZ Cooking - {{name}} Checklist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link href="/css/ez-styles.css" rel="stylesheet">
+  <link href="/css/checklist.css" rel="stylesheet">
+
+</head>
+
+<body onload="extractTool('{{name}}');">
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="dummyBar">
+    <a class="navbar-brand" href="/home">
+      <img class="navbar-logo" src="/images/logo-transparent.svg">
+    </a>
+  </nav>
+  <div id="topNavBar"></div>
+
+
+  <div class="container px-2 px-md-0">
+
+    <h3 id="title-no-lr-padding">Checklist</h3>
+
+    <h5>Tools</h5>
+
+    <div class="row">
+      {{#each tools}}
+      <div class="col-12 checklist-col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="check{{tool-name}}">
+          <label class="form-check-label" for="check{{tool-name}}">
+            {{tool-name}}
+          </label>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+    <h5>Ingredients</h5>
+
+    <div class="row">
+      {{#each ingredients}}
+      <div class="col-12 checklist-col">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="check{{ingredient-name}}">
+          <label class="form-check-label" for="check{{ingredient-name}}">
+            {{ingredient-name}}
+          </label>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col text-left">
+        <button class="button">
+          <a class="text-no-hyperlink" href="/food/{{name}}">Back To Dish</a>
+        </button>
+      </div>
+      <div class="col text-right">
+        <button class="button">
+          <a class="text-no-hyperlink" href="/instructions/{{name}}">Next</a>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/checklist.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+  <script src="/js/firebaseCheck.js"></script>
+
+
+
+</body>
+
+</html>

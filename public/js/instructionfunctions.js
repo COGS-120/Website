@@ -307,7 +307,7 @@ function nextIndex() {
 function previousIndex() {
 	index--;
 	if (index < -1) {
-		window.location.href = "/../ingTool/" + recipeName;
+		window.location.href = "/../checklist/" + recipeName;
 	}
 	else if (index == -1) {
 		display("beginning")

@@ -9,3 +9,11 @@
 	margin-left: 22px;
 	text-align: center;
 }
+
+#shareRow {
+	display: flex;
+}
+
+#rateRow {
+	display : none;
+}

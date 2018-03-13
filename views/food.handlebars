@@ -2,8 +2,8 @@
 <html>
 
 <head>
- 
-   <!-- Global site tag (gtag.js) - Google Analytics -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114830772-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -27,25 +27,26 @@
 <body onload="setPageType('Food', '{{name}}');">
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="dummyBar">
-    <a class="navbar-brand" href="/">EZ Cooking</a>
+    <a class="navbar-brand" href="/home">
+      <img class="navbar-logo" src="/images/logo-transparent.svg">
+    </a>
   </nav>
   <div id="topNavBar"></div>
 
-  <img id="img-top" class="animated fadeInDown" src="../images/{{image}}" alt="Card image">
-
   <div class="container">
 
-    <div id="name-row" class="row">
-      <div class="col-8 offset-2">
-        <h5>{{name}}</h5>
-      </div>
-      <div class="col-2">
-        <img class=" px-2 px-md-0" id="favorites-star" src="../images/favorites/star_unchecked.svg" onclick="checkIfFavorite('{{name}}', true)">
+    <div class="row">
+      <div class="col-12">
+        <div class="food-back">
+          <img id="img-top" class="animated fadeIn" src="../images/{{image}}" alt="Card image">
+          <h5 id="title-on-black">{{name}}</h5>
+          <img class="px-2 px-md-0" id="favorites-star" src="../images/favorites/star_unchecked.svg" onclick="checkIfFavorite('{{name}}', true)">
+          <div class="fadeToBlack">
+          </div>
+        </div>
       </div>
     </div>
 
-    <p id="eta">{{time}}</p>
-    <p id="favorites-message"></p>
 
     <div class="row px-2 px-md-0" id="button-row">
 
@@ -63,21 +64,25 @@
 
       <div class="col-4 text-right">
         <p>
-          <a href="/ingTool/{{name}}" class="button text-no-hyperlink">Start</a>
+          <a href="/checklist/{{name}}" class="button text-no-hyperlink">Start</a>
         </p>
       </div>
 
     </div>
 
+    <div class="row">
+      <div class="col-12">
+        <p id="eta">{{time}}</p>
+        <p class="px-2 px-md-0" id="favorites-message"></p>
+      </div>
+    </div>
+
     <div id="ti_box" class="px-2 px-md-0">
-      <h3>
-        <strong class="tools">Tools</strong>
+      <h3>Tools
       </h3>
 
       <div id="tools">
-        <!-- Testing Columns -->
         <div class="row row-adj ">
-          <!-- row 1 -->
           {{#each tools}}
           <div class="col-6">
             <p>{{tool-name}}</p>
@@ -85,13 +90,12 @@
           {{/each}}
         </div>
       </div>
-        <!-- closing row 1 -->
-        <!-- closed Testing Columns -->
+      <!-- closing row 1 -->
+      <!-- closed Testing Columns -->
 
 
       <div id="ingredients">
-        <h3>
-          <strong>Ingredients</strong>
+        <h3>Ingredients
         </h3>
         <!-- Ingredients -->
         <div class="row row-adj">
@@ -105,29 +109,33 @@
     </div>
 
     <!-- Steps -->
-    <div id="stepsbox" class="px-2 px-md-0"> 
-      <h3>
-        <strong>Steps</strong>
-      </h3>
+    <div id="stepsbox" class="px-2 px-md-0">
+      <h3>Steps</h3>
       {{#each steplist}}
-      <p class="px-2 px-md-0">{{summary}}</p>
+      <p>{{summary}}</p>
       {{/each}}
 
     </div>
 
     <br>
-    
+
     <div class="row px-2 px-md-0" id="button-row">
 
-      <div class="col-6 text-left">
+      <div class="col-4 text-left">
         <p>
           <a href="/category/{{category}}" class="button text-no-hyperlink">Back</a>
         </p>
       </div>
 
-      <div class="col-6 text-right">
+      <div class="col-4 text-center">
         <p>
-          <a href="/ingTool/{{name}}" class="button text-no-hyperlink">Start</a>
+          <a href="/food/{{name}}/gallery" class="button text-no-hyperlink">Gallery</a>
+        </p>
+      </div>
+
+      <div class="col-4 text-right">
+        <p>
+          <a href="/checklist/{{name}}" class="button text-no-hyperlink">Start</a>
         </p>
       </div>
 

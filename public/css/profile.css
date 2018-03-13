@@ -1,0 +1,17 @@
+#profileImage {
+    border-radius: 50%; 
+    width : auto;
+    max-height: 25vh;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+#profileUserName {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.strong {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
