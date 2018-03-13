@@ -330,22 +330,31 @@ function extractRecipe(tempName) {
 function display(type) {
 
 	console.log(type + " " + index);
+	var top_img = document.getElementById("top-image");
 
 	// Make sure to show the options for 
 	if (type === "beginning") {
 		extra_features_options.style.display = "block";
 		stepInformation = title.innerText;
 		title.innerText = "Synthesizer and voice command options";
+		top_img.src = "";
 	}
 	else if (type === "step"){
 		extra_features_options.style.display = "none";
 		stepInformation = speficRecipeData[indexOfDish].steplist[index].step;
 		title.innerText = stepInformation;
+		if (speficRecipeData[indexOfDish].steplist[index]["picture"] != null) {
+			top_img.src = "../images/" + speficRecipeData[indexOfDish].steplist[index]["picture"];
+		}
+		else {
+			top_img.src = "";
+		}
 	}
 	else if (type === "end") {
 		extra_features_options.style.display = "none";
 		stepInformation = "Congratulations! You have finished cooking " + dishName + ". Continue to share your creation!";
 		title.innerText = stepInformation;
+		top_img.src = "";
 	}
 	else {
 		console.log("Invalid type: " + type);

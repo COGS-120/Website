@@ -405,19 +405,22 @@
         {
             "summary": "1. Heating the stock",
             "step": "1. Heat 4 cups chicken stock to a simmer in a medium saucepan, then lower the heat so the stock stays hot.",
-            "id": "1"
+            "id": "1",
+            "picture":  "dinner/boil.jpg"
         },
         {   "summary": "2. Heating oil and adding chopped ingredients",
             "step": "2. In a large saucepan, heat 1 tablespoon oil and 1 tablespoon of the butter over medium heat. When the butter has melted, add the 1 medium chopped shallot or onion. Sauté for 2 to 3 minutes.",
             "id": "2"
         },
-        {   "summary": "3. Adding rice and wine to the pot",
-            "step": "3. Add 1 1/2 cup arborio rice to the pot and stir it with a wooden spoon. Sauté for one minute and add 1/2 cup vermouth until it's fully absorbed.",
-            "id": "3"
+        {   "summary": "3. Adding rice and wine to the pan",
+            "step": "3. Add 1 1/2 cup arborio rice to the pan and stir it with a wooden spoon. Sauté for one minute and add 1/2 cup vermouth until it's fully absorbed.",
+            "id": "3",
+            "picture":  "dinner/ricein.jpg"
         },
         {   "summary": "4. Adding chicken stock to the rice and stir",
             "step": "4. Add a ladle of hot chicken stock to the rice and stir until the liquid is fully absorbed. When the rice is almost dry, add another ladle of stock and repeat the process.",
-            "id": "4"
+            "id": "4",
+            "picture":  "dinner/stockin.jpg"
         },
         {   "summary": "5. Ading chicken stock at time intervals",
             "step": "5. Continue adding stock, a ladle at a time, for 20 to 30 minutes.",
