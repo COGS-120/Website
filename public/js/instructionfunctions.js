@@ -218,6 +218,26 @@ function open() {
 			},
 			'restart *blep': function () {
 				speak(stepInformation);
+			},
+
+			// No Wildcard case
+			'next': function () {
+				nextIndex();
+			},
+			'back': function () {
+				previousIndex();
+			},
+			'pause': function () {
+				stop();
+			},
+			'stop': function () {
+				stop();
+			},
+			'repeat': function () {
+				speak(stepInformation);
+			},
+			'restart': function () {
+				speak(stepInformation);
 			}
 
 		};
@@ -236,15 +256,15 @@ function open() {
 		});
 
 		annyang.addCallback('errorNetwork', function () {
-			tts_feedback.innerText = "Annyang network error: cannot reach speech to text service.";
+			tts_feedback.innerText = "Annyang network error: cannot reach speech to text service. Please check your internet service.";
 		})
 
 		annyang.addCallback('errorPermissionBlocked', function () {
-			tts_feedback.innerText = 'Permission to use the microphone was blocked by the browser.';
+			tts_feedback.innerText = 'Permission to use the microphone was blocked by the browser. Please check your browser accesability or privacy settings.';
 		});
 
 		annyang.addCallback('errorPermissionDenied', function () {
-			tts_feedback.innerText = 'Permission was denied to use the microphone by the user.';
+			tts_feedback.innerText = 'User has denied permission to use the microphone. To re-enable, check your browser accessability or privacy settings.';
 		});
 
 		annyang.addCallback('result', function (userSaid) {
@@ -256,7 +276,6 @@ function open() {
 		});
 
 		annyang.addCallback('end', function () {
-			console.log("annyang ended, restarting...");
 			restartAnnyang(); // workaround call
 		})
 
@@ -264,7 +283,7 @@ function open() {
 		restartAnnyang();
 	}
 	else {
-		console.log("Annyang speech to text not supported.");
+		tts_feedback.innerText = 'Your current browser does not support voice command. To use voice command, please update your browser or try another browser.'
 	}
 
 }
