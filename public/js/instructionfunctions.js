@@ -338,6 +338,7 @@ function display(type) {
 		stepInformation = title.innerText;
 		title.innerText = "Synthesizer and voice command options";
 		top_img.src = "";
+		top_img.style.display = "none";
 	}
 	else if (type === "step"){
 		extra_features_options.style.display = "none";
@@ -345,9 +346,11 @@ function display(type) {
 		title.innerText = stepInformation;
 		if (speficRecipeData[indexOfDish].steplist[index]["picture"] != null) {
 			top_img.src = "../images/" + speficRecipeData[indexOfDish].steplist[index]["picture"];
+			top_img.style.display = "flex";
 		}
 		else {
 			top_img.src = "";
+			top_img.style.display = "none";
 		}
 	}
 	else if (type === "end") {
@@ -355,6 +358,7 @@ function display(type) {
 		stepInformation = "Congratulations! You have finished cooking " + dishName + ". Continue to share your creation!";
 		title.innerText = stepInformation;
 		top_img.src = "";
+		top_img.style.display = "none";
 	}
 	else {
 		console.log("Invalid type: " + type);
