@@ -9,24 +9,6 @@
 
 const supported = 'mediaDevices' in navigator;
 
-$(document).ready(open);
-
-function open() {
-   initializePage();
-
-
-    if (hasGetUserMedia()) {
-
-    } else {
-        alert('getUserMedia() is not supported in your browser');
-    }
-}
-
-function hasGetUserMedia() {
-    return !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
-        navigator.mozGetUserMedia || navigator.msGetUserMedia);
-}
-
 function initializePage() {
     $('.home-button').click(clicker(event));
 }
