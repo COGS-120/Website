@@ -214,6 +214,55 @@ function checkIfFavorite(foodName, toggle) {
     });
 }
 
+function enumerateCategory(category) {
+
+    // Get all the food data from the json
+    $.getJSON("../json/food.json", function(result) {
+
+        // Get each name
+        $.each(result[category], function(key, value) {
+            var name = value["name"];
+
+            // Get data from Firebase
+            database.ref("food/" + name + "/ratings/").once("value", function(snapshot) {
+                if (snapshot.val() != null) {
+                    var ratings = snapshot.val();
+                    // Get ratings
+                    var yesCount = 0;
+                    var noCount = 0;
+                    if (ratings["Yes"] != undefined) {
+                        yesCount = ratings["Yes"];
+                    }
+                    if (ratings["No"] != undefined) {
+                        noCount = ratings["No"];
+                    }
+
+                    // Create a final rating
+                    var total = yesCount + noCount;
+                    //var finalPercentage = yesCount / total * 5;
+                    var percString = yesCount + " likes";
+                    if (yesCount == 1) {
+                        percString = yesCount + " like";
+                    }
+
+                    document.getElementById(name + "-rating").innerText = percString;
+                }
+            });
+        });
+
+    }); 
+
+    // Get data from Firebase
+    database.ref("food").once("value", function(snapshot) {
+        if (snapshot.val() != null) {
+            var foodList = snapshot.val();
+
+            // Check for <food type>/<rating> to exist
+
+        }
+    });
+}
+
 /** 
  * Enumerates all the favorites in the favorites page
  * 
@@ -498,7 +547,12 @@ function setPageType(type, var1) {
     // Any functions here must be called when the current user has been
     // initialized and logged in.
     if (currentUser) {
-        if (type == "Food") { // double equals is intentional here, don't ===
+
+        if (type == "Category") {
+            enumerateCategory(var1);
+        }
+
+        else if (type == "Food") { // double equals is intentional here, don't ===
             checkIfFavorite(var1, false);
         }
 

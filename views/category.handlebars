@@ -25,7 +25,7 @@
 
 </head>
 
-<body onload="setPageType('Category', '{{name}}');">
+<body onload="setPageType('Category', '{{categoryName}}');">
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="dummyBar">
     <a class="navbar-brand" href="/home">
@@ -62,7 +62,7 @@
         <a class="food-link" href="../food/{{name}}">
           <h5> {{name}}</h5>
           <p class="no-margin">{{time}}</p>
-          {{!-- <p class="Rating no-margin" id="{{food}}-rating">Rating</p> --}}
+          <p class="Rating no-margin" id="{{name}}-rating"></p>
         </a>
       </div>
 
